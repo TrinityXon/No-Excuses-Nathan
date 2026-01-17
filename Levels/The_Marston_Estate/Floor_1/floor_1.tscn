@@ -224,7 +224,7 @@ position = Vector2(1481, 659)
 position = Vector2(1135, 745)
 
 [node name="Area2D3" parent="Environment/Rooms/DiningRoom/Props" instance=ExtResource("19_1np0n")]
-position = Vector2(1839, 747)
+position = Vector2(1765, 747)
 flipSprite = true
 
 [node name="Main_Hall" type="Node2D" parent="Environment/Rooms"]
@@ -244,17 +244,17 @@ scale = Vector2(0.960004, 0.360002)
 [node name="Hostiles" type="Node2D" parent="."]
 
 [node name="Enemies" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
-position = Vector2(-1332, 684)
+position = Vector2(-1365, 573)
 player = NodePath("../../Player/Nathan_Main")
 activationZones = NodePath("../../ActivationZones/HallwayEnemy")
 travelPoints = [NodePath("Points"), NodePath("Points2")]
 usesVisionCone = false
 
 [node name="Points" parent="Hostiles/Enemies" instance=ExtResource("7_aplqc")]
-position = Vector2(-127.333, -0.666656)
+position = Vector2(-127.333, 35.3333)
 
 [node name="Points2" parent="Hostiles/Enemies" instance=ExtResource("7_aplqc")]
-position = Vector2(142.667, -2)
+position = Vector2(142, 35.3333)
 
 [node name="Enemies2" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
 position = Vector2(-520, 491)
