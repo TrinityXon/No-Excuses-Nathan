@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbuxb240waqei"]
+
+[ext_resource type="PackedScene" uid="uid://dqixyoi3mgqd4" path="res://Game_Objects/BodiesBase.tscn" id="1_td3qm"]
+
+[node name="Enemies" instance=ExtResource("1_td3qm")]

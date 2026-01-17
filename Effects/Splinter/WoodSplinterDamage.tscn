@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://u3tkb0kj3cuy"]
+
+[ext_resource type="Texture2D" uid="uid://8q6ifjqfajpm" path="res://ArtSprite/SpllinterImpact/Frame1.png" id="1_7ft1i"]
+[ext_resource type="Texture2D" uid="uid://bhqi302lj04vh" path="res://ArtSprite/SpllinterImpact/Frame2.png" id="2_m5e11"]
+[ext_resource type="Texture2D" uid="uid://ck0oobmle68xj" path="res://ArtSprite/SpllinterImpact/Frame3.png" id="3_a6i4l"]
+[ext_resource type="Texture2D" uid="uid://c6ksqm5c3csfx" path="res://ArtSprite/SplinterExplosion/Frame1.png" id="4_4sthh"]
+[ext_resource type="Texture2D" uid="uid://b7okla6xskarc" path="res://ArtSprite/SplinterExplosion/Frame2.png" id="5_su1ft"]
+[ext_resource type="Texture2D" uid="uid://7yx7rammxukp" path="res://ArtSprite/SplinterExplosion/Frame3.png" id="6_7u7ot"]
+[ext_resource type="Texture2D" uid="uid://bkrsjx7d3ossr" path="res://ArtSprite/SplinterExplosion/Frame4.png" id="7_3sgv3"]
+[ext_resource type="Texture2D" uid="uid://4vsupb44wuod" path="res://ArtSprite/SplinterExplosion/Frame5.png" id="8_i5d6n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vhx1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7ft1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m5e11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a6i4l")
+}],
+"loop": false,
+"name": &"splinterDamage",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4sthh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_su1ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7u7ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3sgv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i5d6n")
+}],
+"loop": true,
+"name": &"splinterExplosion",
+"speed": 20.0
+}]
+
+[node name="WoodSplinterDamage" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7vhx1")
+animation = &"splinterExplosion"
+frame_progress = 0.876365

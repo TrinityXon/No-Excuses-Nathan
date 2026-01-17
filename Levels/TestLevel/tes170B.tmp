@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid="uid://d15t0e3xsprqu"]
+
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_cnlnq"]
+[ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Game_Objects/Floor/GroundLevel_Base.tscn" id="2_60d0s"]
+[ext_resource type="PackedScene" uid="uid://cxe41e54d2v0t" path="res://Game_Objects/Enemies/Enemy_Base.tscn" id="3_2v0u1"]
+[ext_resource type="PackedScene" uid="uid://bccyrnlml850f" path="res://UI/DeathScreen.tscn" id="4_eqfj6"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/DestructibleBase.tscn" id="5_p6xcs"]
+
+[node name="Test_Scene" type="Node2D"]
+
+[node name="Nathan_Main" parent="." instance=ExtResource("1_cnlnq")]
+position = Vector2(-381, 355)
+acceleration = 3.0
+deathMenu = ExtResource("4_eqfj6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GroundLevel" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(-35, 493)
+scale = Vector2(8.31895, 0.70996)
+
+[node name="GroundLevel9" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(1636, 584)
+scale = Vector2(4.15837, 0.672115)
+
+[node name="GroundLevel10" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(1982, 482)
+rotation = -2.35619
+scale = Vector2(0.758956, 2.65104)
+
+[node name="GroundLevel4" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(608, 573)
+rotation = -1.0472
+scale = Vector2(0.758951, 2.66996)
+
+[node name="GroundLevel5" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(1319, 622)
+scale = Vector2(0.758951, 1.22996)
+
+[node name="GroundLevel6" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(1027, 655)
+scale = Vector2(5.56968, 0.736277)
+
+[node name="GroundLevel7" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(941, 451)
+scale = Vector2(0.678079, 0.492647)
+
+[node name="GroundLevel3" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(-12, 16)
+scale = Vector2(8.31895, 0.70996)
+
+[node name="GroundLevel8" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(1073, 104)
+scale = Vector2(9.35895, 0.70996)
+
+[node name="GroundLevel19" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(490, 205)
+scale = Vector2(0.678952, 2.71871)
+
+[node name="GroundLevel11" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(2150, -58)
+scale = Vector2(7.45155, 0.70996)
+
+[node name="GroundLevel15" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(2879, -206)
+rotation = -0.523598
+scale = Vector2(4.67596, 0.70996)
+
+[node name="GroundLevel14" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(2991, 221)
+rotation = -2.09439
+scale = Vector2(0.648594, 4.99792)
+
+[node name="GroundLevel13" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(2397, 374)
+scale = Vector2(5.29967, 0.70996)
+
+[node name="GroundLevel16" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(3647, 73)
+scale = Vector2(6.37967, 0.70996)
+
+[node name="GroundLevel17" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(3623, -354)
+scale = Vector2(7.53967, 0.70996)
+
+[node name="GroundLevel12" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(1635, 19)
+scale = Vector2(0.969177, 1.9655)
+
+[node name="GroundLevel2" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(-530, 225)
+rotation = 1.57079
+scale = Vector2(4.11895, 0.70996)
+
+[node name="GroundLevel18" parent="Node2D" instance=ExtResource("2_60d0s")]
+position = Vector2(4080, -131)
+rotation = 1.57079
+scale = Vector2(4.11895, 0.70996)
+
+[node name="Enemies" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_2v0u1")]
+position = Vector2(1610, 478)
+player = NodePath("../Nathan_Main")
+
+[node name="Enemies2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_2v0u1")]
+position = Vector2(2367, 262)
+player = NodePath("../Nathan_Main")
+
+[node name="Enemies3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_2v0u1")]
+position = Vector2(3696, -40)
+player = NodePath("../Nathan_Main")
+
+[node name="Area2D" parent="." instance=ExtResource("5_p6xcs")]
+position = Vector2(-83, 379)
+maxHealth = 20.0

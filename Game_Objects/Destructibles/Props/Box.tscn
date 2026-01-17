@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://83nvl7jt22s2"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_uhq3f"]
+[ext_resource type="Texture2D" uid="uid://dkje5sva0777e" path="res://ArtSprite/Props/Box.png" id="2_lclmq"]
+
+[node name="Box" instance=ExtResource("1_uhq3f")]
+scale = Vector2(1.7, 1.7)
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.66, 0.66)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.141667, 0.141667)
+texture = ExtResource("2_lclmq")
+
+[node name="StaticBody2D" parent="." index="2"]
+position = Vector2(-1, 1)
+scale = Vector2(0.645988, 0.695478)
+
+[node name="groundCheck" parent="." index="8"]
+position = Vector2(0, 30)
+target_position = Vector2(0, 19)

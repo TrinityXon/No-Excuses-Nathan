@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d15t0e3xsprqu"]
+
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_cnlnq"]
+[ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wllm1"]
+[ext_resource type="PackedScene" uid="uid://byr0775cal5qk" path="res://Game_Objects/Enemies/Crackhead_Puny.tscn" id="3_2u4ib"]
+[ext_resource type="PackedScene" uid="uid://c38fadrhelf1p" path="res://Game_Objects/Enemies/Crackhead_Fat.tscn" id="4_60gor"]
+
+[node name="Test_Scene" type="Node2D"]
+scale = Vector2(1, 0.995064)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("1_cnlnq")]
+position = Vector2(77, 456)
+
+[node name="GroundLevel" parent="." instance=ExtResource("1_wllm1")]
+position = Vector2(305, 575)
+scale = Vector2(12.5473, 1)
+
+[node name="Enemies" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_2u4ib")]
+position = Vector2(666, 459.267)
+player = NodePath("../Nathan_Main")
+
+[node name="Enemies2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_60gor")]
+position = Vector2(285, 451.227)
+player = NodePath("../Nathan_Main")

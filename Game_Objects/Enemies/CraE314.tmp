@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://byr0775cal5qk"]
+
+[ext_resource type="PackedScene" uid="uid://cxe41e54d2v0t" path="res://Game_Objects/Enemies/Enemy_Base.tscn" id="1_kknho"]
+[ext_resource type="Texture2D" uid="uid://b1r5uf06yu5es" path="res://ArtSprite/Characters/Crackead_Puny.png" id="2_qdjv5"]
+[ext_resource type="PackedScene" uid="uid://dyaa6i2ul4c67" path="res://Game_Objects/Guns/pistol.tscn" id="3_jcc36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4jro"]
+size = Vector2(40, 65.75)
+
+[node name="Enemies" instance=ExtResource("1_kknho")]
+usesVisionCone = false
+usesActivationZones = true
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 10.875)
+shape = SubResource("RectangleShape2D_u4jro")
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(0, 2)
+scale = Vector2(0.134767, 0.133333)
+texture = ExtResource("2_qdjv5")
+
+[node name="Pistol" parent="gunParent" index="0" instance=ExtResource("3_jcc36")]
+
+[node name="sideCheck_L" parent="." index="5"]
+position = Vector2(-7, 23)
+collision_mask = 32
+
+[node name="sideCheck_R" parent="." index="6"]
+position = Vector2(4, 23)
+collision_mask = 32
+
+[node name="AttackDistance" parent="." index="7"]
+scale = Vector2(2.26549, 2.26549)
+
+[node name="CollisionShape2D" parent="AttackDistance" index="0"]
+visible = false
+position = Vector2(0, -0.441406)
+scale = Vector2(0.5, 0.5)
+
+[node name="healthMonitor" parent="." index="9"]
+maxHealth = 20.0
+
+[node name="Vision" parent="." index="13"]
+visible = false

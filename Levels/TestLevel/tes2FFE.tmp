@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d15t0e3xsprqu"]
+
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_cnlnq"]
+[ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Game_Objects/Floor/GroundLevel_Base.tscn" id="2_60d0s"]
+[ext_resource type="PackedScene" uid="uid://cxe41e54d2v0t" path="res://Game_Objects/Enemies/Enemy_Base.tscn" id="3_2v0u1"]
+
+[node name="Test_Scene" type="Node2D"]
+
+[node name="GroundLevel" parent="." instance=ExtResource("2_60d0s")]
+position = Vector2(633, 413)
+scale = Vector2(12.56, 1)
+
+[node name="GroundLevel2" parent="." instance=ExtResource("2_60d0s")]
+position = Vector2(-143, 181)
+scale = Vector2(0.96, 2.56)
+
+[node name="GroundLevel3" parent="." instance=ExtResource("2_60d0s")]
+position = Vector2(1409, 181)
+scale = Vector2(0.96, 2.56)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("1_cnlnq")]
+position = Vector2(70, 253)
+rotation = 0.000184055
+
+[node name="Enemies" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_2v0u1")]
+position = Vector2(737, 51)
+charHealth = 30.0
+player = NodePath("../Nathan_Main")

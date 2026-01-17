@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cryaljckxmgxf"]
+
+[ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Game_Objects/Floor/GroundLevel_Base.tscn" id="1_7vwil"]
+
+[node name="GroundLevel" instance=ExtResource("1_7vwil")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+z_index = 1
+position = Vector2(0, 1)
+scale = Vector2(1.13, 1.13)
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="Icon" parent="." index="1"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 0)
+debug_color = Color(0.701961, 0, 0.2, 0)

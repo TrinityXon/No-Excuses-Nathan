@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://cq2283q185y71"]
+
+[ext_resource type="Texture2D" uid="uid://dnypl0emy1145" path="res://ArtSprite/Blood/Frame1.png" id="1_e8p3h"]
+[ext_resource type="Texture2D" uid="uid://cdodxmtpi7dwq" path="res://ArtSprite/Blood/Frame2.png" id="2_sq5ac"]
+[ext_resource type="Texture2D" uid="uid://80mwccvt0woh" path="res://ArtSprite/Blood/Frame3.png" id="3_ycj1e"]
+[ext_resource type="Texture2D" uid="uid://kskusmp7thli" path="res://ArtSprite/Blood/Frame4.png" id="4_4d1p6"]
+[ext_resource type="Texture2D" uid="uid://ctjr6iprmeyai" path="res://ArtSprite/Blood/Frame5.png" id="5_8fnll"]
+[ext_resource type="Texture2D" uid="uid://3mlhhac3sqa0" path="res://ArtSprite/Blood/Frame6.png" id="6_46ugf"]
+[ext_resource type="Texture2D" uid="uid://rk0obv5ha1ix" path="res://ArtSprite/Blood/Frame7.png" id="7_2ymuo"]
+[ext_resource type="Texture2D" uid="uid://bqoto1mm2sxh1" path="res://ArtSprite/Blood/Frame8.png" id="8_5give"]
+[ext_resource type="Texture2D" uid="uid://bh5xlrw2p3fq" path="res://ArtSprite/Blood/Frame9.png" id="9_6xvi7"]
+[ext_resource type="Texture2D" uid="uid://cy4r48n6unf3n" path="res://ArtSprite/Blood/Frame10.png" id="10_0556l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xgpaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e8p3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sq5ac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ycj1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4d1p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8fnll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_46ugf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ymuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5give")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6xvi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0556l")
+}],
+"loop": false,
+"name": &"BloodSplash",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_xgpaw")
+animation = &"BloodSplash"

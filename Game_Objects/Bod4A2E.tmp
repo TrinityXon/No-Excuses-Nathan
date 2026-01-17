@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqixyoi3mgqd4"]
+
+[ext_resource type="Texture2D" uid="uid://ewcuotrl10dr" path="res://icon.svg" id="1_5a7cu"]
+[ext_resource type="Script" path="res://Game_Objects/Enemies/Enemies.gd" id="1_g5wnb"]
+[ext_resource type="PackedScene" uid="uid://b4krqoge8gma6" path="res://Game_Objects/Collectible/AmmoCollection.tscn" id="2_1bihi"]
+[ext_resource type="PackedScene" uid="uid://dt1ugd7yr5vyx" path="res://Components/HealthStuffs/HealthMonitor/healthMonitor.tscn" id="3_s1cw8"]
+[ext_resource type="PackedScene" uid="uid://h5evrljprulj" path="res://Components/SplashManager/EffectManager.tscn" id="4_t7ilb"]
+[ext_resource type="PackedScene" uid="uid://cq2283q185y71" path="res://Effects/BloodImpact/BloodSplash.tscn" id="5_0vr3g"]
+[ext_resource type="PackedScene" uid="uid://b6hygjm48yv70" path="res://Components/CentralEmitBus/EmitBus.tscn" id="5_vyd3p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1uhwj"]
+radius = 21.5
+height = 97.0
+
+[sub_resource type="Animation" id="Animation_lr20n"]
+resource_name = "death"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75hui"]
+_data = {
+"death": SubResource("Animation_lr20n")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u6kd"]
+bg_color = Color(0, 0, 0, 0.329412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlbdq"]
+bg_color = Color(0.772549, 0, 0.203922, 1)
+
+[node name="Enemies" type="CharacterBody2D"]
+script = ExtResource("1_g5wnb")
+ammoInstance = ExtResource("2_1bihi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_1uhwj")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+texture = ExtResource("1_5a7cu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_75hui")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = -101.0
+offset_right = 81.0
+offset_bottom = -74.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_1u6kd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rlbdq")
+max_value = 20.0
+show_percentage = false
+
+[node name="healthMonitor" parent="." instance=ExtResource("3_s1cw8")]
+maxHealth = 20.0
+
+[node name="EffectManager" parent="." node_paths=PackedStringArray("bus") instance=ExtResource("4_t7ilb")]
+unique_name_in_owner = true
+effect = ExtResource("5_0vr3g")
+animation = "BloodSplash"
+triggerName = "Impact"
+bus = NodePath("../EmitBus")
+
+[node name="EmitBus" parent="." instance=ExtResource("5_vyd3p")]
+
+[connection signal="hasDied" from="healthMonitor" to="." method="_on_health_monitor_has_died"]
+[connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]

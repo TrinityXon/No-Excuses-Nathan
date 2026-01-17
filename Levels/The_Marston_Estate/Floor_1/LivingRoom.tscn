@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dygfmvgoll2yt"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_5627m"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_7wcpi"]
+
+[node name="Level" type="Node2D"]
+position = Vector2(33, 70)
+scale = Vector2(0.16, 0.16)
+
+[node name="Area2D" parent="." instance=ExtResource("1_5627m")]
+position = Vector2(662.502, 443.752)
+scale = Vector2(9.48746, 0.321366)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("2_7wcpi")]
+position = Vector2(131.25, 356.251)

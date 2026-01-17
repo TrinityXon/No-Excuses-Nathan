@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdspvfk1fibiw"]
+
+[ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_ylcwq"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_hsjbi"]
+[ext_resource type="PackedScene" uid="uid://dygfmvgoll2yt" path="res://Levels/The_Marston_Estate/Floor_1/LivingRoom.tscn" id="4_1bvo5"]
+[ext_resource type="PackedScene" uid="uid://dv5fy5py3vjbm" path="res://Game_Objects/Destructibles/Props/Plank.tscn" id="4_4wvo2"]
+[ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="4_vutuy"]
+
+[node name="Foyer" type="Node2D"]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="GroundLevel" parent="Environment" instance=ExtResource("1_ylcwq")]
+position = Vector2(648, 539)
+scale = Vector2(8.28, 0.439999)
+
+[node name="GroundLevel2" parent="Environment" instance=ExtResource("1_ylcwq")]
+position = Vector2(640, 130)
+scale = Vector2(8.28, 0.439999)
+
+[node name="GroundLevel3" parent="Environment" instance=ExtResource("1_ylcwq")]
+position = Vector2(118, 331)
+rotation = 1.5708
+scale = Vector2(3.57196, 0.44208)
+
+[node name="GroundLevel4" parent="Environment" instance=ExtResource("1_ylcwq")]
+position = Vector2(1171, 341)
+rotation = 1.5708
+scale = Vector2(3.37196, 0.44208)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("2_hsjbi")]
+position = Vector2(236, 455)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(653, 335)
+scale = Vector2(-1.00288, 0.26795)
+
+[node name="BaseDoor" parent="." instance=ExtResource("4_vutuy")]
+position = Vector2(1089, 452)
+scale = Vector2(1.39917, 1.39917)
+nextLevel = ExtResource("4_1bvo5")
+
+[node name="Area2D" parent="." instance=ExtResource("4_4wvo2")]
+position = Vector2(1036, 362)
+rotation = 0.527163
+scale = Vector2(0.22522, 3.37908)
