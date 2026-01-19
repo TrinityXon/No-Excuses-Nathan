@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://duifvlti14tr8"]
+[gd_scene load_steps=21 format=3 uid="uid://duifvlti14tr8"]
 
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_axofd"]
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wy6xv"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cpyi48f1fnqev" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Kitchen_Table.tscn" id="15_04t3h"]
 [ext_resource type="PackedScene" uid="uid://cyp6fm0ftgv1d" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/KitchenDrawer.tscn" id="16_4bw7p"]
 [ext_resource type="PackedScene" uid="uid://cmik0pxe5mwkt" path="res://Game_Objects/Destructibles/Props/Sofa.tscn" id="19_1np0n"]
-[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="20_07amc"]
 [ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="21_1xxo6"]
 
 [node name="Floor1" type="Node2D"]
@@ -141,9 +140,9 @@ rotation = -3.14159
 scale = Vector2(6.15998, 0.360002)
 
 [node name="GroundLevel14" parent="Environment/Rooms/Kitchen" instance=ExtResource("1_wy6xv")]
-position = Vector2(1197, 839)
+position = Vector2(1662, 839)
 rotation = -3.14159
-scale = Vector2(15.7378, 0.360003)
+scale = Vector2(22.4582, 0.360001)
 
 [node name="GroundLevel15" parent="Environment/Rooms/Kitchen" instance=ExtResource("1_wy6xv")]
 position = Vector2(173, 774)
@@ -208,14 +207,9 @@ rotation = -4.71238
 scale = Vector2(2.43999, 0.360002)
 
 [node name="GroundLevel17" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
-position = Vector2(2206, 401)
+position = Vector2(2211, 463)
 rotation = -4.71238
-scale = Vector2(1.64, 0.360002)
-
-[node name="GroundLevel19" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
-position = Vector2(3506, 418)
-rotation = -4.71238
-scale = Vector2(3.44, 0.360002)
+scale = Vector2(2.68, 0.360002)
 
 [node name="GroundLevel18" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
 position = Vector2(1588, 309)
@@ -236,42 +230,24 @@ flipSprite = true
 
 [node name="Main_Hall" type="Node2D" parent="Environment/Rooms"]
 
+[node name="Props" type="Node2D" parent="Environment/Rooms/Main_Hall"]
+
 [node name="GroundLevel19" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2216, 798)
-rotation = -1.57079
-scale = Vector2(0.960004, 0.360002)
-
-[node name="GroundLevel20" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2640, 758)
-scale = Vector2(6.52, 0.360002)
-
-[node name="GroundLevel26" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2850, 404)
-scale = Vector2(9.9032, 0.309004)
-
-[node name="GroundLevel25" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2640, 758)
-scale = Vector2(6.52, 0.360002)
-
-[node name="GroundLevel23" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(3170, 695)
-rotation = -0.523598
-scale = Vector2(1.96949, 0.360002)
-
-[node name="GroundLevel24" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(3400, 632)
-scale = Vector2(1.96949, 0.360002)
+position = Vector2(2677, 381)
+scale = Vector2(7.15999, 0.360002)
 
 [node name="GroundLevel21" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2855, 182)
-scale = Vector2(10.2, 0.360002)
+position = Vector2(2523, 556)
+scale = Vector2(4.8, 0.360002)
 
 [node name="GroundLevel22" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2206, 228)
-rotation = -1.57079
-scale = Vector2(0.960004, 0.360002)
+position = Vector2(3054, 557)
+scale = Vector2(0.719995, 0.360002)
 
-[node name="Props" type="Node2D" parent="Environment/Rooms/Main_Hall"]
+[node name="GroundLevel20" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(3122, 611)
+rotation = 1.57079
+scale = Vector2(3.67998, 0.360002)
 
 [node name="Hostiles" type="Node2D" parent="."]
 
@@ -385,11 +361,7 @@ scale = Vector2(39.1745, -13.9374)
 position = Vector2(2036, 682)
 scale = Vector2(14.2104, -14.9615)
 
-[node name="Area2D2" parent="." instance=ExtResource("20_07amc")]
-position = Vector2(2734, 576)
-rotation = -0.523598
-scale = Vector2(0.734706, 3.41083)
-
 [node name="BaseDoor" parent="." instance=ExtResource("21_1xxo6")]
-position = Vector2(-2480, 681)
+position = Vector2(2293, 467)
+scale = Vector2(1.45245, 1.45245)
 level = "res://Levels/UILevels/MainMenu.tscn"
