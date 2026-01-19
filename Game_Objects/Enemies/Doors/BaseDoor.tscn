@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bur5u1p2bwm08"]
+[gd_scene load_steps=5 format=3 uid="uid://bur5u1p2bwm08"]
 
 [ext_resource type="Script" path="res://Game_Objects/Enemies/Doors/BaseDoor.gd" id="1_28glk"]
 [ext_resource type="PackedScene" uid="uid://bhldf5vjnk7gx" path="res://Components/Pickup/Pickup.tscn" id="2_fvenk"]
+[ext_resource type="PackedScene" uid="uid://l50vj4oeykqw" path="res://Levels/UILevels/MainMenu.tscn" id="2_skhu3"]
 [ext_resource type="Texture2D" uid="uid://cpfnd71vectt5" path="res://ArtSprite/Miscellaneous/door.png" id="3_g2c3p"]
 
 [node name="BaseDoor" type="Node2D"]
 script = ExtResource("1_28glk")
+nextLevel = ExtResource("2_skhu3")
 
 [node name="Pickup" parent="." instance=ExtResource("2_fvenk")]
 position = Vector2(2, 2)

@@ -1,9 +1,8 @@
 extends Node2D
 
-@export var nextLevel: PackedScene
-
+@export var level: String
 func _on_pickup_has_picked(body):
-	if nextLevel:
-		get_tree().change_scene_to_packed(nextLevel)
+	if level != '':
+		get_tree().change_scene_to_file(level)
 	else:
 		print("no level assigned")

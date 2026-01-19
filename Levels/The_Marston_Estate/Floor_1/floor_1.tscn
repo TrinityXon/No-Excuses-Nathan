@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://duifvlti14tr8"]
+[gd_scene load_steps=22 format=3 uid="uid://duifvlti14tr8"]
 
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_axofd"]
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wy6xv"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cyp6fm0ftgv1d" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/KitchenDrawer.tscn" id="16_4bw7p"]
 [ext_resource type="PackedScene" uid="uid://cmik0pxe5mwkt" path="res://Game_Objects/Destructibles/Props/Sofa.tscn" id="19_1np0n"]
 [ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="20_07amc"]
+[ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="21_1xxo6"]
 
 [node name="Floor1" type="Node2D"]
 position = Vector2(3216, -171)
@@ -388,3 +389,7 @@ scale = Vector2(14.2104, -14.9615)
 position = Vector2(2734, 576)
 rotation = -0.523598
 scale = Vector2(0.734706, 3.41083)
+
+[node name="BaseDoor" parent="." instance=ExtResource("21_1xxo6")]
+position = Vector2(-2480, 681)
+level = "res://Levels/UILevels/MainMenu.tscn"
