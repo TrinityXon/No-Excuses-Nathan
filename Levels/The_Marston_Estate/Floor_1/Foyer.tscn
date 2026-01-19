@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdspvfk1fibiw"]
+[gd_scene load_steps=5 format=3 uid="uid://cdspvfk1fibiw"]
 
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_ylcwq"]
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_hsjbi"]
-[ext_resource type="PackedScene" uid="uid://dygfmvgoll2yt" path="res://Levels/The_Marston_Estate/Floor_1/LivingRoom.tscn" id="4_1bvo5"]
 [ext_resource type="PackedScene" uid="uid://dv5fy5py3vjbm" path="res://Game_Objects/Destructibles/Props/Plank.tscn" id="4_4wvo2"]
 [ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="4_vutuy"]
 
@@ -38,7 +37,6 @@ scale = Vector2(-1.00288, 0.26795)
 [node name="BaseDoor" parent="." instance=ExtResource("4_vutuy")]
 position = Vector2(1089, 452)
 scale = Vector2(1.39917, 1.39917)
-nextLevel = ExtResource("4_1bvo5")
 
 [node name="Area2D" parent="." instance=ExtResource("4_4wvo2")]
 position = Vector2(1036, 362)

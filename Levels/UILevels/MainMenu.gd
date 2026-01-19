@@ -1,10 +1,9 @@
 extends Control
 
-@export var nextLevel: PackedScene
-
+@export var level: String
 func _on_play_pressed():
-	if nextLevel != null:
-		get_tree().change_scene_to_packed(nextLevel)
+	if level != '':
+		get_tree().change_scene_to_file(level)
 	else:
 		print("no level to transition")
 func _on_options_pressed():

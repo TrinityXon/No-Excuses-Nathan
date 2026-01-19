@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://l50vj4oeykqw"]
+[gd_scene load_steps=2 format=3 uid="uid://l50vj4oeykqw"]
 
 [ext_resource type="Script" path="res://Levels/UILevels/MainMenu.gd" id="1_q2rmk"]
-[ext_resource type="PackedScene" uid="uid://duifvlti14tr8" path="res://Levels/The_Marston_Estate/Floor_1/floor_1.tscn" id="2_v2dmk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q2rmk")
-nextLevel = ExtResource("2_v2dmk")
+level = "res://Levels/The_Marston_Estate/Floor_1/floor_1.tscn"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
