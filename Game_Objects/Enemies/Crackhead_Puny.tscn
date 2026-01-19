@@ -29,7 +29,6 @@ scale = Vector2(0.134767, 0.133333)
 texture = ExtResource("2_qdjv5")
 
 [node name="Pistol" parent="gunParent" index="0" instance=ExtResource("3_jcc36")]
-damage = 7.5
 
 [node name="ShotCheck" type="RayCast2D" parent="gunParent" index="1"]
 unique_name_in_owner = true
@@ -59,13 +58,6 @@ maxHealth = 20.0
 
 [node name="EffectManager" parent="." index="10"]
 unique_name_in_owner = false
-
-[node name="Label" parent="." index="12"]
-offset_left = -137.333
-offset_top = -94.6667
-offset_right = -44.3333
-offset_bottom = -49.6667
-scale = Vector2(3.02667, 3.02667)
 
 [node name="Vision" parent="." index="13"]
 visible = false

@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 EmitBus="*res://Components/CentralEmitBus/EmitBus.gd"
-GlobalVars="*res://Game_Objects/Global_Variable_Controller/global_vars.tscn"
 
 [input]
 
