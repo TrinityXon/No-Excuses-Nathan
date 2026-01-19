@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbym6uw7r4ntf"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_vns20"]
+[ext_resource type="Texture2D" uid="uid://bk5jpyahjs648" path="res://ArtSprite/Props/The_Marston_Estate/Statue.png" id="2_cntqa"]
+
+[node name="Area2D" instance=ExtResource("1_vns20")]
+z_index = -2
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-4, -17)
+scale = Vector2(-1.26748, 1.7763)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_cntqa")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-3, -13)
+scale = Vector2(3.52, 1.72)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 30.0

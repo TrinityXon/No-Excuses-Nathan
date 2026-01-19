@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://duifvlti14tr8"]
+[gd_scene load_steps=26 format=3 uid="uid://duifvlti14tr8"]
 
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_axofd"]
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wy6xv"]
@@ -18,8 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://cbybm0fvqtutg" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Dining_Table.tscn" id="14_ti1vo"]
 [ext_resource type="PackedScene" uid="uid://cpyi48f1fnqev" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Kitchen_Table.tscn" id="15_04t3h"]
 [ext_resource type="PackedScene" uid="uid://cyp6fm0ftgv1d" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/KitchenDrawer.tscn" id="16_4bw7p"]
+[ext_resource type="PackedScene" uid="uid://cfv66c1kn5eqv" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Stair.tscn" id="16_46fwd"]
+[ext_resource type="PackedScene" uid="uid://b3pfdpwvrppc" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Pillar.tscn" id="17_y0t8y"]
 [ext_resource type="PackedScene" uid="uid://cmik0pxe5mwkt" path="res://Game_Objects/Destructibles/Props/Sofa.tscn" id="19_1np0n"]
-[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="20_07amc"]
+[ext_resource type="PackedScene" uid="uid://cp2ohacay52py" path="res://Game_Objects/Floor/Handrails.tscn" id="22_h6bw6"]
+[ext_resource type="PackedScene" uid="uid://bbym6uw7r4ntf" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Statue.tscn" id="23_4036x"]
+[ext_resource type="PackedScene" uid="uid://256qlmsru0a3" path="res://Game_Objects/Elevator.tscn" id="24_e5e55"]
+[ext_resource type="PackedScene" uid="uid://l50vj4oeykqw" path="res://Levels/UILevels/MainMenu.tscn" id="25_wvi1r"]
 
 [node name="Floor1" type="Node2D"]
 position = Vector2(3216, -171)
@@ -27,7 +32,7 @@ position = Vector2(3216, -171)
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Nathan_Main" parent="Player" instance=ExtResource("1_axofd")]
-position = Vector2(-3110, 696)
+position = Vector2(2419, 635)
 acceleration = 4.0
 
 [node name="Environment" type="Node2D" parent="."]
@@ -212,9 +217,9 @@ rotation = -4.71238
 scale = Vector2(1.64, 0.360002)
 
 [node name="GroundLevel19" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
-position = Vector2(3506, 418)
+position = Vector2(3357, 468)
 rotation = -4.71238
-scale = Vector2(3.44, 0.360002)
+scale = Vector2(4.48, 0.360002)
 
 [node name="GroundLevel18" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
 position = Vector2(1588, 309)
@@ -240,30 +245,13 @@ position = Vector2(2216, 798)
 rotation = -1.57079
 scale = Vector2(0.960004, 0.360002)
 
-[node name="GroundLevel20" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2640, 758)
-scale = Vector2(6.52, 0.360002)
-
-[node name="GroundLevel26" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2850, 404)
-scale = Vector2(9.9032, 0.309004)
-
-[node name="GroundLevel25" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2640, 758)
-scale = Vector2(6.52, 0.360002)
+[node name="GroundLevel21" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(2766, 182)
+scale = Vector2(8.96001, 0.360002)
 
 [node name="GroundLevel23" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(3170, 695)
-rotation = -0.523598
-scale = Vector2(1.96949, 0.360002)
-
-[node name="GroundLevel24" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(3400, 632)
-scale = Vector2(1.96949, 0.360002)
-
-[node name="GroundLevel21" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
-position = Vector2(2855, 182)
-scale = Vector2(10.2, 0.360002)
+position = Vector2(2798, 755)
+scale = Vector2(8.96001, 0.360002)
 
 [node name="GroundLevel22" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
 position = Vector2(2206, 228)
@@ -271,6 +259,44 @@ rotation = -1.57079
 scale = Vector2(0.960004, 0.360002)
 
 [node name="Props" type="Node2D" parent="Environment/Rooms/Main_Hall"]
+
+[node name="Area2D" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("16_46fwd")]
+position = Vector2(3244, 662)
+scale = Vector2(1.19744, 0.963431)
+
+[node name="Area2D2" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("17_y0t8y")]
+position = Vector2(2637, 580)
+rotation = -0.523598
+scale = Vector2(1, 0.906797)
+
+[node name="Area2D3" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("23_4036x")]
+position = Vector2(2635, 329)
+
+[node name="Walls_floors" type="Node2D" parent="Environment/Rooms/Main_Hall"]
+
+[node name="GroundLevel" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(2293, 381)
+
+[node name="GroundLevel2" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(2419, 381)
+
+[node name="GroundLevel3" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(2547, 381)
+
+[node name="GroundLevel4" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(2670, 381)
+
+[node name="GroundLevel5" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(2798, 381)
+
+[node name="GroundLevel6" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(2925, 381)
+
+[node name="GroundLevel7" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(3051, 381)
+
+[node name="GroundLevel8" parent="Environment/Rooms/Main_Hall/Walls_floors" instance=ExtResource("22_h6bw6")]
+position = Vector2(3178, 381)
 
 [node name="Hostiles" type="Node2D" parent="."]
 
@@ -384,7 +410,6 @@ scale = Vector2(39.1745, -13.9374)
 position = Vector2(2036, 682)
 scale = Vector2(14.2104, -14.9615)
 
-[node name="Area2D2" parent="." instance=ExtResource("20_07amc")]
-position = Vector2(2734, 576)
-rotation = -0.523598
-scale = Vector2(0.734706, 3.41083)
+[node name="BaseDoor" parent="." instance=ExtResource("24_e5e55")]
+position = Vector2(2293, 329)
+nextLevel = ExtResource("25_wvi1r")

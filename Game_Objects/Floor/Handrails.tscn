@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp2ohacay52py"]
+
+[ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_iecqn"]
+[ext_resource type="Texture2D" uid="uid://bie50cpstvbim" path="res://ArtSprite/Background-Non-Collision/Handrails.png" id="2_ar6yy"]
+
+[node name="GroundLevel" instance=ExtResource("1_iecqn")]
+scale = Vector2(0.679999, 0.679999)
+shouldModulate = false
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = true
+position = Vector2(5.96046e-08, 50)
+scale = Vector2(1.59879, 0.21)
+
+[node name="Icon" parent="." index="1"]
+modulate = Color(1, 1, 1, 1)
+scale = Vector2(0.498437, 0.483333)
+texture = ExtResource("2_ar6yy")

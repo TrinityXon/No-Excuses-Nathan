@@ -149,6 +149,7 @@ func patrol(TravelPointsV: Array):
 	return
 
 func chasePlayer():
+	detectionLabel.text = '!'
 	moveDir = (player.global_position - global_position).normalized()
 	velocity.x = moveDir.x * speed
 	print(moveDir.x)

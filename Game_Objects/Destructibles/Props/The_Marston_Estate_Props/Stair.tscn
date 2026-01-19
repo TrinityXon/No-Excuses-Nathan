@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfv66c1kn5eqv"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_10xgs"]
+[ext_resource type="Texture2D" uid="uid://c5ayw187qc7wp" path="res://ArtSprite/Props/The_Marston_Estate/Stairs.png" id="2_bidsc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2fhp"]
+size = Vector2(20, 46)
+
+[node name="Stairs" instance=ExtResource("1_10xgs")]
+position = Vector2(22, -84)
+scale = Vector2(1.43744, 1.15653)
+isInvincible = true
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = true
+position = Vector2(9, -21)
+scale = Vector2(0.930473, 1.4114)
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(-122, -76)
+scale = Vector2(0.419445, 0.419444)
+texture = ExtResource("2_bidsc")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = true
+position = Vector2(-13, 41)
+scale = Vector2(5.4981, 0.538444)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+position = Vector2(8, -23)
+scale = Vector2(7.02282, 1.36302)
+shape = SubResource("RectangleShape2D_p2fhp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+position = Vector2(31, -87)
+scale = Vector2(4.78282, 1.36302)
+shape = SubResource("RectangleShape2D_p2fhp")

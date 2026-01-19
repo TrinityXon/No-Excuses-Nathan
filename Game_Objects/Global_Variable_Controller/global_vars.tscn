@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://f7upm41tgc2r"]
+
+[ext_resource type="Script" path="res://Game_Objects/Global_Variable_Controller/global_vars.gd" id="1_ydpvp"]
+
+[node name="global_vars" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ydpvp")
