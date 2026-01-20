@@ -29,4 +29,4 @@ scale = Vector2(0.888889, 0.888889)
 texture = ExtResource("3_f73wd")
 
 [node name="ShotTimer" parent="." index="2"]
-wait_time = 0.2
+wait_time = 0.4
