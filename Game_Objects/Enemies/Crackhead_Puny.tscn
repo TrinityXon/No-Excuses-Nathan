@@ -29,6 +29,7 @@ scale = Vector2(0.134767, 0.133333)
 texture = ExtResource("2_qdjv5")
 
 [node name="Pistol" parent="gunParent" index="0" instance=ExtResource("3_jcc36")]
+damage = 5.0
 
 [node name="ShotCheck" type="RayCast2D" parent="gunParent" index="1"]
 unique_name_in_owner = true

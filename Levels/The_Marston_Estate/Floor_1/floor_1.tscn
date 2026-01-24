@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://duifvlti14tr8"]
+[gd_scene load_steps=26 format=3 uid="uid://duifvlti14tr8"]
 
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_axofd"]
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wy6xv"]
@@ -19,6 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://cpyi48f1fnqev" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Kitchen_Table.tscn" id="15_04t3h"]
 [ext_resource type="PackedScene" uid="uid://cyp6fm0ftgv1d" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/KitchenDrawer.tscn" id="16_4bw7p"]
 [ext_resource type="PackedScene" uid="uid://cmik0pxe5mwkt" path="res://Game_Objects/Destructibles/Props/Sofa.tscn" id="19_1np0n"]
+[ext_resource type="PackedScene" uid="uid://bcdkcbook1q1r" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Chandelier.tscn" id="20_d6t3w"]
+[ext_resource type="PackedScene" uid="uid://ch8wh7ro4obxr" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/mainHallTable.tscn" id="21_afuwc"]
+[ext_resource type="PackedScene" uid="uid://dhlmdl6lxli1c" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Sofa_MainHall.tscn" id="22_xedl0"]
+[ext_resource type="PackedScene" uid="uid://0536y12sjmtb" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/Pillar.tscn" id="23_tjsfw"]
+[ext_resource type="PackedScene" uid="uid://bdlhdljwpgr4v" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Statue.tscn" id="24_pyya3"]
+[ext_resource type="PackedScene" uid="uid://boaiwxrakmajw" path="res://Game_Objects/Interactable/Elevator.tscn" id="25_rm6dx"]
 
 [node name="Floor1" type="Node2D"]
 position = Vector2(3216, -171)
@@ -210,11 +216,6 @@ position = Vector2(2211, 463)
 rotation = -4.71238
 scale = Vector2(2.68, 0.360002)
 
-[node name="GroundLevel19" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
-position = Vector2(2399, 401)
-rotation = -6.28318
-scale = Vector2(2.68, 0.360002)
-
 [node name="GroundLevel18" parent="Environment/Rooms/DiningRoom" instance=ExtResource("1_wy6xv")]
 position = Vector2(1588, 309)
 rotation = -6.28318
@@ -234,12 +235,89 @@ flipSprite = true
 
 [node name="Main_Hall" type="Node2D" parent="Environment/Rooms"]
 
+[node name="GroundLevel26" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(4049, 378)
+rotation = -3.14158
+scale = Vector2(0.969556, -0.279632)
+
+[node name="GroundLevel19" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(2679, 401)
+scale = Vector2(7.04, 0.360002)
+
+[node name="GroundLevel20" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(3132, 785)
+rotation = -1.57078
+scale = Vector2(1.12002, 0.360002)
+
+[node name="GroundLevel22" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(3121, 295)
+rotation = -1.57078
+scale = Vector2(1.79636, 0.3601)
+
+[node name="GroundLevel24" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(4109, 467)
+rotation = -1.57078
+scale = Vector2(4.15636, 0.3601)
+
+[node name="GroundLevel21" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(3623, 727)
+scale = Vector2(7.72002, 0.360002)
+
+[node name="GroundLevel23" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(3626, 200)
+scale = Vector2(7.72002, 0.360002)
+
+[node name="GroundLevel25" parent="Environment/Rooms/Main_Hall" instance=ExtResource("1_wy6xv")]
+position = Vector2(3513, 381)
+scale = Vector2(5.72003, 0.280002)
+
 [node name="Props" type="Node2D" parent="Environment/Rooms/Main_Hall"]
+
+[node name="Chandelier" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("20_d6t3w")]
+position = Vector2(2668, 563)
+scale = Vector2(1.22179, 1.22179)
+
+[node name="Area2D" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("21_afuwc")]
+position = Vector2(2655, 756)
+scale = Vector2(0.720007, 0.353684)
+
+[node name="Area2D2" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("22_xedl0")]
+position = Vector2(2434, 763)
+
+[node name="Area2D3" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("22_xedl0")]
+position = Vector2(2907, 759)
+flipSprite = true
+
+[node name="DecorationsBase" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("23_tjsfw")]
+position = Vector2(3287, 545)
+scale = Vector2(1, 1.12)
+
+[node name="DecorationsBase2" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("23_tjsfw")]
+position = Vector2(3531, 545)
+scale = Vector2(1, 1.12)
+
+[node name="DecorationsBase3" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("23_tjsfw")]
+position = Vector2(3773, 541)
+scale = Vector2(1, 1.12)
+
+[node name="Area2D4" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("24_pyya3")]
+position = Vector2(3410, 643)
+
+[node name="Box" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("3_qbm2n")]
+position = Vector2(3907, 648)
+scale = Vector2(1.5, 1.5)
+
+[node name="Box2" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("3_qbm2n")]
+position = Vector2(4023, 639)
+
+[node name="Box3" parent="Environment/Rooms/Main_Hall/Props" instance=ExtResource("3_qbm2n")]
+position = Vector2(4009, 530)
+scale = Vector2(1.26, 1.26)
 
 [node name="Hostiles" type="Node2D" parent="."]
 
 [node name="Enemies" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
-position = Vector2(-1365, 573)
+position = Vector2(-1338, 681)
 player = NodePath("../../Player/Nathan_Main")
 activationZones = NodePath("../../ActivationZones/HallwayEnemy")
 travelPoints = [NodePath("Points"), NodePath("Points2")]
@@ -252,7 +330,7 @@ position = Vector2(-127.333, 35.3333)
 position = Vector2(142, 35.3333)
 
 [node name="Enemies2" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
-position = Vector2(-520, 491)
+position = Vector2(-518, 505)
 player = NodePath("../../Player/Nathan_Main")
 activationZones = NodePath("../../ActivationZones/TableEnemy")
 travelPoints = [NodePath("Points"), NodePath("Points2")]
@@ -278,11 +356,18 @@ position = Vector2(-86.6666, 4)
 position = Vector2(102.667, 0)
 scale = Vector2(1.32, 1)
 
-[node name="Enemies4" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones") instance=ExtResource("6_8jkhy")]
+[node name="Enemies4" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
 position = Vector2(580, 638)
 player = NodePath("../../Player/Nathan_Main")
 activationZones = NodePath("../../ActivationZones/Kitchen")
+travelPoints = [NodePath("Points"), NodePath("Points2")]
 usesVisionCone = false
+
+[node name="Points" parent="Hostiles/Enemies4" instance=ExtResource("7_aplqc")]
+position = Vector2(-386.667, -425.333)
+scale = Vector2(0.666667, 0.666667)
+
+[node name="Points2" parent="Hostiles/Enemies4" instance=ExtResource("7_aplqc")]
 
 [node name="Enemies5" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
 position = Vector2(1481, 597)
@@ -297,11 +382,54 @@ position = Vector2(-166.667, 18)
 [node name="Points2" parent="Hostiles/Enemies5" instance=ExtResource("7_aplqc")]
 position = Vector2(138.667, 18)
 
-[node name="Enemies6" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones") instance=ExtResource("6_8jkhy")]
+[node name="Enemies6" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
 position = Vector2(2043, 748)
 player = NodePath("../../Player/Nathan_Main")
 activationZones = NodePath("../../ActivationZones/DiningRoomEnemy2")
+travelPoints = [NodePath("Points2"), NodePath("Points")]
 usesVisionCone = false
+
+[node name="Points2" parent="Hostiles/Enemies6" instance=ExtResource("7_aplqc")]
+position = Vector2(-104.667, 16.6667)
+
+[node name="Points" parent="Hostiles/Enemies6" instance=ExtResource("7_aplqc")]
+position = Vector2(91.3335, 18.6667)
+
+[node name="Enemies7" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
+position = Vector2(2656, 648)
+player = NodePath("../../Player/Nathan_Main")
+activationZones = NodePath("../../ActivationZones/MainHall_Rm_1")
+travelPoints = [NodePath("Points"), NodePath("Points2")]
+
+[node name="Points" parent="Hostiles/Enemies7" instance=ExtResource("7_aplqc")]
+position = Vector2(-97.3333, 28.6667)
+
+[node name="Points2" parent="Hostiles/Enemies7" instance=ExtResource("7_aplqc")]
+position = Vector2(102.667, 29.3333)
+
+[node name="Enemies8" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
+position = Vector2(3665, 635)
+player = NodePath("../../Player/Nathan_Main")
+activationZones = NodePath("../../ActivationZones/MainHall_Rm_2")
+travelPoints = [NodePath("Points"), NodePath("Points2")]
+
+[node name="Points" parent="Hostiles/Enemies8" instance=ExtResource("7_aplqc")]
+position = Vector2(102.667, 28)
+
+[node name="Points2" parent="Hostiles/Enemies8" instance=ExtResource("7_aplqc")]
+position = Vector2(-119.333, 25.3333)
+
+[node name="Enemies9" parent="Hostiles" node_paths=PackedStringArray("player", "activationZones", "travelPoints") instance=ExtResource("6_8jkhy")]
+position = Vector2(3466, 288)
+player = NodePath("../../Player/Nathan_Main")
+activationZones = NodePath("../../ActivationZones/MainHall_Rm_3")
+travelPoints = [NodePath("Points"), NodePath("Points2")]
+
+[node name="Points2" parent="Hostiles/Enemies9" instance=ExtResource("7_aplqc")]
+position = Vector2(247.333, 23.3333)
+
+[node name="Points" parent="Hostiles/Enemies9" instance=ExtResource("7_aplqc")]
+position = Vector2(-119.333, 34)
 
 [node name="Miscellaneous" type="Node2D" parent="."]
 
@@ -347,3 +475,20 @@ scale = Vector2(39.1745, -13.9374)
 [node name="DiningRoomEnemy2" parent="ActivationZones" instance=ExtResource("7_ocwhu")]
 position = Vector2(2036, 682)
 scale = Vector2(14.2104, -14.9615)
+
+[node name="MainHall_Rm_1" parent="ActivationZones" instance=ExtResource("7_ocwhu")]
+position = Vector2(2655, 641)
+scale = Vector2(27.172, -13.3954)
+
+[node name="MainHall_Rm_2" parent="ActivationZones" instance=ExtResource("7_ocwhu")]
+position = Vector2(3598, 591)
+scale = Vector2(27.172, -13.3954)
+
+[node name="MainHall_Rm_3" parent="ActivationZones" instance=ExtResource("7_ocwhu")]
+position = Vector2(3545, 295)
+scale = Vector2(27.172, -7.95539)
+
+[node name="BaseDoor" parent="." instance=ExtResource("25_rm6dx")]
+position = Vector2(3209, 298)
+scale = Vector2(1.56, 1.56)
+level = "res://Levels/UILevels/MainMenu.tscn"

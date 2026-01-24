@@ -94,9 +94,9 @@ func _ready():
 	else:
 		visionCone.visible = false
 	
-		
-	for points in travelPoints:
-		TravelPointsVector.append(Vector2(round(points.global_position.x), round(points.global_position.y)))
+	if travelPoints != null:
+		for points in travelPoints:
+			TravelPointsVector.append(Vector2(round(points.global_position.x), round(points.global_position.y)))
 	
 func _physics_process(delta):
 	flip_enemy()
