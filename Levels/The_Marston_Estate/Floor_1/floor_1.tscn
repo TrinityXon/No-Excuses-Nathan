@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://duifvlti14tr8"]
+[gd_scene load_steps=27 format=3 uid="uid://duifvlti14tr8"]
 
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_axofd"]
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wy6xv"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://0536y12sjmtb" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/Pillar.tscn" id="23_tjsfw"]
 [ext_resource type="PackedScene" uid="uid://bdlhdljwpgr4v" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Statue.tscn" id="24_pyya3"]
 [ext_resource type="PackedScene" uid="uid://boaiwxrakmajw" path="res://Game_Objects/Interactable/Elevator.tscn" id="25_rm6dx"]
+[ext_resource type="PackedScene" uid="uid://4wb4xj1d13d4" path="res://Game_Objects/Interactable/Ladder.tscn" id="26_hc5gc"]
 
 [node name="Floor1" type="Node2D"]
 position = Vector2(3216, -171)
@@ -492,3 +493,7 @@ scale = Vector2(27.172, -7.95539)
 position = Vector2(3209, 298)
 scale = Vector2(1.56, 1.56)
 level = "res://Levels/UILevels/MainMenu.tscn"
+
+[node name="Ladder" parent="." instance=ExtResource("26_hc5gc")]
+position = Vector2(-2417, 583)
+scale = Vector2(2.58155, 6.26155)

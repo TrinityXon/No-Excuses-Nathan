@@ -4,16 +4,22 @@ extends CharacterBody2D
 # Control variables
 @export var maxSpeed = 600
 @export var minSpeed = 0
+@export var maxSpeedVert = 300
+@export var minSpeedVert = 0
 @export var acceleration: float = 3
 
 @export var jumpSpeed = 450
 @export var gravity = 600
 
 var Speed = maxSpeed
+var climbSpeed = maxSpeed
 var direction: float
+var directionYClimb: float
 var airMovementMultiplier = 0.7
+var gravityEnabled: bool = true
 
 enum playerStates {default, armed}
+var canClimb: bool = false
 var curStates: playerStates = playerStates.default
 
 # Node References
@@ -72,7 +78,9 @@ func _physics_process(delta):
 	
 	# Log direction and set it to velocity on the x axis
 	direction = Input.get_axis("MoveLeft", "Move_Right")
+	directionYClimb = Input.get_axis("Move_Down", "Move_Up") 
 	var targetSpeed = Speed * direction
+	var targetSpeedY = climbSpeed * directionYClimb
 	var accel = acceleration
 	
 	
@@ -82,13 +90,20 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x, targetSpeed, accel * delta)
 	
 	# Gravity Logic
-	if !is_on_floor():
+	if !is_on_floor() and gravityEnabled:
 		velocity.y += gravity * delta
 	
 	if curStates == playerStates.armed:
 		if Input.is_action_pressed("Shoot"):
 			gun.shoot()
 	
+	if canClimb:
+		if gravityEnabled:
+			gravityEnabled = false
+		velocity.y = lerp(velocity.y, targetSpeedY, accel * delta)
+	elif not canClimb:
+		gravityEnabled = true
+		
 	flip_player()
 	move_and_slide()
 
@@ -214,3 +229,6 @@ func unCrouch():
 	Speed *= 2
 	
 	isCrouching = false
+
+func changeMovement():
+	canClimb = true
