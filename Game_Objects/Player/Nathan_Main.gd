@@ -230,5 +230,8 @@ func unCrouch():
 	
 	isCrouching = false
 
-func changeMovement():
-	canClimb = true
+func changeMovement(climb: bool):
+	if climb:
+		canClimb = true
+	if not climb:
+		canClimb = false
