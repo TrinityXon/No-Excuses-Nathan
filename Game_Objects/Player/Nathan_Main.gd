@@ -89,21 +89,18 @@ func _physics_process(delta):
 	
 	velocity.x = lerp(velocity.x, targetSpeed, accel * delta)
 	
-	# Gravity Logic
-	if !is_on_floor() and gravityEnabled:
-		velocity.y += gravity * delta
-	
 	if curStates == playerStates.armed:
 		if Input.is_action_pressed("Shoot"):
 			gun.shoot()
 	
 	if canClimb:
-		if gravityEnabled:
-			gravityEnabled = false
-		velocity.y = lerp(velocity.y, targetSpeedY, accel * delta)
-	elif not canClimb:
-		gravityEnabled = true
-		
+	# CLIMB MODE
+		velocity.y = lerp(velocity.y,targetSpeedY,accel * delta)
+	else:
+	# NORMAL MODE
+		if not is_on_floor():
+			velocity.y += gravity * delta
+	
 	flip_player()
 	move_and_slide()
 

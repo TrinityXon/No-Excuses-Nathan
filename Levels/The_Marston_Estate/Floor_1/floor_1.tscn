@@ -495,5 +495,5 @@ scale = Vector2(1.56, 1.56)
 level = "res://Levels/UILevels/MainMenu.tscn"
 
 [node name="Ladder" parent="." instance=ExtResource("26_hc5gc")]
-position = Vector2(-2417, 583)
-scale = Vector2(2.58155, 6.26155)
+position = Vector2(3908, 466)
+scale = Vector2(1.50155, 3.64201)
