@@ -92,7 +92,12 @@ bus = NodePath("../EmitBus")
 [node name="EmitBus" parent="." instance=ExtResource("7_f7w8o")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -70)
+position = Vector2(-8, -28)
 zoom = Vector2(1.625, 1.625)
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+rotation_smoothing_speed = 40.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]
