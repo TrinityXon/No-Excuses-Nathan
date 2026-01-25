@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Game_Objects/Floor/GroundLevel_Base.tscn" id="1_7vwil"]
 
 [node name="GroundLevel" instance=ExtResource("1_7vwil")]
+collision_layer = 39
 
 [node name="CollisionShape2D" parent="." index="0"]
 z_index = 1

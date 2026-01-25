@@ -43,9 +43,9 @@ acceleration = 4.0
 [node name="Foyer" type="Node2D" parent="Environment/Rooms"]
 
 [node name="GroundLevel3" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
-position = Vector2(-2265, 481)
+position = Vector2(-2268, 495)
 rotation = 1.57079
-scale = Vector2(1.28, 0.360002)
+scale = Vector2(1.76, 0.360002)
 
 [node name="GroundLevel4" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
 position = Vector2(-3188, 574)

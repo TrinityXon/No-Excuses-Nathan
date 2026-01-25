@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q2rmk")
-level = "res://Levels/The_Marston_Estate/Floor_1/floor_1.tscn"
+level = "res://Levels/UILevels/Level_Select/Level_Select.tscn"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://mkprluj0fh7b"]
+
+[ext_resource type="Script" path="res://UI/LevelButton/LevelButton.gd" id="1_ewfme"]
+[ext_resource type="Texture2D" uid="uid://12nf8diiwcv7" path="res://ArtSprite/LevelPreviewImages/MarstonEstate.png" id="1_x7pia"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp2n6"]
+texture = ExtResource("1_x7pia")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xadkd"]
+texture = ExtResource("1_x7pia")
+
+[node name="LevelButton" type="Node2D"]
+scale = Vector2(2.3033, 2.3033)
+script = ExtResource("1_ewfme")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -25.0
+offset_right = -26.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8.34891, 6.84347)
+theme_override_styles/normal = SubResource("StyleBoxTexture_kp2n6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xadkd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -33.8645
+offset_top = 33.4303
+offset_right = 116.136
+offset_bottom = 59.4303
+scale = Vector2(0.444275, 0.444275)
+theme_override_font_sizes/font_size = 16
+text = "The Marston Estate"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
