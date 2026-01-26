@@ -18,6 +18,7 @@ var canShoot = true
 @onready var shotTimer = $ShotTimer
 
 @export var shotAnim: String
+@onready var shootSound: Node2D = $SoundEffect
 
 var emitBus: Node
 
@@ -88,5 +89,9 @@ func shootRegular():
 			damageCollider.takeDamage(damage)
 			print(hit.name)
 	
+	playSound()
 func shootShotgun():
 	pass # TODO: ADD SPRAY MECHANICS
+	
+func playSound():
+	shootSound.play_effect()
