@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkxd5w41oy32"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Levels/Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_t7uip"]
+[ext_resource type="Texture2D" uid="uid://dfg50fgx1md4c" path="res://ArtSprite/Props/The_Marston_Estate/Drawers.png" id="2_mbsmr"]
+
+[node name="Drawers" instance=ExtResource("1_t7uip")]
+maxHealth = 20.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-2, -57)
+scale = Vector2(1.38662, 0.955173)
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(-1, -150)
+scale = Vector2(0.412858, 0.412858)
+texture = ExtResource("2_mbsmr")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-1, -57)
+scale = Vector2(4.91032, 0.97402)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 20.0
+
+[node name="EffectManager" parent="." index="4"]
+position = Vector2(-1, -58)
+
+[node name="EffectManager2" parent="." index="6"]
+position = Vector2(-1, -54)

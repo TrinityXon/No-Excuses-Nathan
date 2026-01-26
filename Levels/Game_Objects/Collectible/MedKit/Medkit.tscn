@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://7kfttknk6kh2"]
+
+[ext_resource type="Script" path="res://Levels/Game_Objects/Collectible/MedKit/Medkit.gd" id="1_brlc3"]
+[ext_resource type="PackedScene" uid="uid://bhldf5vjnk7gx" path="res://Components/Pickup/Pickup.tscn" id="2_cndj8"]
+[ext_resource type="Texture2D" uid="uid://cp52fm6liwu68" path="res://ArtSprite/Miscellaneous/Medkit.png" id="3_3ecwd"]
+
+[node name="Medkit" type="Node2D"]
+script = ExtResource("1_brlc3")
+
+[node name="Pickup" parent="." instance=ExtResource("2_cndj8")]
+scale = Vector2(0.926072, 0.926072)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 0)
+scale = Vector2(0.188889, 0.188889)
+texture = ExtResource("3_3ecwd")
+
+[connection signal="hasPicked" from="Pickup" to="." method="_on_pickup_has_picked"]

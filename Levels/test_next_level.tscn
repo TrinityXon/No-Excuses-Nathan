@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://05jlb0ytsida"]
 
-[ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Game_Objects/Floor/GroundLevel_Base.tscn" id="1_q44tx"]
-[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_4esia"]
+[ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Levels/Game_Objects/Floor/GroundLevel_Base.tscn" id="1_q44tx"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Levels/Game_Objects/Player/Nathan_Main.tscn" id="2_4esia"]
 
 [node name="test_next_level" type="Node2D"]
 

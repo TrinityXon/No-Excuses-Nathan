@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dygfmvgoll2yt"]
 
-[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_5627m"]
-[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_7wcpi"]
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Levels/Game_Objects/Destructibles/Placeholder.tscn" id="1_5627m"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Levels/Game_Objects/Player/Nathan_Main.tscn" id="2_7wcpi"]
 
 [node name="Level" type="Node2D"]
 position = Vector2(33, 70)

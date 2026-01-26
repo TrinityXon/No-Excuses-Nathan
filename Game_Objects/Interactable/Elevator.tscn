@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://boaiwxrakmajw"]
-
-[ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="1_m75mr"]
-[ext_resource type="Texture2D" uid="uid://cppgdgbjfya5j" path="res://ArtSprite/Interactables/Elevator.png" id="2_iectp"]
-
-[node name="BaseDoor" instance=ExtResource("1_m75mr")]
-
-[node name="Door" parent="." index="1"]
-texture = ExtResource("2_iectp")

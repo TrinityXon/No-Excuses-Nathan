@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://wgm30cc5agxg"]
+
+[ext_resource type="Script" path="res://Levels/Game_Objects/Player/Nathan_Main.gd" id="1_otmha"]
+[ext_resource type="Texture2D" uid="uid://bt3ocgy16vuwd" path="res://ArtSprite/Player_sprites/Player_Armed.png" id="2_7anrj"]
+[ext_resource type="PackedScene" uid="uid://bccyrnlml850f" path="res://UI/DeathScreen.tscn" id="3_4omfy"]
+[ext_resource type="Texture2D" uid="uid://baqt54ha63nng" path="res://ArtSprite/Player_sprites/Player_Unarmed.png" id="4_x0p8r"]
+[ext_resource type="PackedScene" uid="uid://cte1u47xln5ie" path="res://Levels/Game_Objects/Guns/SMG.tscn" id="5_uo81i"]
+[ext_resource type="PackedScene" uid="uid://dyaa6i2ul4c67" path="res://Levels/Game_Objects/Guns/pistol.tscn" id="6_6ceb4"]
+[ext_resource type="PackedScene" uid="uid://c2mys52s1kf60" path="res://Levels/Game_Objects/Guns/shotgun.tscn" id="7_2a4e8"]
+[ext_resource type="PackedScene" uid="uid://dt1ugd7yr5vyx" path="res://Components/HealthStuffs/HealthMonitor/healthMonitor.tscn" id="8_1dync"]
+[ext_resource type="PackedScene" uid="uid://h5evrljprulj" path="res://Components/SplashManager/EffectManager.tscn" id="9_duome"]
+[ext_resource type="PackedScene" uid="uid://cq2283q185y71" path="res://Effects/BloodImpact/BloodSplash.tscn" id="10_vvv5k"]
+[ext_resource type="PackedScene" uid="uid://b6hygjm48yv70" path="res://Components/CentralEmitBus/EmitBus.tscn" id="11_npfph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqetb"]
+size = Vector2(28.1226, 36.8143)
+
+[node name="Nathan_Main" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+collision_layer = 159
+script = ExtResource("1_otmha")
+maxSpeed = 800
+acceleration = 5.0
+jumpSpeed = 600
+gravity = 1050
+armedTex = ExtResource("2_7anrj")
+deathMenu = ExtResource("3_4omfy")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(0.127778, 0.127778)
+texture = ExtResource("4_x0p8r")
+
+[node name="CeilingCheck" type="RayCast2D" parent="Icon"]
+unique_name_in_owner = true
+position = Vector2(0, -31.7538)
+rotation = -3.14159
+scale = Vector2(0.73846, 0.73846)
+target_position = Vector2(1, 80)
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-2.5, -0.999999)
+scale = Vector2(1.0312, -2.01009)
+shape = SubResource("RectangleShape2D_uqetb")
+
+[node name="gunParent" type="Node2D" parent="."]
+
+[node name="Pistol" parent="gunParent" instance=ExtResource("5_uo81i")]
+
+[node name="Pistol2" parent="gunParent" instance=ExtResource("6_6ceb4")]
+
+[node name="Pistol3" parent="gunParent" instance=ExtResource("7_2a4e8")]
+
+[node name="healthMonitor" parent="." instance=ExtResource("8_1dync")]
+unique_name_in_owner = true
+maxHealth = 50.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+offset_left = 47.0
+offset_top = 34.0
+offset_right = 265.0
+offset_bottom = 60.0
+text = "Ammo: "
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 31.0
+offset_top = 97.0
+offset_right = 216.0
+offset_bottom = 124.0
+show_percentage = false
+
+[node name="EffectManager" parent="." node_paths=PackedStringArray("bus") instance=ExtResource("9_duome")]
+effect = ExtResource("10_vvv5k")
+animation = "BloodSplash"
+triggerName = "Damage"
+bus = NodePath("../EmitBus")
+
+[node name="EmitBus" parent="." instance=ExtResource("11_npfph")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -70)
+zoom = Vector2(1.625, 1.625)
+
+[connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]

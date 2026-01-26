@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bq4uhhl8cv1a4"]
+
+[ext_resource type="Script" path="res://Levels/Game_Objects/Destructibles/Base/DestructibleBase.gd" id="1_2oc1t"]
+[ext_resource type="PackedScene" uid="uid://dt1ugd7yr5vyx" path="res://Components/HealthStuffs/HealthMonitor/healthMonitor.tscn" id="2_h60mg"]
+[ext_resource type="PackedScene" uid="uid://h5evrljprulj" path="res://Components/SplashManager/EffectManager.tscn" id="4_nxl35"]
+[ext_resource type="PackedScene" uid="uid://u3tkb0kj3cuy" path="res://Effects/Splinter/WoodSplinterDamage.tscn" id="5_jkk66"]
+[ext_resource type="Texture2D" uid="uid://ewcuotrl10dr" path="res://icon.svg" id="5_kannq"]
+[ext_resource type="PackedScene" uid="uid://b6hygjm48yv70" path="res://Components/CentralEmitBus/EmitBus.tscn" id="6_xj4j3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6nvj"]
+size = Vector2(131, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf3gd"]
+size = Vector2(33.9674, 116)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 39
+collision_mask = 39
+script = ExtResource("1_2oc1t")
+maxHealth = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.500002, -0.500002)
+shape = SubResource("RectangleShape2D_v6nvj")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("5_kannq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 39
+collision_mask = 39
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(1, -1)
+scale = Vector2(3.68, 1)
+shape = SubResource("RectangleShape2D_tf3gd")
+
+[node name="healthMonitor" parent="." instance=ExtResource("2_h60mg")]
+maxHealth = 10.0
+
+[node name="EffectManager" parent="." node_paths=PackedStringArray("bus") instance=ExtResource("4_nxl35")]
+z_index = 2
+effect = ExtResource("5_jkk66")
+animation = "splinterDamage"
+triggerName = "hit"
+bus = NodePath("../EmitBus")
+
+[node name="EmitBus" parent="." instance=ExtResource("6_xj4j3")]
+
+[node name="EffectManager2" parent="." node_paths=PackedStringArray("bus") instance=ExtResource("4_nxl35")]
+effect = ExtResource("5_jkk66")
+animation = "splinterExplosion"
+triggerName = "destroy"
+bus = NodePath("../EmitBus")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="groundCheck" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(0, 27)
+target_position = Vector2(0, 38)
+collision_mask = 7
+
+[connection signal="hasDied" from="healthMonitor" to="." method="_on_health_monitor_has_died"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2mys52s1kf60"]
+
+[ext_resource type="PackedScene" uid="uid://pfnh7t0qqb4t" path="res://Levels/Game_Objects/Guns/Base/Gun_Base.tscn" id="1_n0sgh"]
+[ext_resource type="Texture2D" uid="uid://bpnbgu6v53ndg" path="res://ArtSprite/Guns/Shotgun.png" id="2_gmlr0"]
+[ext_resource type="Texture2D" uid="uid://bq0jd5adm4qmw" path="res://ArtSprite/Miscellaneous/Hands.png" id="3_qxbgg"]
+
+[node name="Pistol" instance=ExtResource("1_n0sgh")]
+damage = 20.0
+range = 175.0
+ammoMax = 50.0
+shotAnim = "Shoot"
+
+[node name="Pistol" parent="Marker2D" index="0"]
+position = Vector2(64, -8)
+scale = Vector2(0.166667, 0.166667)
+texture = ExtResource("2_gmlr0")
+
+[node name="EffectManager" parent="Marker2D/Pistol" index="0"]
+position = Vector2(534, 36)
+scale = Vector2(41.479, 0.814815)
+
+[node name="Hands" parent="Marker2D/Pistol" index="1"]
+position = Vector2(-240, 108)
+scale = Vector2(0.799999, 0.799999)
+
+[node name="Hands2" type="Sprite2D" parent="Marker2D/Pistol" index="2"]
+position = Vector2(186, 71.9998)
+scale = Vector2(0.599999, 0.599999)
+texture = ExtResource("3_qxbgg")
+
+[node name="RayCast2D" parent="Marker2D" index="1"]
+target_position = Vector2(0, 175)
+
+[node name="ShotTimer" parent="." index="2"]
+wait_time = 2.75

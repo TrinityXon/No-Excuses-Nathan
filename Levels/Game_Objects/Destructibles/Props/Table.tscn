@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://rjpdxs0hfcdh"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Levels/Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_1s246"]
+[ext_resource type="Texture2D" uid="uid://bwcymjulcprg2" path="res://ArtSprite/Props/Table.png" id="2_rkty6"]
+
+[node name="Area2D" instance=ExtResource("1_1s246")]
+position = Vector2(7, -71)
+scale = Vector2(1.78552, 1.34552)
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = false
+position = Vector2(0.500002, 24)
+scale = Vector2(0.5, 0.5)
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(0, 18)
+scale = Vector2(0.197222, 0.197222)
+texture = ExtResource("2_rkty6")
+
+[node name="StaticBody2D" parent="." index="2"]
+position = Vector2(-1, 26)
+scale = Vector2(0.985381, 0.535985)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = false

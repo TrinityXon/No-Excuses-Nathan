@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbybm0fvqtutg"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Levels/Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_8cqlu"]
+[ext_resource type="Texture2D" uid="uid://bodfxdtn2w0vf" path="res://ArtSprite/Props/The_Marston_Estate/Dining_Table.png" id="2_4bics"]
+
+[node name="Area2D" instance=ExtResource("1_8cqlu")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-7, 81)
+scale = Vector2(4.92, 1.32)
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(9, -13)
+scale = Vector2(0.727063, 0.472222)
+texture = ExtResource("2_4bics")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-7, 81)
+scale = Vector2(18.7587, 1.25791)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 100.0

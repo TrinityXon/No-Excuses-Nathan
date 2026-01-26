@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddkj2652ggdys"]
 
 [ext_resource type="Script" path="res://Components/VisonCone/Vision.gd" id="1_dccox"]
-[ext_resource type="Script" path="res://Game_Objects/Enemies/CollisionPolygon2D.gd" id="2_d4hjx"]
+[ext_resource type="Script" path="res://Levels/Game_Objects/Enemies/CollisionPolygon2D.gd" id="2_d4hjx"]
 
 [node name="Vision" type="Area2D"]
 script = ExtResource("1_dccox")

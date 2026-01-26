@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgvkigcv3vcls"]
+
+[ext_resource type="PackedScene" uid="uid://bpg6gyva0ftsl" path="res://Levels/Game_Objects/Background_Non_Collision/DecorationsBase.tscn" id="1_67gtn"]
+[ext_resource type="Texture2D" uid="uid://ba1utrjxc3ut8" path="res://ArtSprite/Background-Non-Collision/Mirror.png" id="2_beonl"]
+
+[node name="Mirror" instance=ExtResource("1_67gtn")]
+z_index = -2
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(4, 13)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_beonl")
