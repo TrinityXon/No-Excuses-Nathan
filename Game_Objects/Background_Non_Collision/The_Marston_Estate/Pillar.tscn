@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0536y12sjmtb"]
+
+[ext_resource type="PackedScene" uid="uid://bpg6gyva0ftsl" path="res://Game_Objects/Background_Non_Collision/DecorationsBase.tscn" id="1_k8c4k"]
+[ext_resource type="Texture2D" uid="uid://dv4hywo5ovjwl" path="res://ArtSprite/Props/The_Marston_Estate/Pillar.png" id="2_l0kf3"]
+
+[node name="DecorationsBase" instance=ExtResource("1_k8c4k")]
+
+[node name="Sprite2D" parent="." index="0"]
+z_index = -1
+scale = Vector2(0.413889, 0.413889)
+texture = ExtResource("2_l0kf3")

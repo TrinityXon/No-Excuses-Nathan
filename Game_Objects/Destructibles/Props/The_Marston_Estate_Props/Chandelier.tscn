@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcdkcbook1q1r"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_j5anj"]
+[ext_resource type="Texture2D" uid="uid://0ch3gamr44rc" path="res://ArtSprite/Props/Chandelier.png" id="2_t14as"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb5xw"]
+
+[node name="Area2D" instance=ExtResource("1_j5anj")]
+scale = Vector2(1.38178, 1.38178)
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-8, -13)
+scale = Vector2(2.05763, 0.401747)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.422222, 0.422222)
+texture = ExtResource("2_t14as")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-8, -18)
+scale = Vector2(6.76, 0.399999)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 50.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+visible = false
+position = Vector2(-9, -95)
+scale = Vector2(1.36, 5.2)
+shape = SubResource("RectangleShape2D_sb5xw")
