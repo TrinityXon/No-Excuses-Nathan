@@ -7,6 +7,8 @@ extends Node2D
 @export var randomPitchParamHigh: float
 @export var soundVol: float
 
+var soundHasFinished: bool
+
 
 func _ready():
 	audioPlayer.stream = audio
@@ -20,3 +22,5 @@ func play_effect():
 	
 	
 	audioPlayer.play()
+	if audioPlayer.finished:
+		soundHasFinished = true

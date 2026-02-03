@@ -33,7 +33,7 @@ position = Vector2(3216, -171)
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Nathan_Main" parent="Player" instance=ExtResource("1_axofd")]
-position = Vector2(-3110, 696)
+position = Vector2(-3091, 704)
 acceleration = 4.0
 
 [node name="Environment" type="Node2D" parent="."]
@@ -48,13 +48,18 @@ rotation = 1.57079
 scale = Vector2(1.76, 0.360002)
 
 [node name="GroundLevel4" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
-position = Vector2(-3188, 574)
+position = Vector2(-3189, 472)
 rotation = 1.57079
-scale = Vector2(3.32, 0.360002)
+scale = Vector2(1.64588, 0.359995)
 
 [node name="GroundLevel2" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
 position = Vector2(-2728, 378)
 scale = Vector2(7.35279, 0.360002)
+
+[node name="GroundLevel10" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
+position = Vector2(-3195, 285)
+rotation = 1.57079
+scale = Vector2(2.1528, 0.360002)
 
 [node name="GroundLevel5" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
 position = Vector2(-2118, 774)
@@ -435,7 +440,7 @@ position = Vector2(-119.333, 34)
 [node name="Miscellaneous" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Miscellaneous"]
-layer = -1
+layer = -2
 
 [node name="ColorRect" type="ColorRect" parent="Miscellaneous/CanvasLayer"]
 anchors_preset = 15
@@ -444,7 +449,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997648, 1)
-color = Color(0.694118, 0.572549, 0.317647, 1)
+color = Color(0.443137, 0.443137, 0.443137, 1)
 
 [node name="SizeRefe" type="Sprite2D" parent="Miscellaneous"]
 position = Vector2(-2814, 171)
@@ -495,5 +500,5 @@ scale = Vector2(1.56, 1.56)
 level = "res://Levels/UILevels/MainMenu.tscn"
 
 [node name="Ladder" parent="." instance=ExtResource("26_hc5gc")]
-position = Vector2(3908, 466)
-scale = Vector2(1.50155, 3.64201)
+position = Vector2(3923, 476)
+scale = Vector2(1.78151, 3.72201)

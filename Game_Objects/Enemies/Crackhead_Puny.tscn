@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://byr0775cal5qk"]
+[gd_scene load_steps=11 format=3 uid="uid://byr0775cal5qk"]
 
 [ext_resource type="PackedScene" uid="uid://cxe41e54d2v0t" path="res://Game_Objects/Enemies/Enemy_Base.tscn" id="1_kknho"]
 [ext_resource type="PackedScene" uid="uid://7kfttknk6kh2" path="res://Game_Objects/Collectible/MedKit/Medkit.tscn" id="2_oxjxp"]
 [ext_resource type="Texture2D" uid="uid://b1r5uf06yu5es" path="res://ArtSprite/Characters/Crackead_Puny.png" id="2_qdjv5"]
 [ext_resource type="PackedScene" uid="uid://b4krqoge8gma6" path="res://Game_Objects/Collectible/AmmoCollection.tscn" id="3_c1pj5"]
 [ext_resource type="PackedScene" uid="uid://dyaa6i2ul4c67" path="res://Game_Objects/Guns/pistol.tscn" id="3_jcc36"]
+[ext_resource type="PackedScene" uid="uid://dw44kq432namn" path="res://Components/SoundEffect/SoundEffect.tscn" id="6_7vpbd"]
+[ext_resource type="AudioStream" uid="uid://bha56wqb4aerc" path="res://SoundEffect/Enemy/Basic/Reaction/Enemy_hurt.mp3" id="7_123ij"]
+[ext_resource type="AudioStream" uid="uid://bklc8eymt4ebv" path="res://SoundEffect/Enemy/Basic/Reaction/Enemy_death.mp3" id="8_uxfog"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4i1ty"]
 radius = 20.0
@@ -68,6 +71,30 @@ unique_name_in_owner = true
 wait_time = 0.3
 one_shot = true
 
+[node name="Sound" type="Node" parent="." index="17"]
+
+[node name="Death" parent="Sound" index="0" instance=ExtResource("6_7vpbd")]
+unique_name_in_owner = true
+audio = ExtResource("8_uxfog")
+randomPitchParamLow = 1.0
+randomPitchParamHigh = 1.098
+soundVol = 3.0
+
+[node name="Hurt" parent="Sound" index="1" instance=ExtResource("6_7vpbd")]
+unique_name_in_owner = true
+audio = ExtResource("7_123ij")
+randomPitchParamLow = 0.98
+randomPitchParamHigh = 1.0
+soundVol = 3.0
+
+[node name="Hurt_Effect" type="AudioStreamPlayer2D" parent="Sound" index="2"]
+stream = ExtResource("7_123ij")
+
+[node name="Death_Effect" type="AudioStreamPlayer2D" parent="Sound" index="3"]
+stream = ExtResource("8_uxfog")
+
 [connection signal="damageBehaviour" from="." to="." method="_on_damage_behaviour"]
+[connection signal="deathBehaviour" from="." to="." method="_on_death_behaviour"]
 [connection signal="hasDetected" from="Vision" to="." method="_on_vision_has_detected"]
 [connection signal="timeout" from="ReactionSpeed" to="." method="_on_reaction_speed_timeout"]
+[connection signal="finished" from="Sound/Death_Effect" to="." method="_on_death_effect_finished"]

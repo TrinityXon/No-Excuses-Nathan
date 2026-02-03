@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var maxSpeedVert = 300
 @export var minSpeedVert = 0
 @export var acceleration: float = 3
+@export var cameraZoom: float
 
 @export var jumpSpeed = 450
 @export var gravity = 600
@@ -30,6 +31,7 @@ var curStates: playerStates = playerStates.default
 @onready var ceilingCheck = %CeilingCheck
 @onready var progress_bar = %ProgressBar
 @onready var health_monitor = %healthMonitor
+@onready var camera_2d = $Camera2D
 
 var emitBus
 
@@ -70,6 +72,9 @@ func _ready():
 	if gun:
 		ammoLabel.text = "Ammo: " + str(gun.ammoCnt)
 		gun.ammoChange.connect(trackAmmo)
+	
+	if cameraZoom != 0:
+		camera_2d.zoom = Vector2(cameraZoom, cameraZoom)
 
 # Game loop
 func _physics_process(delta):
