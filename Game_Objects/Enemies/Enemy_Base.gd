@@ -61,10 +61,6 @@ var TravelPointsVector: Array = []
 # Miscellaneous
 var canStartTimer: bool = true
 
-#Sound effects
-@onready var hurtSound = $Sound/Hurt_Effect
-@onready var deathSound = $Sound/Death_Effect
-
 func _ready():
 	gun = gunParent.get_child(0)
 	currentGunRange = gun.range
@@ -263,14 +259,3 @@ func _on_vision_has_detected():
 
 func _on_damage_behaviour():
 	hasDetected = true
-	hurtSound.stop()
-	hurtSound.play()
-
-
-func _on_death_behaviour():
-	deathSound.play()
-	
-
-
-func _on_death_effect_finished():
-	die()

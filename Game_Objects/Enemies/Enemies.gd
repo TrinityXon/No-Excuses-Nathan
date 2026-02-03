@@ -11,7 +11,6 @@ extends CharacterBody2D
 @export var ammoInstance: Array[PackedScene]
 
 signal damageBehaviour
-signal deathBehaviour
 
 func _ready():
 	healthBar.max_value = healthMonitor.maxHealth
@@ -22,7 +21,7 @@ func _ready():
 
 
 func _on_health_monitor_has_died():
-	deathBehaviour.emit()
+	die()
 	print("dead")
 
 

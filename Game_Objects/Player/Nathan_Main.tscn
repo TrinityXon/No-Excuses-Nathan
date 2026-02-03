@@ -93,6 +93,6 @@ bus = NodePath("../EmitBus")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -70)
-zoom = Vector2(1.825, 1.825)
+zoom = Vector2(1.625, 1.625)
 
 [connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]
