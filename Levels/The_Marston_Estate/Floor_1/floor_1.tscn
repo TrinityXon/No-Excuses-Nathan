@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://duifvlti14tr8"]
+[gd_scene load_steps=26 format=3 uid="uid://duifvlti14tr8"]
 
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="1_axofd"]
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_wy6xv"]
-[ext_resource type="Texture2D" uid="uid://ewcuotrl10dr" path="res://icon.svg" id="2_1uvfl"]
 [ext_resource type="PackedScene" uid="uid://83nvl7jt22s2" path="res://Game_Objects/Destructibles/Props/Box.tscn" id="3_qbm2n"]
 [ext_resource type="PackedScene" uid="uid://bkxd5w41oy32" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Drawers.tscn" id="4_jg5i0"]
 [ext_resource type="PackedScene" uid="uid://cgvkigcv3vcls" path="res://Game_Objects/Background_Non_Collision/The_Marston_Estate/Mirror.tscn" id="4_x4tvv"]
@@ -445,10 +444,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997648, 1)
 color = Color(0, 0, 0, 1)
-
-[node name="SizeRefe" type="Sprite2D" parent="Miscellaneous"]
-position = Vector2(-2814, 171)
-texture = ExtResource("2_1uvfl")
 
 [node name="ActivationZones" type="Node2D" parent="."]
 visible = false
