@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3ioiy683ua8y"]
+
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_72pj6"]
+[ext_resource type="Texture2D" uid="uid://q247wbkjkvqd" path="res://ArtSprite/Props/The_Marston_Estate/Porch_MaEs.png" id="2_w3qn1"]
+[ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="3_b1vqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_326jx"]
+size = Vector2(385, 90)
+
+[node name="Area2D" instance=ExtResource("1_72pj6")]
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.719444, 0.719444)
+texture = ExtResource("2_w3qn1")
+
+[node name="StaticBody2D" parent="." index="2"]
+position = Vector2(19, -86)
+scale = Vector2(3.8, 1.36)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+position = Vector2(22.5, -212)
+shape = SubResource("RectangleShape2D_326jx")
+
+[node name="BaseDoor" parent="." index="10" instance=ExtResource("3_b1vqx")]
+position = Vector2(22, 113)
+scale = Vector2(1.92, 2.24)
+level = "res://Levels/The_Marston_Estate/Floor_1/floor_1.tscn"
+visibleSprite = false
