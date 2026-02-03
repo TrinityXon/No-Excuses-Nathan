@@ -57,7 +57,7 @@ position = Vector2(-2728, 378)
 scale = Vector2(7.35279, 0.360002)
 
 [node name="GroundLevel5" parent="Environment/Rooms/Foyer" instance=ExtResource("1_wy6xv")]
-position = Vector2(-2118, 774)
+position = Vector2(-2118, 773)
 scale = Vector2(16.4042, 0.363312)
 
 [node name="Props" type="Node2D" parent="Environment/Rooms/Foyer"]
@@ -92,9 +92,9 @@ position = Vector2(-1706, 555)
 [node name="LivingRoom" type="Node2D" parent="Environment/Rooms"]
 
 [node name="GroundLevel7" parent="Environment/Rooms/LivingRoom" instance=ExtResource("1_wy6xv")]
-position = Vector2(-1035, 741)
+position = Vector2(-1027, 739)
 rotation = -1.57079
-scale = Vector2(0.839988, 0.360002)
+scale = Vector2(0.879995, 0.3)
 
 [node name="GroundLevel9" parent="Environment/Rooms/LivingRoom" instance=ExtResource("1_wy6xv")]
 position = Vector2(-1006, 335)
@@ -435,7 +435,7 @@ position = Vector2(-119.333, 34)
 [node name="Miscellaneous" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Miscellaneous"]
-layer = -1
+layer = -2
 
 [node name="ColorRect" type="ColorRect" parent="Miscellaneous/CanvasLayer"]
 anchors_preset = 15
@@ -444,7 +444,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997648, 1)
-color = Color(0.694118, 0.572549, 0.317647, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="SizeRefe" type="Sprite2D" parent="Miscellaneous"]
 position = Vector2(-2814, 171)
@@ -492,8 +492,63 @@ scale = Vector2(27.172, -7.95539)
 [node name="BaseDoor" parent="." instance=ExtResource("25_rm6dx")]
 position = Vector2(3209, 298)
 scale = Vector2(1.56, 1.56)
-level = "res://Levels/UILevels/MainMenu.tscn"
+level = "res://Levels/UILevels/Level_Select/Level_Select.tscn"
 
 [node name="Ladder" parent="." instance=ExtResource("26_hc5gc")]
 position = Vector2(3908, 466)
 scale = Vector2(1.50155, 3.64201)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Walls"]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 47.0
+offset_top = 223.0
+offset_right = 956.0
+offset_bottom = 579.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 956.0
+offset_top = 316.0
+offset_right = 2188.0
+offset_bottom = 599.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 2188.0
+offset_top = 25.0
+offset_right = 3412.0
+offset_bottom = 511.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 3389.0
+offset_top = 283.0
+offset_right = 4196.0
+offset_bottom = 682.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 4196.0
+offset_top = 138.0
+offset_right = 5413.0
+offset_bottom = 652.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 5396.0
+offset_top = 247.0
+offset_right = 6360.0
+offset_bottom = 669.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Walls/CanvasLayer"]
+offset_left = 6351.0
+offset_top = 52.0
+offset_right = 7315.0
+offset_bottom = 542.0
+color = Color(0.47451, 0.529412, 0.207843, 1)
