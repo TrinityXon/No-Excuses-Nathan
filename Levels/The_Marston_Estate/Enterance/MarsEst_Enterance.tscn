@@ -1,3 +1,69 @@
-[gd_scene format=3 uid="uid://c5wvrry32q6mi"]
+[gd_scene load_steps=7 format=3 uid="uid://c5wvrry32q6mi"]
+
+[ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_micl7"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_n02ow"]
+[ext_resource type="PackedScene" uid="uid://d3ioiy683ua8y" path="res://Game_Objects/Level_Enter_Scenes/Porch_MarsEst.tscn" id="3_as7h6"]
+[ext_resource type="PackedScene" uid="uid://83nvl7jt22s2" path="res://Game_Objects/Destructibles/Props/Box.tscn" id="4_yu0f7"]
+[ext_resource type="PackedScene" uid="uid://cmik0pxe5mwkt" path="res://Game_Objects/Destructibles/Props/Sofa.tscn" id="5_kjggi"]
+[ext_resource type="PackedScene" uid="uid://rjpdxs0hfcdh" path="res://Game_Objects/Destructibles/Props/Table.tscn" id="6_kvuua"]
 
 [node name="MarsEst_Enterance" type="Node2D"]
+
+[node name="GroundLevel" parent="." instance=ExtResource("1_micl7")]
+position = Vector2(444, 268)
+scale = Vector2(77.5015, 0.318636)
+
+[node name="GroundLevel2" parent="." instance=ExtResource("1_micl7")]
+position = Vector2(-270, -202)
+rotation = 1.5708
+scale = Vector2(7.22147, 0.318636)
+newColor = Color(0.384314, 0.384314, 0.384314, 0)
+
+[node name="GroundLevel3" parent="." instance=ExtResource("1_micl7")]
+position = Vector2(1612, -202)
+rotation = 1.5708
+scale = Vector2(7.22147, 0.318636)
+newColor = Color(0, 0, 0, 0)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("2_n02ow")]
+position = Vector2(-120, 192)
+
+[node name="Area2D" parent="." instance=ExtResource("3_as7h6")]
+z_index = -1
+position = Vector2(1329, 10)
+
+[node name="Box" parent="." instance=ExtResource("4_yu0f7")]
+position = Vector2(499, 203)
+scale = Vector2(1.34, 1.34)
+
+[node name="Box2" parent="." instance=ExtResource("4_yu0f7")]
+position = Vector2(590, 204)
+scale = Vector2(1.34, 1.34)
+
+[node name="Box4" parent="." instance=ExtResource("4_yu0f7")]
+position = Vector2(34, 206)
+scale = Vector2(1.34, 1.34)
+
+[node name="Box3" parent="." instance=ExtResource("4_yu0f7")]
+position = Vector2(562, 103)
+scale = Vector2(1.34, 1.34)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_kjggi")]
+position = Vector2(817, 186)
+rotation = 1.309
+scale = Vector2(1.99697, 1.99697)
+
+[node name="Area2D3" parent="." instance=ExtResource("6_kvuua")]
+position = Vector2(915, 179)
+rotation = 0.785398
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 1)

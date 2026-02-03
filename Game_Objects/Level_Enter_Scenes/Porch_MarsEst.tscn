@@ -8,6 +8,7 @@
 size = Vector2(385, 90)
 
 [node name="Area2D" instance=ExtResource("1_72pj6")]
+isInvincible = true
 
 [node name="Icon" parent="." index="1"]
 scale = Vector2(0.719444, 0.719444)
