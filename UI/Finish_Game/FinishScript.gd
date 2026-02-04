@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var main_menu = $ColorRect/MainMenu
 @onready var restart_btn = $ColorRect/Restart
 @onready var quit_btn = $ColorRect/Quit
+@onready var button_press = $ButtonPress
 
 @export var levelScreen: String
 @export var mainMenu: String
@@ -28,9 +29,15 @@ func customScreenSwitch(scenePath: String, debugMessage: String):
 		print(debugMessage)
 
 func _has_restarted():
+	button_press.play()
+	
 	get_tree().reload_current_scene()
 	get_tree().paused = false
 
 func _has_quit():
 	get_tree().quit()
 
+
+
+func _on_button_press_finished():
+	pass # Replace with function body.
