@@ -94,4 +94,5 @@ func shootShotgun():
 	pass # TODO: ADD SPRAY MECHANICS
 	
 func playSound():
-	shootSound.play_effect()
+	#shootSound.play_effect()
+	pass

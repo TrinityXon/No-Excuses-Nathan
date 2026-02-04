@@ -33,7 +33,7 @@ position = Vector2(3216, -171)
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Nathan_Main" parent="Player" instance=ExtResource("1_axofd")]
-position = Vector2(-3110, 696)
+position = Vector2(3692, 295)
 acceleration = 4.0
 
 [node name="Environment" type="Node2D" parent="."]
@@ -493,6 +493,8 @@ scale = Vector2(27.172, -7.95539)
 position = Vector2(3209, 298)
 scale = Vector2(1.56, 1.56)
 level = "res://Levels/UILevels/Level_Select/Level_Select.tscn"
+shouldLoadMenu = true
+menu = "res://UI/Finish_Game/finish_screen.tscn"
 
 [node name="Ladder" parent="." instance=ExtResource("26_hc5gc")]
 position = Vector2(3908, 466)
