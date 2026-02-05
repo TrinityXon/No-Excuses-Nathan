@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wgm30cc5agxg"]
+[gd_scene load_steps=13 format=3 uid="uid://wgm30cc5agxg"]
 
 [ext_resource type="Script" path="res://Game_Objects/Player/Nathan_Main.gd" id="1_xrqsh"]
 [ext_resource type="Texture2D" uid="uid://bt3ocgy16vuwd" path="res://ArtSprite/Player_sprites/Player_Armed.png" id="2_gqtnm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cq2283q185y71" path="res://Effects/BloodImpact/BloodSplash.tscn" id="7_as6eh"]
 [ext_resource type="PackedScene" uid="uid://b6hygjm48yv70" path="res://Components/CentralEmitBus/EmitBus.tscn" id="7_f7w8o"]
 [ext_resource type="AudioStream" uid="uid://cfgbuplas5fwx" path="res://Sound_Effects/NeN_Sound_Effects/Player_Diagetic/Equip_Weapon.mp3" id="10_ary8m"]
+[ext_resource type="AudioStream" uid="uid://dlkrrt8e570ny" path="res://Sound_Effects/NeN_Sound_Effects/Movement/Jump.mp3" id="11_5jgpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqetb"]
 size = Vector2(28.1226, 36.8143)
@@ -92,5 +93,8 @@ zoom = Vector2(1.625, 1.625)
 
 [node name="EquipWeapon" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_ary8m")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_5jgpc")
 
 [connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]

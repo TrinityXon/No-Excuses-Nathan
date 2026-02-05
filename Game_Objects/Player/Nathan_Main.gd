@@ -31,6 +31,7 @@ var curStates: playerStates = playerStates.default
 @onready var progress_bar = %ProgressBar
 @onready var health_monitor = %healthMonitor
 @onready var equip_sound_effect = $EquipWeapon
+@onready var jump = $Jump
 
 var emitBus
 
@@ -113,6 +114,7 @@ func _process(delta):
 func _input(event):
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y -= jumpSpeed
+		jump.play()
 		print("Jump")
 	
 	if Input.is_action_just_pressed("Shoot"):
