@@ -4,6 +4,8 @@ extends Area2D
 @export var ammoIncreaseMax: int = 5
 
 @onready var pickup = $Pickup
+@onready var pickup_sound = $PickupSound
+@onready var sprite = $Ammo
 
 var ammoIncreaseAmount
 
@@ -12,6 +14,11 @@ func _ready():
 
 		
 func pickedFinish():
+	pickup_sound.play()
+	sprite.visible = false
+	pickup.process_mode = Node.PROCESS_MODE_DISABLED
+	print('heyyyeye')
+	await pickup_sound.finished
 	queue_free()
 
 func pickupLogic(body):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4krqoge8gma6"]
+[gd_scene load_steps=6 format=3 uid="uid://b4krqoge8gma6"]
 
 [ext_resource type="Texture2D" uid="uid://coqrcv4oa1gs7" path="res://ArtSprite/Miscellaneous/Ammo.png" id="1_6emc2"]
 [ext_resource type="Script" path="res://Game_Objects/Collectible/AmmoCollection.gd" id="1_origy"]
 [ext_resource type="PackedScene" uid="uid://bhldf5vjnk7gx" path="res://Components/Pickup/Pickup.tscn" id="3_lybdg"]
+[ext_resource type="AudioStream" uid="uid://dq4lpe2iji4xd" path="res://Sound_Effects/NeN_Sound_Effects/Pickup/Pickup_ammo.mp3" id="4_6hpnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gniqw"]
 size = Vector2(58, 28)
@@ -23,6 +24,10 @@ texture = ExtResource("1_6emc2")
 
 [node name="Pickup" parent="." instance=ExtResource("3_lybdg")]
 scale = Vector2(1.82666, 1.8)
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6hpnw")
+volume_db = 5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hasPicked" from="Pickup" to="." method="_on_pickup_has_picked"]
