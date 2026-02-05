@@ -27,6 +27,8 @@ extends "res://Game_Objects/Enemies/Enemies.gd"
 @onready var shotCheck = %ShotCheck
 @onready var reactionTimer = %ReactionSpeed
 
+@onready var damage_sound = $Damage
+
 # Vision cone reference
 @onready var poly_gon = $PlayerCheck/CollisionPolygon2D
 
@@ -258,4 +260,5 @@ func _on_vision_has_detected():
 	print("Detected")
 
 func _on_damage_behaviour():
+	damage_sound.play()
 	hasDetected = true

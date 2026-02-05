@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var healthBar = $HealthBar
 @onready var healthMonitor = $healthMonitor
 
+
+
 @export var effectManager: Node2D
 
 @export var ammoInstance: Array[PackedScene]
@@ -35,7 +37,7 @@ func _on_health_monitor_has_taken_damage(damageAmount: float):
 	healthBar.value = healthMonitor.currentHealth
 	
 	damageBehaviour.emit()
-	
+
 	effectManager.playEffect()
 
 func die():
