@@ -12,6 +12,8 @@ extends "res://Game_Objects/Enemies/Enemies.gd"
 # External node references
 @export var player: CharacterBody2D
 @export var activationZones: Area2D
+@onready var cameraRef = get_tree().get_first_node_in_group('Camera')
+
 
 # Jump checks
 @onready var sideCheck_L: RayCast2D = %sideCheck_L # TODO - CHECK FOR LEDGES AND JUMP
@@ -271,6 +273,9 @@ func _on_vision_has_detected():
 
 func _on_damage_behaviour():
 	damage_sound.play()
+	Hitstop.hitstop(0.025)
+	cameraRef.trigger_shake()
+	
 	hasDetected = true
 
 

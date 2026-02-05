@@ -181,6 +181,8 @@ func _on_damage(damageAmount: float):
 	if emitBus:
 		emitBus.emit_event("Damage")
 	
+	$Camera2D.trigger_shake()
+	
 func die():
 	if deathMenu:
 		var spawnedMenu = deathMenu.instantiate()

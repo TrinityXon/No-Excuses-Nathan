@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4msytdl1o1sv"]
+
+[ext_resource type="Script" path="res://MiscellaneousScripts/Hitstop.gd" id="1_dmgav"]
+
+[node name="Hitstop" type="Node2D"]
+script = ExtResource("1_dmgav")
