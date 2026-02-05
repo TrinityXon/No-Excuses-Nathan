@@ -39,10 +39,10 @@ func _on_health_monitor_has_taken_damage(damageAmount: float):
 
 	effectManager.playEffect()
 
-func die():
+func die(sfxLength: float):
 	deathAnim.play("death")
 	
-	await deathAnim.animation_finished
+	await get_tree().create_timer(sfxLength).timeout
 	
 	var spawnIndex = randi_range(0, ammoInstance.size() - 1)
 	

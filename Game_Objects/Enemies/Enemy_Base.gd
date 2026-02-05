@@ -267,4 +267,4 @@ func _on_damage_behaviour():
 
 func _on_death_behaviour():
 	death.play()
-	die()
+	die(death.stream.get_length())
