@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyaa6i2ul4c67"]
+[gd_scene load_steps=5 format=3 uid="uid://dyaa6i2ul4c67"]
 
 [ext_resource type="PackedScene" uid="uid://pfnh7t0qqb4t" path="res://Game_Objects/Guns/Base/Gun_Base.tscn" id="1_dqi32"]
 [ext_resource type="Texture2D" uid="uid://c2iuwto43wc5s" path="res://ArtSprite/Guns/Pistol_new.png" id="2_vey3t"]
 [ext_resource type="Texture2D" uid="uid://bq0jd5adm4qmw" path="res://ArtSprite/Miscellaneous/Hands.png" id="3_f73wd"]
 [ext_resource type="PackedScene" uid="uid://dw44kq432namn" path="res://Components/SoundEffect/SoundEffect.tscn" id="4_htneh"]
-[ext_resource type="AudioStream" uid="uid://2time2p76kyk" path="res://SoundEffect/Weapons/Pistol/Pistol_Gunshot.mp3" id="5_hsvt7"]
 
 [node name="Pistol" instance=ExtResource("1_dqi32")]
 damage = 10.0
@@ -34,8 +33,10 @@ texture = ExtResource("3_f73wd")
 wait_time = 0.4
 
 [node name="SoundEffect" parent="." index="4" instance=ExtResource("4_htneh")]
-audio = ExtResource("5_hsvt7")
 shouldRandomizePitch = true
 randomPitchParamLow = 0.95
 randomPitchParamHigh = 1.0
 soundVol = 1.05
+
+[node name="Gunshot_sound" parent="." index="5"]
+volume_db = -10.0

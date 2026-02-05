@@ -6,6 +6,8 @@ var emitBus
 var isOnFloor: bool
 
 @onready var icon = $Icon
+@onready var damage_sound = $DamageSound
+
 @export var maxHealth: float
 @export var isInvincible: bool
 
@@ -55,3 +57,8 @@ func hasDamage(damageAmount):
 func _on_timer_timeout():
 	print('has destroyed')
 	queue_free()
+
+
+func _on_health_monitor_has_taken_damage(damageAmount):
+	damage_sound.play()
+	print('hit triggered')

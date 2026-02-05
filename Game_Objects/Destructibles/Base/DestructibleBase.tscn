@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bq4uhhl8cv1a4"]
+[gd_scene load_steps=10 format=3 uid="uid://bq4uhhl8cv1a4"]
 
 [ext_resource type="Script" path="res://Game_Objects/Destructibles/Base/DestructibleBase.gd" id="1_2oc1t"]
 [ext_resource type="PackedScene" uid="uid://dt1ugd7yr5vyx" path="res://Components/HealthStuffs/HealthMonitor/healthMonitor.tscn" id="2_h60mg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://u3tkb0kj3cuy" path="res://Effects/Splinter/WoodSplinterDamage.tscn" id="5_jkk66"]
 [ext_resource type="Texture2D" uid="uid://ewcuotrl10dr" path="res://icon.svg" id="5_kannq"]
 [ext_resource type="PackedScene" uid="uid://b6hygjm48yv70" path="res://Components/CentralEmitBus/EmitBus.tscn" id="6_xj4j3"]
+[ext_resource type="AudioStream" uid="uid://opyro0tglkn5" path="res://Sound_Effects/NeN_Sound_Effects/Prop_damage/Wood_Impact.mp3" id="7_jwxbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6nvj"]
 size = Vector2(131, 127)
@@ -64,5 +65,10 @@ position = Vector2(0, 27)
 target_position = Vector2(0, 38)
 collision_mask = 7
 
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jwxbb")
+volume_db = 10.0
+
 [connection signal="hasDied" from="healthMonitor" to="." method="_on_health_monitor_has_died"]
+[connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
