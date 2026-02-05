@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxe41e54d2v0t"]
+[gd_scene load_steps=9 format=3 uid="uid://cxe41e54d2v0t"]
 
 [ext_resource type="PackedScene" uid="uid://dqixyoi3mgqd4" path="res://Game_Objects/BodiesBase.tscn" id="1_fvynh"]
 [ext_resource type="Script" path="res://Game_Objects/Enemies/Enemy_Base.gd" id="2_dvmwy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddkj2652ggdys" path="res://Components/VisonCone/Vision.tscn" id="4_eyxcj"]
 [ext_resource type="AudioStream" uid="uid://c8qp201uupa2n" path="res://Sound_Effects/NeN_Sound_Effects/Reactions/Enemy_Hurt.mp3" id="5_rsgus"]
 [ext_resource type="AudioStream" uid="uid://c073pym6wtus" path="res://Sound_Effects/NeN_Sound_Effects/Reactions/Enemy_death.mp3" id="6_yhhqq"]
+[ext_resource type="AudioStream" uid="uid://d0qhxpnsnwn4" path="res://Sound_Effects/NeN_Sound_Effects/Miscellaneous/Enemy_Detection.mp3" id="7_00asw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfjyb"]
 radius = 134.06
@@ -97,6 +98,9 @@ stream = ExtResource("5_rsgus")
 
 [node name="Death" type="AudioStreamPlayer2D" parent="." index="17"]
 stream = ExtResource("6_yhhqq")
+
+[node name="Detection" type="AudioStreamPlayer2D" parent="." index="18"]
+stream = ExtResource("7_00asw")
 
 [connection signal="deathBehaviour" from="." to="." method="_on_death_behaviour"]
 [connection signal="body_entered" from="AttackDistance" to="." method="_on_attack_distance_body_entered"]

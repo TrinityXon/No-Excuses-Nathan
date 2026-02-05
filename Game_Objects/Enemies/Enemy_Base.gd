@@ -29,6 +29,9 @@ extends "res://Game_Objects/Enemies/Enemies.gd"
 
 @onready var damage_sound = $Damage
 @onready var death = $Death
+@onready var detection_sound = $Detection
+
+var hasPlayed: bool = false
 
 # Vision cone reference
 @onready var poly_gon = $PlayerCheck/CollisionPolygon2D
@@ -154,6 +157,10 @@ func patrol(TravelPointsV: Array):
 	return
 
 func chasePlayer():
+	#if not hasPlayed:
+	#	detection_sound.play()
+	#else:
+	#	pass
 	moveDir = (player.global_position - global_position).normalized()
 	velocity.x = moveDir.x * speed
 	print(moveDir.x)
