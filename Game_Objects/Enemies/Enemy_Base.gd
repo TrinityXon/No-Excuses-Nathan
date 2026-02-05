@@ -61,6 +61,8 @@ var TravelPointsVector: Array = []
 @export var usesVisionCone: bool = true
 @export var usesActivationZones: bool = false
 
+@export var canGravity: bool = true
+
 # Miscellaneous
 var canStartTimer: bool = true
 
@@ -104,7 +106,7 @@ func _ready():
 func _physics_process(delta):
 	flip_enemy()
 	
-	if not is_on_floor():
+	if not is_on_floor() and canGravity:
 		velocity.y += gravity * delta
 	
 	if hasDetected:
@@ -267,4 +269,8 @@ func _on_damage_behaviour():
 
 func _on_death_behaviour():
 	death.play()
+	gun.process_mode = PROCESS_MODE_DISABLED
+	gun.visible = false
+	
+	canGravity = false
 	die(death.stream.get_length())

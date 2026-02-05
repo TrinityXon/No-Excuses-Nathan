@@ -41,6 +41,9 @@ func _on_health_monitor_has_taken_damage(damageAmount: float):
 
 func die(sfxLength: float):
 	deathAnim.play("death")
+	velocity = Vector2(0,0)
+	$CollisionShape2D.disabled = true
+
 	
 	await get_tree().create_timer(sfxLength).timeout
 	
