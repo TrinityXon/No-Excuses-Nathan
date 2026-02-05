@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var max_shake: float = 0.5
+@export var max_shake: float = 4
 @export var shake_fade: float = 15
 
 var shake_strength = 0.0

@@ -21,6 +21,8 @@ var canShoot = true
 @onready var shootSound: Node2D = $SoundEffect
 
 @onready var gunshot_sound = $Gunshot_sound
+@onready var cameraRef = get_tree().get_first_node_in_group('Camera')
+
 
 var emitBus: Node
 
@@ -92,6 +94,7 @@ func shootRegular():
 			print(hit.name)
 	
 	gunshot_sound.play()
+	cameraRef.trigger_shake()
 	
 func shootShotgun():
 	pass # TODO: ADD SPRAY MECHANICS
