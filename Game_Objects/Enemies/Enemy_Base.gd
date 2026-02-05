@@ -3,7 +3,7 @@ extends "res://Game_Objects/Enemies/Enemies.gd"
 # Movement Variables
 @export var gravity: float = 900
 @export var speed = 300
-@export var patrolSpeed = 150
+@export var patrolSpeed: float = 150
 @export var jumpValue = -450
 
 # Vision cone visibility
@@ -28,6 +28,7 @@ extends "res://Game_Objects/Enemies/Enemies.gd"
 @onready var reactionTimer = %ReactionSpeed
 
 @onready var damage_sound = $Damage
+@onready var death = $Death
 
 # Vision cone reference
 @onready var poly_gon = $PlayerCheck/CollisionPolygon2D
@@ -262,3 +263,8 @@ func _on_vision_has_detected():
 func _on_damage_behaviour():
 	damage_sound.play()
 	hasDetected = true
+
+
+func _on_death_behaviour():
+	death.play()
+	die()

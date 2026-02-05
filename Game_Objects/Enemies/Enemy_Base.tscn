@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxe41e54d2v0t"]
+[gd_scene load_steps=8 format=3 uid="uid://cxe41e54d2v0t"]
 
 [ext_resource type="PackedScene" uid="uid://dqixyoi3mgqd4" path="res://Game_Objects/BodiesBase.tscn" id="1_fvynh"]
 [ext_resource type="Script" path="res://Game_Objects/Enemies/Enemy_Base.gd" id="2_dvmwy"]
 [ext_resource type="Texture2D" uid="uid://t0inkvy1m08x" path="res://ArtSprite/Characters/Enemy.png" id="3_xkpyn"]
 [ext_resource type="PackedScene" uid="uid://ddkj2652ggdys" path="res://Components/VisonCone/Vision.tscn" id="4_eyxcj"]
 [ext_resource type="AudioStream" uid="uid://c8qp201uupa2n" path="res://Sound_Effects/NeN_Sound_Effects/Reactions/Enemy_Hurt.mp3" id="5_rsgus"]
+[ext_resource type="AudioStream" uid="uid://c073pym6wtus" path="res://Sound_Effects/NeN_Sound_Effects/Reactions/Enemy_death.mp3" id="6_yhhqq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hfjyb"]
 radius = 134.06
@@ -12,15 +13,15 @@ radius = 134.06
 [node name="Enemies" node_paths=PackedStringArray("travelPoints") instance=ExtResource("1_fvynh")]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("2_dvmwy")
-gravity = 900.0
-speed = 300
-patrolSpeed = 150
-jumpValue = -450
-visionVisible = true
+gravity = null
+speed = null
+patrolSpeed = null
+jumpValue = null
+visionVisible = null
 travelPoints = []
-immediatelySeePlayer = false
-usesVisionCone = true
-usesActivationZones = false
+immediatelySeePlayer = null
+usesVisionCone = null
+usesActivationZones = null
 
 [node name="CollisionShape2D" parent="." index="0"]
 visible = false
@@ -93,6 +94,10 @@ unique_name_in_owner = true
 [node name="Damage" type="AudioStreamPlayer2D" parent="." index="16"]
 stream = ExtResource("5_rsgus")
 
+[node name="Death" type="AudioStreamPlayer2D" parent="." index="17"]
+stream = ExtResource("6_yhhqq")
+
+[connection signal="deathBehaviour" from="." to="." method="_on_death_behaviour"]
 [connection signal="body_entered" from="AttackDistance" to="." method="_on_attack_distance_body_entered"]
 [connection signal="body_exited" from="AttackDistance" to="." method="_on_attack_distance_body_exited"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

@@ -6,13 +6,12 @@ extends CharacterBody2D
 @onready var healthBar = $HealthBar
 @onready var healthMonitor = $healthMonitor
 
-
-
 @export var effectManager: Node2D
 
 @export var ammoInstance: Array[PackedScene]
 
 signal damageBehaviour
+signal deathBehaviour
 
 func _ready():
 	healthBar.max_value = healthMonitor.maxHealth
@@ -23,7 +22,7 @@ func _ready():
 
 
 func _on_health_monitor_has_died():
-	die()
+	deathBehaviour.emit()
 	print("dead")
 
 
@@ -43,7 +42,7 @@ func _on_health_monitor_has_taken_damage(damageAmount: float):
 func die():
 	deathAnim.play("death")
 	
-	await deathAnim.animation_finished 
+	await deathAnim.animation_finished
 	
 	var spawnIndex = randi_range(0, ammoInstance.size() - 1)
 	
