@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var healthIncrease = 10
+@export var pickupSound: AudioStreamPlayer2D
+
 
 func _on_pickup_has_picked(body):
 	if body.has_node("healthMonitor"):
@@ -12,4 +14,10 @@ func _on_pickup_has_picked(body):
 			destroyKit()
 
 func destroyKit():
-	queue_free()
+	if pickupSound != null:
+		pickupSound.play()
+		visible = false
+		await pickupSound.finished
+		queue_free()
+	else:
+		queue_free()
