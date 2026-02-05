@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pfnh7t0qqb4t"]
+[gd_scene load_steps=10 format=3 uid="uid://pfnh7t0qqb4t"]
 
 [ext_resource type="Script" path="res://Game_Objects/Guns/Base/WeaponScript.gd" id="1_mj07o"]
 [ext_resource type="Texture2D" uid="uid://ddmganev8xqid" path="res://ArtSprite/Guns/Pistol.png" id="2_38gj4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://h5evrljprulj" path="res://Components/SplashManager/EffectManager.tscn" id="4_hrdln"]
 [ext_resource type="PackedScene" uid="uid://dmjqkqalpc463" path="res://Effects/MuzzleFlashes/PistolMFlash.tscn" id="5_1ywuk"]
 [ext_resource type="Texture2D" uid="uid://bq0jd5adm4qmw" path="res://ArtSprite/Miscellaneous/Hands.png" id="6_7bhtg"]
+[ext_resource type="AudioStream" uid="uid://b0wkh2h5hm5ls" path="res://Sound_Effects/NeN_Sound_Effects/Weapons/Pistol.mp3" id="7_nqrul"]
 
 [sub_resource type="Animation" id="Animation_le13i"]
 resource_name = "Shoot"
@@ -70,5 +71,8 @@ libraries = {
 one_shot = true
 
 [node name="EmitBus" parent="." instance=ExtResource("3_ian8x")]
+
+[node name="Gunshot_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nqrul")
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
