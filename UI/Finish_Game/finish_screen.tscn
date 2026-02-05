@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://jd0jqbirgxkr"]
+[gd_scene load_steps=5 format=3 uid="uid://jd0jqbirgxkr"]
 
 [ext_resource type="PackedScene" uid="uid://bccyrnlml850f" path="res://UI/DeathScreen.tscn" id="1_pwfh6"]
 [ext_resource type="Script" path="res://UI/Finish_Game/FinishScript.gd" id="2_5rdjg"]
+[ext_resource type="AudioStream" uid="uid://dmd3qrpgtptky" path="res://Sound_Effects/NeN_Sound_Effects/UI/Button_Press.mp3" id="3_ea82s"]
+[ext_resource type="Script" path="res://UI/Finish_Game/ButtonAudio.gd" id="3_rl0i5"]
 
 [node name="DeathScreen" instance=ExtResource("1_pwfh6")]
 script = ExtResource("2_5rdjg")
@@ -11,19 +13,23 @@ mainMenu = "res://Levels/UILevels/MainMenu.tscn"
 [node name="Label" parent="ColorRect" index="0"]
 text = "YAY LEVEL COMPLETE"
 
-[node name="Restart" parent="ColorRect" index="1"]
+[node name="Restart" parent="ColorRect" index="1" node_paths=PackedStringArray("soundEffectPress")]
 offset_left = -86.0
 offset_top = 33.0
 offset_right = 87.0
 offset_bottom = 72.0
+script = ExtResource("3_rl0i5")
+soundEffectPress = NodePath("../../ButtonPress")
 
-[node name="Quit" parent="ColorRect" index="2"]
+[node name="Quit" parent="ColorRect" index="2" node_paths=PackedStringArray("soundEffectPress")]
 offset_left = -86.0
 offset_top = 93.0
 offset_right = 87.0
 offset_bottom = 132.0
+script = ExtResource("3_rl0i5")
+soundEffectPress = NodePath("../../ButtonPress")
 
-[node name="LevelSelect" type="Button" parent="ColorRect" index="3"]
+[node name="LevelSelect" type="Button" parent="ColorRect" index="3" node_paths=PackedStringArray("soundEffectPress")]
 process_mode = 2
 layout_mode = 1
 anchors_preset = 8
@@ -38,8 +44,10 @@ offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Finish - Level Select"
+script = ExtResource("3_rl0i5")
+soundEffectPress = NodePath("../../ButtonPress")
 
-[node name="MainMenu" type="Button" parent="ColorRect" index="4"]
+[node name="MainMenu" type="Button" parent="ColorRect" index="4" node_paths=PackedStringArray("soundEffectPress")]
 process_mode = 2
 layout_mode = 1
 anchors_preset = 8
@@ -54,3 +62,11 @@ offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Finish - MAIN MENU"
+script = ExtResource("3_rl0i5")
+soundEffectPress = NodePath("../../ButtonPress")
+
+[node name="ButtonPress" type="AudioStreamPlayer2D" parent="." index="1"]
+process_mode = 2
+stream = ExtResource("3_ea82s")
+
+[connection signal="finished" from="ButtonPress" to="." method="_on_button_press_finished"]

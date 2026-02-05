@@ -30,6 +30,7 @@ var curStates: playerStates = playerStates.default
 @onready var ceilingCheck = %CeilingCheck
 @onready var progress_bar = %ProgressBar
 @onready var health_monitor = %healthMonitor
+@onready var equip_sound_effect = $EquipWeapon
 
 var emitBus
 
@@ -122,6 +123,7 @@ func _input(event):
 				print("hey")
 	
 	if Input.is_action_just_pressed("equip"):
+		equip_sound_effect.play()
 		if curStates == playerStates.armed:
 			change_state(playerStates.default)
 
