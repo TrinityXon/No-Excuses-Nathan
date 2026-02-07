@@ -40,8 +40,8 @@ position = Vector2(59, 1)
 texture = ExtResource("2_38gj4")
 
 [node name="EffectManager" parent="Marker2D/Pistol" node_paths=PackedStringArray("bus") instance=ExtResource("4_hrdln")]
-position = Vector2(26.6667, -3.55556)
-scale = Vector2(0.592593, 0.592593)
+position = Vector2(27, -5)
+scale = Vector2(37.2726, 37.2726)
 effect = ExtResource("5_1ywuk")
 animation = "MuzzleFlash"
 triggerName = "shoot"
@@ -51,6 +51,13 @@ bus = NodePath("../../../EmitBus")
 position = Vector2(-4, 4)
 scale = Vector2(0.0944445, 0.0944444)
 texture = ExtResource("6_7bhtg")
+
+[node name="PistolMFlash" parent="Marker2D/Pistol" instance=ExtResource("5_1ywuk")]
+unique_name_in_owner = true
+position = Vector2(46, -7)
+scale = Vector2(0.625, 0.626215)
+frame = 4
+frame_progress = 1.0
 
 [node name="RayCast2D" type="RayCast2D" parent="Marker2D"]
 unique_name_in_owner = true

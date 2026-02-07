@@ -71,6 +71,11 @@ var TravelPointsVector: Array = []
 # Miscellaneous
 var canStartTimer: bool = true
 
+@onready var screenFlash = get_tree().get_first_node_in_group('ScreenFlash')
+
+var kb_velocity: Vector2 = Vector2.ZERO
+var kb_decay: float = 10.0
+
 func _ready():
 	gun = gunParent.get_child(0)
 	currentGunRange = gun.range
@@ -125,6 +130,9 @@ func _physics_process(delta):
 	
 	if sideCheck_R.is_colliding() and moveDir != Vector2.ZERO and is_on_floor():
 		jump(delta)
+		
+	velocity += kb_velocity
+	kb_velocity = kb_velocity.lerp(Vector2.ZERO, kb_decay * delta)
 	
 	manage_states()
 
@@ -164,7 +172,7 @@ func chasePlayer():
 	#else:
 	#	pass
 	moveDir = (player.global_position - global_position).normalized()
-	velocity.x = moveDir.x * speed
+	velocity.x = moveDir.x * speed + kb_velocity.x
 	print(moveDir.x)
 
 func AttackPlayer():
@@ -274,7 +282,10 @@ func _on_vision_has_detected():
 func _on_damage_behaviour():
 	damage_sound.play()
 	Hitstop.hitstop(0.025)
-	cameraRef.trigger_shake()
+	screenFlash.screen_flash(Color.YELLOW, 0.07, 0.08)
+	
+	var dir = global_position - player.position
+	knockback(dir, 800)
 	
 	hasDetected = true
 
@@ -283,6 +294,14 @@ func _on_death_behaviour():
 	death.play()
 	gun.process_mode = PROCESS_MODE_DISABLED
 	gun.visible = false
+	screenFlash.screen_flash(Color.ORANGE, 0.09, 0.7)
+	cameraRef.trigger_shake(5, 60)
 	
 	canGravity = false
 	die(death.stream.get_length())
+
+func knockback(dir: Vector2, force: float):
+	# Add knockback in direction
+	kb_velocity += dir.normalized() * force
+	kb_velocity.y = 0
+	kb_velocity = kb_velocity.limit_length(350)

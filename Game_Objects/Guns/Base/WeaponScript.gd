@@ -16,17 +16,20 @@ enum gunStates {REGULAR, SHOTGUN}
 
 var canShoot = true
 @onready var shotTimer = $ShotTimer
+@onready var shootEffect = %PistolMFlash
 
 @export var shotAnim: String
 @onready var shootSound: Node2D = $SoundEffect
 
 @onready var gunshot_sound = $Gunshot_sound
 @onready var cameraRef = get_tree().get_first_node_in_group('Camera')
+@onready var flash_effect = get_tree().get_first_node_in_group('ScreenFlash')
 
 
 var emitBus: Node
 
 signal ammoChange(curAmmo: float)
+signal shotFired
 
 func _ready():
 	raycast.target_position = Vector2(0, range)
@@ -94,7 +97,13 @@ func shootRegular():
 			print(hit.name)
 	
 	gunshot_sound.play()
-	cameraRef.trigger_shake()
+		
+	shotFired.emit()
+	shootEffect.visible = true
+	shootEffect.play_animation()
+	await shootEffect.animation_finished
+	
+	shootEffect.visible = false
 	
 func shootShotgun():
 	pass # TODO: ADD SPRAY MECHANICS

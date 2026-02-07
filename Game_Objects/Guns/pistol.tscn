@@ -18,7 +18,7 @@ texture = ExtResource("2_vey3t")
 [node name="EffectManager" parent="Marker2D/Pistol" index="0"]
 unique_name_in_owner = true
 position = Vector2(260, -90)
-scale = Vector2(1, -0.025)
+scale = Vector2(454.2, -11.355)
 
 [node name="Hands" parent="Marker2D/Pistol" index="1"]
 position = Vector2(-50, 0)
@@ -28,6 +28,11 @@ scale = Vector2(1.01285, 1.04167)
 position = Vector2(170, -50)
 scale = Vector2(0.888889, 0.888889)
 texture = ExtResource("3_f73wd")
+
+[node name="PistolMFlash" parent="Marker2D/Pistol" index="3"]
+visible = false
+position = Vector2(440, -70)
+scale = Vector2(3.33333, 3.33981)
 
 [node name="ShotTimer" parent="." index="2"]
 wait_time = 0.4

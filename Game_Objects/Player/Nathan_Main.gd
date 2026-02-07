@@ -51,6 +51,9 @@ var healthMonitor
 var isCrouching: bool = false
 @export var canCrouch = false
 
+@onready var screenFlash = get_tree().get_first_node_in_group('ScreenFlash')
+@onready var cameraRef = get_tree().get_first_node_in_group('Camera')
+
 
 @export var deathMenu: PackedScene
 
@@ -181,6 +184,9 @@ func _on_damage(damageAmount: float):
 	if emitBus:
 		emitBus.emit_event("Damage")
 	
+	screenFlash.screen_flash(Color.RED, 0.08, 0.09)
+	cameraRef.trigger_shake(2.5, 30)
+	
 func die():
 	if deathMenu:
 		var spawnedMenu = deathMenu.instantiate()
@@ -201,9 +207,11 @@ func switch_gun():
 	gun = allguns[selectedGun]
 	gun.visible = true
 	
-	if not gun.is_connected("ammoChange", trackAmmo):
+	if not gun.is_connected("ammoChange", trackAmmo) or gun.is_connected("shotFired", shotFiredFun):
 		gun.connect("ammoChange", trackAmmo)
 	
+	if not gun.is_connected("shotFired", shotFiredFun):
+		gun.shotFired.connect(shotFiredFun)
 	ammoLabel.text = "Ammo: " + str(gun.ammoCnt)
 	
 	
@@ -236,3 +244,7 @@ func changeMovement(climb: bool):
 		canClimb = true
 	if not climb:
 		canClimb = false
+
+
+func shotFiredFun():
+	screenFlash.screen_flash(Color.WHITE, 0.04, 0.1)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmjqkqalpc463"]
+[gd_scene load_steps=8 format=3 uid="uid://dmjqkqalpc463"]
 
 [ext_resource type="Texture2D" uid="uid://qiqs46l8a4jh" path="res://ArtSprite/MuzzleFlash_Pistol/Frame1.png" id="1_dpxlg"]
 [ext_resource type="Texture2D" uid="uid://cbv2w6kj4v2rw" path="res://ArtSprite/MuzzleFlash_Pistol/Frame2.png" id="2_jglj7"]
 [ext_resource type="Texture2D" uid="uid://bt5sswi6lwsyn" path="res://ArtSprite/MuzzleFlash_Pistol/Frame3.png" id="3_wstml"]
 [ext_resource type="Texture2D" uid="uid://incdh6cftm18" path="res://ArtSprite/MuzzleFlash_Pistol/Frame4.png" id="4_i5qaq"]
 [ext_resource type="Texture2D" uid="uid://6smp122nidd4" path="res://ArtSprite/MuzzleFlash_Pistol/Frame5.png" id="5_3rsah"]
+[ext_resource type="Script" path="res://Effects/MuzzleFlashes/Effect.gd" id="6_140d5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qyjoy"]
 animations = [{
@@ -27,15 +28,10 @@ animations = [{
 "loop": false,
 "name": &"MuzzleFlash",
 "speed": 20.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
 }]
 
 [node name="PistolMFlash" type="AnimatedSprite2D"]
 scale = Vector2(0.99806, 1)
 sprite_frames = SubResource("SpriteFrames_qyjoy")
 animation = &"MuzzleFlash"
-frame_progress = 0.868325
+script = ExtResource("6_140d5")

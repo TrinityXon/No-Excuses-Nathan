@@ -13,5 +13,12 @@ script = ExtResource("1_6uld7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e5c0o")
 
+[node name="Pickup_Text" type="Label" parent="."]
+visible = false
+offset_left = 18.0
+offset_top = -37.0
+offset_right = 58.0
+offset_bottom = -14.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

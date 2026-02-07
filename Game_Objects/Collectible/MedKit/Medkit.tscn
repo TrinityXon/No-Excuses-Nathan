@@ -11,9 +11,10 @@ pickupSound = NodePath("Med")
 
 [node name="Pickup" parent="." instance=ExtResource("2_cndj8")]
 scale = Vector2(0.926072, 0.926072)
+pickup_prompt = "'F' to Pickup"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(6, 0)
+position = Vector2(4, 2)
 scale = Vector2(0.188889, 0.188889)
 texture = ExtResource("3_3ecwd")
 
