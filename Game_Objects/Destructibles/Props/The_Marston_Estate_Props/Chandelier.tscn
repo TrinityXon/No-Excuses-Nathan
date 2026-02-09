@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcdkcbook1q1r"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_j5anj"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_j5anj"]
 [ext_resource type="Texture2D" uid="uid://0ch3gamr44rc" path="res://ArtSprite/Props/Chandelier.png" id="2_t14as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb5xw"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbybm0fvqtutg"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_8cqlu"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_8cqlu"]
 [ext_resource type="Texture2D" uid="uid://bodfxdtn2w0vf" path="res://ArtSprite/Props/The_Marston_Estate/Dining_Table.png" id="2_4bics"]
 
 [node name="Area2D" instance=ExtResource("1_8cqlu")]

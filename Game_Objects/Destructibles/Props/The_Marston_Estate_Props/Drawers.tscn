@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkxd5w41oy32"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_t7uip"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_t7uip"]
 [ext_resource type="Texture2D" uid="uid://dfg50fgx1md4c" path="res://ArtSprite/Props/The_Marston_Estate/Drawers.png" id="2_mbsmr"]
 
 [node name="Drawers" instance=ExtResource("1_t7uip")]

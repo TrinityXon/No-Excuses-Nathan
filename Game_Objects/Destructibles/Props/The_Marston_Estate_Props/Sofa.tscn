@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfennkh5qeu18"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_e4vha"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_e4vha"]
 [ext_resource type="Texture2D" uid="uid://c8qhdqpxunih2" path="res://ArtSprite/Props/The_Marston_Estate/Sofa.png" id="2_ky8uk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwaly"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://rjpdxs0hfcdh"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_1s246"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_1s246"]
 [ext_resource type="Texture2D" uid="uid://bwcymjulcprg2" path="res://ArtSprite/Props/Table.png" id="2_rkty6"]
 
 [node name="Area2D" instance=ExtResource("1_1s246")]

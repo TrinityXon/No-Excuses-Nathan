@@ -24,6 +24,7 @@ immediatelySeePlayer = false
 usesVisionCone = true
 usesActivationZones = false
 canGravity = true
+damage_anim_path = ""
 
 [node name="CollisionShape2D" parent="." index="0"]
 visible = false

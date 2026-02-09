@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ip1gvp25rhdj"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_j80i2"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_j80i2"]
 [ext_resource type="Texture2D" uid="uid://otsu26bi35a6" path="res://ArtSprite/Blockout.png" id="2_a0kiw"]
 
 [node name="Area2D" instance=ExtResource("1_j80i2")]

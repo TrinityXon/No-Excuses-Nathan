@@ -11,6 +11,11 @@ extends CharacterBody2D
 @export var jumpSpeed = 450
 @export var gravity = 600
 
+@export var lean_offset: float = 15
+@export var lean_weight: float = 8
+
+@onready var character_lean: Node2D = $Character_Lean
+
 var Speed = maxSpeed
 var climbSpeed = maxSpeed
 var direction: float
@@ -61,6 +66,8 @@ var isCrouching: bool = false
 
 var was_on_floor: bool = false
 
+var public_delta: float
+
 func _ready():
 	allguns = gunParent.get_children()
 	gunIndices = allguns.size()
@@ -79,7 +86,6 @@ func _ready():
 	if gun:
 		ammoLabel.text = "Ammo: " + str(gun.ammoCnt)
 		gun.ammoChange.connect(trackAmmo)
-
 # Game loop
 func _physics_process(delta):
 	# Start Stuff
@@ -117,9 +123,13 @@ func _physics_process(delta):
 	if was_on_floor and not is_on_floor():
 		print("Left ground")
 
+	public_delta = delta
+	
 	# Update for next frame
 	was_on_floor = is_on_floor()
 	
+
+	character_lean.lean(0.05, direction, delta, lean_weight, playerSprite)
 	flip_player()
 	move_and_slide()
 
@@ -201,7 +211,7 @@ func _on_damage(damageAmount: float):
 	
 	jump_squeeze.stretch()
 	screenFlash.screen_flash(Color.RED, 0.08, 0.09)
-	cameraRef.trigger_shake(2.5, 30)
+	cameraRef.trigger_shake(5, 15)
 	
 func die():
 	if deathMenu:

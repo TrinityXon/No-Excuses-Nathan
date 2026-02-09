@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3ioiy683ua8y"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_72pj6"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_72pj6"]
 [ext_resource type="Texture2D" uid="uid://q247wbkjkvqd" path="res://ArtSprite/Props/The_Marston_Estate/Porch_MaEs.png" id="2_w3qn1"]
 [ext_resource type="PackedScene" uid="uid://bur5u1p2bwm08" path="res://Game_Objects/Enemies/Doors/BaseDoor.tscn" id="3_b1vqx"]
 

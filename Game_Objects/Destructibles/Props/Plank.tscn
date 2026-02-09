@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv5fy5py3vjbm"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_abt4o"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_abt4o"]
 [ext_resource type="Texture2D" uid="uid://otsu26bi35a6" path="res://ArtSprite/Blockout.png" id="2_2e08q"]
 
 [node name="Plank" instance=ExtResource("1_abt4o")]

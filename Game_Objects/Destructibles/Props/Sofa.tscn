@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmik0pxe5mwkt"]
 
-[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://Game_Objects/Destructibles/Base/DestructibleBase.tscn" id="1_sda84"]
+[ext_resource type="PackedScene" uid="uid://bq4uhhl8cv1a4" path="res://MiscellaneousScripts/DestructibleBase.tscn" id="1_sda84"]
 [ext_resource type="Texture2D" uid="uid://2uah8oub8dul" path="res://ArtSprite/Props/Chair.png" id="2_57q8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv21b"]

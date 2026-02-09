@@ -290,6 +290,7 @@ func _on_damage_behaviour():
 	damage_anim.play(damage_anim_path)
 	Hitstop.hitstop(0.025)
 	screenFlash.screen_flash(Color.YELLOW, 0.07, 0.08)
+	cameraRef.trigger_shake(5, 10)
 	
 	var dir = global_position - player.position
 	knockback(dir, 800)

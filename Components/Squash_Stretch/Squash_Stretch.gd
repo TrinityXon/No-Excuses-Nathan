@@ -18,11 +18,12 @@ func _process(delta):
 	# Slowly recover target scale back to normal
 	target_scale = target_scale.lerp(original_scale, 6 * delta)
 
-func stretch(scale: float = recovery_speed):
-	var amount = stretch_percent / 100.0
+func stretch(scale: float = recovery_speed, stretch_p = stretch_percent):
+	var amount = stretch_p / 100.0
 	
 	# Horizontal squash, vertical stretch
 	target_scale = Vector2(
 		original_scale.x * (1.0 + amount),
 		original_scale.y * (1.0 - amount)
 	)
+
