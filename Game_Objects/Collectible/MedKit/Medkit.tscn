@@ -9,8 +9,9 @@
 script = ExtResource("1_brlc3")
 pickupSound = NodePath("Med")
 
-[node name="Pickup" parent="." instance=ExtResource("2_cndj8")]
+[node name="Pickup" parent="." node_paths=PackedStringArray("pickup_text") instance=ExtResource("2_cndj8")]
 scale = Vector2(0.926072, 0.926072)
+pickup_text = NodePath("../Pickup2")
 pickup_prompt = "'F' to Pickup"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,5 +21,16 @@ texture = ExtResource("3_3ecwd")
 
 [node name="Med" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_cxtnh")
+
+[node name="Pickup2" type="Label" parent="."]
+visible = false
+offset_left = -42.0
+offset_top = -62.0
+offset_right = 47.0
+offset_bottom = -36.0
+size_flags_horizontal = 4
+text = "Plack
+"
+horizontal_alignment = 1
 
 [connection signal="hasPicked" from="Pickup" to="." method="_on_pickup_has_picked"]

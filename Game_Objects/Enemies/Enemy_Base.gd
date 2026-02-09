@@ -76,6 +76,9 @@ var canStartTimer: bool = true
 var kb_velocity: Vector2 = Vector2.ZERO
 var kb_decay: float = 10.0
 
+@export var damage_anim: AnimationPlayer
+@export var damage_anim_path: String
+
 func _ready():
 	gun = gunParent.get_child(0)
 	currentGunRange = gun.range
@@ -113,6 +116,9 @@ func _ready():
 		for points in travelPoints:
 			TravelPointsVector.append(Vector2(round(points.global_position.x), round(points.global_position.y)))
 	
+	if damage_anim == null or damage_anim_path == '' or damage_anim_path == null:
+		damage_anim = $Damage_Anim
+		damage_anim_path = 'Damage_Anim'
 func _physics_process(delta):
 	flip_enemy()
 	
@@ -281,6 +287,7 @@ func _on_vision_has_detected():
 
 func _on_damage_behaviour():
 	damage_sound.play()
+	damage_anim.play(damage_anim_path)
 	Hitstop.hitstop(0.025)
 	screenFlash.screen_flash(Color.YELLOW, 0.07, 0.08)
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhfakds1d3n5b"
-path="res://.godot/imported/Kitchen_Drawer.png-b76f1af40d4c022ce3146399eaaa4739.ctex"
+uid="uid://com6bf2y5do5e"
+path="res://.godot/imported/Bottom_Shelf.png-03a631be9da2def00a18a362acf644ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtSprite/Background-Non-Collision/Kitchen_Drawer.png"
-dest_files=["res://.godot/imported/Kitchen_Drawer.png-b76f1af40d4c022ce3146399eaaa4739.ctex"]
+source_file="res://Background-Non-Collision/Bottom_Shelf.png"
+dest_files=["res://.godot/imported/Bottom_Shelf.png-03a631be9da2def00a18a362acf644ed.ctex"]
 
 [params]
 

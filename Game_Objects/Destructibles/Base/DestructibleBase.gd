@@ -18,6 +18,11 @@ var isOnFloor: bool
 @export var gravityStrength: float = 450
 @export var gravityEnabled: bool = false
 
+@export var damage_anim: AnimationPlayer
+@export var damage_anim_path: String
+
+@export var squash_stretch: Node2D
+
 func _ready():
 	healthMonitor = get_node("healthMonitor")
 	emitBus = get_node("EmitBus")
@@ -33,6 +38,10 @@ func _ready():
 	
 	if flipSprite:
 		scale.x *= -1
+	
+	if damage_anim == null or damage_anim_path == null or damage_anim_path == '':
+		damage_anim = $Damage
+		damage_anim_path = 'Damage' 
 
 func _physics_process(delta):
 	if not isOnFloor and gravityEnabled:
@@ -46,11 +55,14 @@ func _process(delta):
 
 func destruction():
 	emitBus.emit_event("destroy")
+	squash_stretch.stretch(30)
+	await get_tree().create_timer(0.1).timeout
 	icon.visible = false
 	$Timer.start()
 	
 
 func hasDamage(damageAmount):
+	squash_stretch.stretch()
 	emitBus.emit_event("hit")
 
 

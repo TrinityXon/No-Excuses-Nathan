@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmro5c5jpolhx"
-path="res://.godot/imported/Window_Big.png-8252870198ed7a7665317417e3e1155e.ctex"
+path="res://.godot/imported/Window_Big.png-605b5e2103ca47a9805a15295b613f8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArtSprite/Background-Non-Collision/Window_Big.png"
-dest_files=["res://.godot/imported/Window_Big.png-8252870198ed7a7665317417e3e1155e.ctex"]
+source_file="res://Background-Non-Collision/Window_Big.png"
+dest_files=["res://.godot/imported/Window_Big.png-605b5e2103ca47a9805a15295b613f8f.ctex"]
 
 [params]
 

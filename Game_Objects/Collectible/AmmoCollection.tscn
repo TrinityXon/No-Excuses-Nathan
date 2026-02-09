@@ -22,12 +22,30 @@ position = Vector2(-1, -1)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_6emc2")
 
-[node name="Pickup" parent="." instance=ExtResource("3_lybdg")]
+[node name="Pickup" parent="." node_paths=PackedStringArray("pickup_text") instance=ExtResource("3_lybdg")]
 scale = Vector2(1.82666, 1.8)
+pickup_text = NodePath("../PickupText")
+pickup_prompt = "'F' to collect ammo"
 
 [node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_6hpnw")
 volume_db = 5.0
+
+[node name="PickupText" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -92.0
+offset_right = 91.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Plackholder"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hasPicked" from="Pickup" to="." method="_on_pickup_has_picked"]

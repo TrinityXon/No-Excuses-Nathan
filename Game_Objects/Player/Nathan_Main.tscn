@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wgm30cc5agxg"]
+[gd_scene load_steps=17 format=3 uid="uid://wgm30cc5agxg"]
 
 [ext_resource type="Script" path="res://Game_Objects/Player/Nathan_Main.gd" id="1_xrqsh"]
 [ext_resource type="Texture2D" uid="uid://bt3ocgy16vuwd" path="res://ArtSprite/Player_sprites/Player_Armed.png" id="2_gqtnm"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cfgbuplas5fwx" path="res://Sound_Effects/NeN_Sound_Effects/Player_Diagetic/Equip_Weapon.mp3" id="10_ary8m"]
 [ext_resource type="AudioStream" uid="uid://dlkrrt8e570ny" path="res://Sound_Effects/NeN_Sound_Effects/Movement/Jump.mp3" id="11_5jgpc"]
 [ext_resource type="Script" path="res://Game_Objects/Player/ScreenFlash.gd" id="13_6fveu"]
+[ext_resource type="PackedScene" uid="uid://cw33yr5gfx5gh" path="res://Components/Squash_Stretch/SquashStretch.tscn" id="14_2dbrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqetb"]
 size = Vector2(28.1226, 36.8143)
@@ -114,5 +115,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.690196, 0, 0.172549, 0)
+
+[node name="SquashStretch" parent="." node_paths=PackedStringArray("sprite_to_stretch") instance=ExtResource("14_2dbrb")]
+sprite_to_stretch = NodePath("../Icon")
+stretch_percent = 30
+
+[node name="LandStretch" parent="." node_paths=PackedStringArray("sprite_to_stretch") instance=ExtResource("14_2dbrb")]
+sprite_to_stretch = NodePath("../Icon")
+stretch_percent = 13
+recovery_speed = 37.0
 
 [connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]

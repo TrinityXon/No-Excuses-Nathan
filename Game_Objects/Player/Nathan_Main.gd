@@ -56,6 +56,10 @@ var isCrouching: bool = false
 
 
 @export var deathMenu: PackedScene
+@onready var jump_squeeze = $SquashStretch
+@onready var land_squeeze = $LandStretch
+
+var was_on_floor: bool = false
 
 func _ready():
 	allguns = gunParent.get_children()
@@ -106,6 +110,16 @@ func _physics_process(delta):
 		if not is_on_floor():
 			velocity.y += gravity * delta
 	
+	if not was_on_floor and is_on_floor():
+		print("Just landed")
+
+	# Detect leaving ground (jump / fall)
+	if was_on_floor and not is_on_floor():
+		print("Left ground")
+
+	# Update for next frame
+	was_on_floor = is_on_floor()
+	
 	flip_player()
 	move_and_slide()
 
@@ -118,6 +132,7 @@ func _input(event):
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y -= jumpSpeed
 		jump.play()
+		jump_squeeze
 		print("Jump")
 	
 	if Input.is_action_just_pressed("Shoot"):
@@ -184,6 +199,7 @@ func _on_damage(damageAmount: float):
 	if emitBus:
 		emitBus.emit_event("Damage")
 	
+	jump_squeeze.stretch()
 	screenFlash.screen_flash(Color.RED, 0.08, 0.09)
 	cameraRef.trigger_shake(2.5, 30)
 	

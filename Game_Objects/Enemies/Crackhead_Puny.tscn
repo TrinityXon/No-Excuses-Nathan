@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://byr0775cal5qk"]
+[gd_scene load_steps=10 format=3 uid="uid://byr0775cal5qk"]
 
 [ext_resource type="PackedScene" uid="uid://cxe41e54d2v0t" path="res://Game_Objects/Enemies/Enemy_Base.tscn" id="1_kknho"]
 [ext_resource type="PackedScene" uid="uid://7kfttknk6kh2" path="res://Game_Objects/Collectible/MedKit/Medkit.tscn" id="2_oxjxp"]
@@ -13,9 +13,42 @@ height = 65.25
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dayg1"]
 size = Vector2(141.232, 86.3926)
 
+[sub_resource type="Animation" id="Animation_vbgsf"]
+resource_name = "Damage_Anim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Icon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.134767, 0.133333), Vector2(0.102947, 0.101852), Vector2(0.134767, 0.133333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.360784), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsd7e"]
+_data = {
+"Damage_Anim": SubResource("Animation_vbgsf")
+}
+
 [node name="Enemies" instance=ExtResource("1_kknho")]
 visionVisible = false
 usesActivationZones = true
+damage_anim_path = ""
 ammoInstance = Array[PackedScene]([ExtResource("2_oxjxp"), ExtResource("3_c1pj5")])
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -67,6 +100,13 @@ visible = false
 unique_name_in_owner = true
 wait_time = 0.3
 one_shot = true
+
+[node name="Damage_Anim" type="AnimationPlayer" parent="." index="20"]
+root_node = NodePath("../AnimationPlayer")
+speed_scale = 6.0
+libraries = {
+"": SubResource("AnimationLibrary_jsd7e")
+}
 
 [connection signal="damageBehaviour" from="." to="." method="_on_damage_behaviour"]
 [connection signal="hasDetected" from="Vision" to="." method="_on_vision_has_detected"]

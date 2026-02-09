@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq4uhhl8cv1a4"]
+[gd_scene load_steps=13 format=3 uid="uid://bq4uhhl8cv1a4"]
 
 [ext_resource type="Script" path="res://Game_Objects/Destructibles/Base/DestructibleBase.gd" id="1_2oc1t"]
 [ext_resource type="PackedScene" uid="uid://dt1ugd7yr5vyx" path="res://Components/HealthStuffs/HealthMonitor/healthMonitor.tscn" id="2_h60mg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ewcuotrl10dr" path="res://icon.svg" id="5_kannq"]
 [ext_resource type="PackedScene" uid="uid://b6hygjm48yv70" path="res://Components/CentralEmitBus/EmitBus.tscn" id="6_xj4j3"]
 [ext_resource type="AudioStream" uid="uid://opyro0tglkn5" path="res://Sound_Effects/NeN_Sound_Effects/Prop_damage/Wood_Impact.mp3" id="7_jwxbb"]
+[ext_resource type="PackedScene" uid="uid://cw33yr5gfx5gh" path="res://Components/Squash_Stretch/SquashStretch.tscn" id="8_cqjuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6nvj"]
 size = Vector2(131, 127)
@@ -14,11 +15,32 @@ size = Vector2(131, 127)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf3gd"]
 size = Vector2(33.9674, 116)
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="Animation" id="Animation_432mj"]
+resource_name = "Damage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Icon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.74, 0.74), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhqq5"]
+_data = {
+"Damage": SubResource("Animation_432mj")
+}
+
+[node name="Area2D" type="Area2D" node_paths=PackedStringArray("squash_stretch")]
 collision_layer = 39
 collision_mask = 39
 script = ExtResource("1_2oc1t")
 maxHealth = 10.0
+squash_stretch = NodePath("SquashStretch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -68,6 +90,16 @@ collision_mask = 7
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_jwxbb")
 volume_db = 10.0
+
+[node name="Damage" type="AnimationPlayer" parent="."]
+speed_scale = 7.0
+libraries = {
+"": SubResource("AnimationLibrary_vhqq5")
+}
+
+[node name="SquashStretch" parent="." node_paths=PackedStringArray("sprite_to_stretch") instance=ExtResource("8_cqjuw")]
+sprite_to_stretch = NodePath("../Icon")
+recovery_speed = 17.0
 
 [connection signal="hasDied" from="healthMonitor" to="." method="_on_health_monitor_has_died"]
 [connection signal="hasTakenDamage" from="healthMonitor" to="." method="_on_health_monitor_has_taken_damage"]
