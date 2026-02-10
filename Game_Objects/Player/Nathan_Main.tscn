@@ -98,6 +98,9 @@ bus = NodePath("../EmitBus")
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 position = Vector2(0, -70)
 zoom = Vector2(1.625, 1.625)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 16.0
 script = ExtResource("10_05jj0")
 
 [node name="EquipWeapon" type="AudioStreamPlayer2D" parent="."]

@@ -33,9 +33,10 @@ position = Vector2(3216, -171)
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="Nathan_Main" parent="Player" instance=ExtResource("1_axofd")]
+[node name="Nathan_Main" parent="Player" node_paths=PackedStringArray("test_object") instance=ExtResource("1_axofd")]
 position = Vector2(-3108, 662)
 acceleration = 4.0
+test_object = NodePath("../../Environment/Rooms/Foyer/Props/Drawers")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -503,49 +504,49 @@ offset_left = 47.0
 offset_top = 223.0
 offset_right = 956.0
 offset_bottom = 579.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Walls/CanvasLayer"]
 offset_left = 956.0
 offset_top = 316.0
 offset_right = 2188.0
 offset_bottom = 599.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Walls/CanvasLayer"]
 offset_left = 2188.0
 offset_top = 25.0
 offset_right = 3412.0
 offset_bottom = 511.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Walls/CanvasLayer"]
 offset_left = 3389.0
 offset_top = 283.0
 offset_right = 4196.0
 offset_bottom = 682.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="Walls/CanvasLayer"]
 offset_left = 4196.0
 offset_top = 138.0
 offset_right = 5413.0
 offset_bottom = 652.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="Walls/CanvasLayer"]
 offset_left = 5396.0
 offset_top = 247.0
 offset_right = 6360.0
 offset_bottom = 669.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="Walls/CanvasLayer"]
 offset_left = 6351.0
 offset_top = 52.0
 offset_right = 7315.0
 offset_bottom = 542.0
-color = Color(0.47451, 0.529412, 0.207843, 1)
+color = Color(0.294118, 0.329412, 0.113725, 1)
 
 [node name="SquashStretch" parent="." instance=ExtResource("27_oh5dg")]
 position = Vector2(-3644, 119)

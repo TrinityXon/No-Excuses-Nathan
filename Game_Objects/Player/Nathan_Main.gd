@@ -16,6 +16,8 @@ extends CharacterBody2D
 
 @onready var character_lean: Node2D = $Character_Lean
 
+@export var test_object: Node2D
+
 var Speed = maxSpeed
 var climbSpeed = maxSpeed
 var direction: float
@@ -136,7 +138,10 @@ func _physics_process(delta):
 
 func _process(delta):
 	progress_bar.value = healthMonitor.currentHealth
-
+	var dir = directionToObject(test_object)
+	print(str(dir))
+	
+	
 # Handle Input
 func _input(event):
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -274,3 +279,10 @@ func changeMovement(climb: bool):
 
 func shotFiredFun():
 	screenFlash.screen_flash(Color.WHITE, 0.04, 0.1)
+
+
+func directionToObject(object: Node2D) -> float:
+	if object:
+		return position.direction_to(object.position).x
+	else:
+		return 0.0
