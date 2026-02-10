@@ -138,8 +138,6 @@ func _physics_process(delta):
 
 func _process(delta):
 	progress_bar.value = healthMonitor.currentHealth
-	var dir = directionToObject(test_object)
-	print(str(dir))
 	
 	
 # Handle Input
@@ -210,13 +208,14 @@ func switchPlayerArmed(process, visibility: bool, texture: Texture, host: Node2D
 func _on_death():
 	die()
 	
-func _on_damage(damageAmount: float):
+func _on_damage(damageAmount: float, attackerRef: CharacterBody2D = null):
 	if emitBus:
 		emitBus.emit_event("Damage")
 	
 	jump_squeeze.stretch()
 	screenFlash.screen_flash(Color.RED, 0.08, 0.09)
 	cameraRef.trigger_shake(5, 15)
+	
 	
 func die():
 	if deathMenu:
@@ -281,7 +280,7 @@ func shotFiredFun():
 	screenFlash.screen_flash(Color.WHITE, 0.04, 0.1)
 
 
-func directionToObject(object: Node2D) -> float:
+func directionToObject(object) -> float:
 	if object:
 		return position.direction_to(object.position).x
 	else:

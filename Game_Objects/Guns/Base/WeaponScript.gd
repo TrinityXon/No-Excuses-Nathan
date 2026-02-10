@@ -93,7 +93,7 @@ func shootRegular():
 		
 		if hit and hit.has_node("healthMonitor"):
 			var damageCollider = hit.get_node("healthMonitor")
-			damageCollider.takeDamage(damage)
+			damageCollider.takeDamage(damage, get_parent())
 			print(hit.name)
 	
 	gunshot_sound.play()
