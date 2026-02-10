@@ -4,19 +4,20 @@ extends Node
 @export var isInvincible: bool = false
 var currentHealth: float
 
-signal hasTakenDamage(damageAmount: float, attackerRef: CharacterBody2D)
+signal hasTakenDamage(damageAmount: float)
 signal hasDied
 
 func _ready():
 	currentHealth = maxHealth
 
-func takeDamage(damageAmount: float, attackerRef = null):
+func takeDamage(damageAmount: float):
 	if currentHealth <= 0 or isInvincible:
 		return
 	
+	
 	currentHealth -= damageAmount
 	print(currentHealth)
-	emit_signal("hasTakenDamage", damageAmount, attackerRef)
+	emit_signal("hasTakenDamage", damageAmount)
 	
 	if currentHealth <= 0:
 		emit_signal("hasDied")
