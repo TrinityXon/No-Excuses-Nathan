@@ -39,6 +39,7 @@ var curStates: playerStates = playerStates.default
 @onready var health_monitor = %healthMonitor
 @onready var equip_sound_effect = $EquipWeapon
 @onready var jump = $Jump
+@onready var hostile_dir_manager = $HostileDirManager
 
 var emitBus
 
@@ -69,6 +70,10 @@ var isCrouching: bool = false
 var was_on_floor: bool = false
 
 var public_delta: float
+
+var hostileDir: Vector2
+var kb_velocity: Vector2 = Vector2.ZERO
+var kb_decay: float = 10.0
 
 func _ready():
 	allguns = gunParent.get_children()
@@ -132,14 +137,16 @@ func _physics_process(delta):
 	
 
 	character_lean.lean(0.05, direction, delta, lean_weight, playerSprite)
+	
+	velocity += kb_velocity
+	kb_velocity = kb_velocity.lerp(Vector2.ZERO, kb_decay * delta)
+	
 	flip_player()
 	move_and_slide()
 
 
 func _process(delta):
 	progress_bar.value = healthMonitor.currentHealth
-	var dir = directionToObject(test_object)
-	print(str(dir))
 	
 	
 # Handle Input
@@ -168,6 +175,7 @@ func _input(event):
 	if Input.is_action_just_pressed("SwitchForward") and curStates == playerStates.armed:
 		selectedGun = (selectedGun + 1) % gunIndices
 		switch_gun()
+		print(global_position, 'gulugul')
 		
 	if Input.is_action_just_pressed("SwitchBack") and curStates == playerStates.armed:
 		selectedGun = (selectedGun - 1 + gunIndices) % gunIndices
@@ -217,6 +225,11 @@ func _on_damage(damageAmount: float):
 	jump_squeeze.stretch()
 	screenFlash.screen_flash(Color.RED, 0.08, 0.09)
 	cameraRef.trigger_shake(5, 15)
+	
+	var hostileDirection = hostile_dir_manager.hostileDir
+	if hostileDirection != null:
+		print(str(directionToObject(hostileDirection), 'groot'))
+		knockback(Vector2(directionToObject(hostileDirection) * -1, 0), damageAmount * 6)
 	
 func die():
 	if deathMenu:
@@ -281,8 +294,15 @@ func shotFiredFun():
 	screenFlash.screen_flash(Color.WHITE, 0.04, 0.1)
 
 
-func directionToObject(object: Node2D) -> float:
-	if object:
-		return position.direction_to(object.position).x
+func directionToObject(object_pos: Vector2) -> float:
+	if object_pos:
+		return global_position.direction_to(object_pos).x
 	else:
 		return 0.0
+
+
+func knockback(dir: Vector2, force: float):
+	# Add knockback in direction
+	kb_velocity += dir.normalized() * force
+	kb_velocity.y = force * 0.35
+	kb_velocity = kb_velocity.limit_length(350)

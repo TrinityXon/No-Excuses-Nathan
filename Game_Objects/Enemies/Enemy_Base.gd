@@ -28,6 +28,7 @@ extends "res://Game_Objects/Enemies/Enemies.gd"
 @onready var enemyDetectRay = %HostileCheck
 @onready var shotCheck = %ShotCheck
 @onready var reactionTimer = %ReactionSpeed
+@onready var hostile_dir_manager = $HostileDirManager
 
 @onready var damage_sound = $Damage
 @onready var death = $Death
@@ -140,6 +141,8 @@ func _physics_process(delta):
 	velocity += kb_velocity
 	kb_velocity = kb_velocity.lerp(Vector2.ZERO, kb_decay * delta)
 	
+	
+	
 	manage_states()
 
 	move_and_slide()
@@ -178,7 +181,8 @@ func chasePlayer():
 	#else:
 	#	pass
 	moveDir = (player.global_position - global_position).normalized()
-	velocity.x = moveDir.x * speed + kb_velocity.x
+	
+	velocity.x = lerp(velocity.x, moveDir.x * speed, 100 * get_process_delta_time())
 	print(moveDir.x)
 
 func AttackPlayer():
@@ -289,14 +293,17 @@ func _on_damage_behaviour():
 	damage_sound.play()
 	damage_anim.play(damage_anim_path)
 	Hitstop.hitstop(0.025)
+
 	screenFlash.screen_flash(Color.YELLOW, 0.07, 0.08)
 	cameraRef.trigger_shake(5, 10)
 	
-	var dir = global_position - player.position
-	knockback(dir, 800)
-	
 	hasDetected = true
-
+		
+	var hostileDirection = hostile_dir_manager.hostileDir
+	if hostileDirection != null:
+		print(str(directionToObject(hostileDirection), 'groet'))
+		knockback(Vector2(directionToObject(hostileDirection) * -1, 0), 800)
+	
 
 func _on_death_behaviour():
 	death.play()
@@ -313,3 +320,10 @@ func knockback(dir: Vector2, force: float):
 	kb_velocity += dir.normalized() * force
 	kb_velocity.y = 0
 	kb_velocity = kb_velocity.limit_length(350)
+
+
+func directionToObject(object_pos: Vector2) -> float:
+	if object_pos:
+		return global_position.direction_to(object_pos).x
+	else:
+		return 0.0

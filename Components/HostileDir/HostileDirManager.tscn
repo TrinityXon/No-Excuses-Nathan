@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://df16k3uttb670"]
+
+[ext_resource type="Script" path="res://Components/HostileDir/HostileDirManager.gd" id="1_5r4di"]
+
+[node name="HostileDirManager" type="Node2D"]
+script = ExtResource("1_5r4di")

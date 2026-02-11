@@ -25,6 +25,7 @@ var canShoot = true
 @onready var cameraRef = get_tree().get_first_node_in_group('Camera')
 @onready var flash_effect = get_tree().get_first_node_in_group('ScreenFlash')
 
+@onready var parentPos: Vector2
 
 var emitBus: Node
 
@@ -36,6 +37,9 @@ func _ready():
 	ammoCnt = ammoMax
 	
 	emitBus = get_node("EmitBus")
+
+func _process(delta):
+	parentPos = get_parent().position
 
 func shoot():
 	if not canShoot:
@@ -95,6 +99,12 @@ func shootRegular():
 			var damageCollider = hit.get_node("healthMonitor")
 			damageCollider.takeDamage(damage)
 			print(hit.name)
+		
+		if hit and hit.has_node("HostileDirManager"):
+			var damageCollider = hit.get_node("HostileDirManager")
+			damageCollider.get_hostile_position(global_position)
+		else:
+			print('Mam mia')
 	
 	gunshot_sound.play()
 		
