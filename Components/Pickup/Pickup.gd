@@ -7,6 +7,9 @@ var playerBody
 @export var pickup_prompt: String
 @export var interactionText: String
 
+@export var isOneTime: bool = false
+var alreadyPicked
+
 var hasAnimCompleted: bool = true
 
 signal hasPicked(body)
@@ -26,7 +29,7 @@ func _ready():
 		pass
 	
 func _input(event):
-	if Input.is_action_just_pressed("Pickup") and isInPickRange:
+	if Input.is_action_just_pressed("Pickup") and isInPickRange and not alreadyPicked:
 		await pickup_animation(pickup_text, interactionText, Color.GREEN, 0.2)
 		
 		hasPicked.emit(playerBody)
