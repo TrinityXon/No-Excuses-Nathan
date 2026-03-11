@@ -7,23 +7,49 @@ extends Node2D
 var original_scale: Vector2
 var target_scale: Vector2
 
+
 func _ready():
+	if sprite_to_stretch == null:
+		push_error("sprite_to_stretch is not assigned.")
+		return
+	
 	original_scale = sprite_to_stretch.scale
 	target_scale = original_scale
 
-func _process(delta):
-	# Move sprite toward target scale
-	sprite_to_stretch.scale = sprite_to_stretch.scale.lerp(target_scale, recovery_speed * delta)
-	
-	# Slowly recover target scale back to normal
-	target_scale = target_scale.lerp(original_scale, 6 * delta)
 
-func stretch(scale: float = recovery_speed, stretch_p = stretch_percent):
+func _process(delta):
+	sprite_to_stretch.scale = sprite_to_stretch.scale.lerp(target_scale, recovery_speed * delta)
+
+
+# Combined squash + stretch (kept for compatibility)
+func stretch(stretch_p: float = stretch_percent):
 	var amount = stretch_p / 100.0
 	
-	# Horizontal squash, vertical stretch
 	target_scale = Vector2(
 		original_scale.x * (1.0 + amount),
 		original_scale.y * (1.0 - amount)
 	)
 
+
+# Only stretch vertically
+func stretch_only(stretch_p: float = stretch_percent):
+	var amount = stretch_p / 100.0
+	
+	target_scale = Vector2(
+		original_scale.x,
+		original_scale.y * (1.0 + amount)
+	)
+
+
+# Only squash vertically
+func squash(stretch_p: float = stretch_percent):
+	var amount = stretch_p / 100.0
+	
+	target_scale = Vector2(
+		original_scale.x * (1.0 + amount),
+		original_scale.y * (1.0 - amount)
+	)
+
+
+func reset_scale():
+	target_scale = original_scale
