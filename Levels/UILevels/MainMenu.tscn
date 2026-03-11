@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://l50vj4oeykqw"]
+[gd_scene format=3 uid="uid://l50vj4oeykqw"]
 
-[ext_resource type="Script" path="res://Levels/UILevels/MainMenu.gd" id="1_q2rmk"]
-[ext_resource type="Script" path="res://UI/Finish_Game/ButtonAudio.gd" id="2_x1s1m"]
+[ext_resource type="Script" uid="uid://dhw1uugp0uod3" path="res://Levels/UILevels/MainMenu.gd" id="1_q2rmk"]
+[ext_resource type="Script" uid="uid://d3a5cevqtu17u" path="res://UI/Finish_Game/ButtonAudio.gd" id="2_x1s1m"]
 [ext_resource type="AudioStream" uid="uid://dmd3qrpgtptky" path="res://Sound_Effects/NeN_Sound_Effects/UI/Button_Press.mp3" id="3_3cljr"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("pressSound")]
+[node name="MainMenu" type="Control" unique_id=1707393729 node_paths=PackedStringArray("pressSound")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ script = ExtResource("1_q2rmk")
 level = "res://Levels/UILevels/Level_Select/Level_Select.tscn"
 pressSound = NodePath("AudioStreamPlayer2D")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2097575821]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,50 +29,50 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=665126676]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1920665150]
 layout_mode = 2
 theme_override_font_sizes/font_size = 61
 text = "No Excuses Nathan"
 horizontal_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1816494097]
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1465737347]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer" unique_id=927481223 node_paths=PackedStringArray("soundEffectPress")]
 layout_mode = 2
 text = "Play"
 script = ExtResource("2_x1s1m")
 soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=496510861]
 layout_mode = 2
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1788954650 node_paths=PackedStringArray("soundEffectPress")]
 layout_mode = 2
 text = "Options"
 script = ExtResource("2_x1s1m")
 soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=804970023]
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=596198171 node_paths=PackedStringArray("soundEffectPress")]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("2_x1s1m")
 soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=917068896]
 layout_mode = 2
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1801698520]
 process_mode = 2
 stream = ExtResource("3_3cljr")
 
