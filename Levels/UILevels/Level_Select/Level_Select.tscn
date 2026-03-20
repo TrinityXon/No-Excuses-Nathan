@@ -25,4 +25,3 @@ text = "Level Select"
 
 [node name="LevelButton" parent="." instance=ExtResource("1_k0by0")]
 position = Vector2(147, 229)
-levelpath = "res://Levels/The_Marston_Estate/Floor_1/floor_1.tscn"

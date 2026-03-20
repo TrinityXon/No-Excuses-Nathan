@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://l50vj4oeykqw"]
+[gd_scene load_steps=9 format=3 uid="uid://l50vj4oeykqw"]
 
 [ext_resource type="Script" path="res://Levels/UILevels/MainMenu.gd" id="1_q2rmk"]
 [ext_resource type="Script" path="res://UI/Finish_Game/ButtonAudio.gd" id="2_x1s1m"]
 [ext_resource type="AudioStream" uid="uid://dmd3qrpgtptky" path="res://Sound_Effects/NeN_Sound_Effects/UI/Button_Press.mp3" id="3_3cljr"]
+[ext_resource type="Script" path="res://UI/Finish_Game/ButtonAudioTextureButton.gd" id="3_6hn2d"]
+[ext_resource type="Texture2D" uid="uid://4owx1fxv6eia" path="res://ArtSprite/UI/MAIN_MENU/Settings Button.png" id="3_x2im6"]
+[ext_resource type="Texture2D" uid="uid://d21xknlf7jwpp" path="res://ArtSprite/UI/MAIN_MENU/Quit.png" id="4_hhfr5"]
+[ext_resource type="Texture2D" uid="uid://b0oh8q7wxseud" path="res://ArtSprite/UI/MAIN_MENU/Play.png" id="4_l3wva"]
+[ext_resource type="Texture2D" uid="uid://c4jj8c3xgx7y8" path="res://ArtSprite/UI/MAIN_MENU/Top Panel.png" id="6_gmy0j"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("pressSound")]
 layout_mode = 3
@@ -15,67 +20,195 @@ script = ExtResource("1_q2rmk")
 level = "res://Levels/UILevels/Level_Select/Level_Select.tscn"
 pressSound = NodePath("AudioStreamPlayer2D")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 2
+stream = ExtResource("3_3cljr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -50.0
-offset_right = 213.0
-offset_bottom = 51.0
+offset_left = -23.0
+offset_top = -30.0
+offset_right = 17.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.857778, 0.857778)
+
+[node name="Settings" type="Node2D" parent="Control"]
+position = Vector2(-402.202, 208.679)
+scale = Vector2(0.653264, 0.653264)
+
+[node name="TextureButton" type="TextureButton" parent="Control/Settings" node_paths=PackedStringArray("soundEffectPress")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.545
+offset_top = -389.544
+offset_right = 409.455
+offset_bottom = 330.456
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(232.143, 87.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_x2im6")
+script = ExtResource("3_6hn2d")
+soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
+
+[node name="Quit" type="Node2D" parent="Control"]
+position = Vector2(430.181, 209.844)
+scale = Vector2(0.636413, 0.636413)
+
+[node name="QuitButton" type="TextureButton" parent="Control/Quit" node_paths=PackedStringArray("soundEffectPress")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.97
+offset_top = -397.585
+offset_right = 607.03
+offset_bottom = 322.415
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(232.143, 87.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_hhfr5")
+script = ExtResource("3_6hn2d")
+soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
+
+[node name="Play" type="Node2D" parent="Control"]
+position = Vector2(-23.316, 212.176)
+scale = Vector2(0.606633, 0.606633)
+
+[node name="TextureButton" type="TextureButton" parent="Control/Play" node_paths=PackedStringArray("soundEffectPress")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.988
+offset_top = -386.306
+offset_right = 582.012
+offset_bottom = 333.694
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(489.285, 416.071)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_l3wva")
+script = ExtResource("3_6hn2d")
+soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 270.5
+offset_top = 174.5
+offset_right = 839.5
+offset_bottom = 434.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 61
 text = "No Excuses Nathan"
 horizontal_alignment = 1
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
+[node name="Play" type="Button" parent="Control/MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
 layout_mode = 2
 text = "Play"
 script = ExtResource("2_x1s1m")
-soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
+soundEffectPress = NodePath("../../../../AudioStreamPlayer2D")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
+[node name="Options" type="Button" parent="Control/MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
 layout_mode = 2
 text = "Options"
 script = ExtResource("2_x1s1m")
-soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
+soundEffectPress = NodePath("../../../../AudioStreamPlayer2D")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
+[node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer" node_paths=PackedStringArray("soundEffectPress")]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("2_x1s1m")
-soundEffectPress = NodePath("../../../AudioStreamPlayer2D")
+soundEffectPress = NodePath("../../../../AudioStreamPlayer2D")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-process_mode = 2
-stream = ExtResource("3_3cljr")
+[node name="TOPpanel" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.3316
+offset_top = 5.64767
+offset_right = 17.6684
+offset_bottom = 45.6477
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1399, 1.18653)
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="TopPanel" type="Sprite2D" parent="Control/TOPpanel"]
+position = Vector2(24.5455, 94.4961)
+scale = Vector2(1.22514, 1.13039)
+texture = ExtResource("6_gmy0j")
+
+[node name="Label" type="Label" parent="Control/TOPpanel"]
+layout_mode = 1
+offset_left = -532.0
+offset_top = -276.0
+offset_right = -383.0
+offset_bottom = -250.0
+scale = Vector2(3.28196, 3.30842)
+theme_override_colors/font_color = Color(0, 0, 0, 0.678431)
+text = "No Excuses Nathan"
+
+[connection signal="pressed" from="Control/Settings/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/Quit/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/Play/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
