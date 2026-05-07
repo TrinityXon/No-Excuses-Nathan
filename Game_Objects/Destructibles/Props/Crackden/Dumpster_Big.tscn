@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://hv0rqhhuqp61"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_7rjc5"]
+[ext_resource type="Texture2D" uid="uid://bc3hlwswn827l" path="res://ArtSprite/Props/Crackden/Dumpster_Big.png" id="2_0h0aa"]
+
+[node name="Area2D" instance=ExtResource("1_7rjc5")]
+scale = Vector2(0.76, 0.76)
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1, 13)
+scale = Vector2(2.25716, 1.58105)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.399041, 0.388896)
+texture = ExtResource("2_0h0aa")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-2.08334, 1.92308)
+scale = Vector2(7.88834, 1.30769)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 30.0

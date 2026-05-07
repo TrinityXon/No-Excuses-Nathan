@@ -10,7 +10,7 @@ radius = 20.0
 height = 65.25
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dayg1"]
-size = Vector2(141.232, 86.3926)
+size = Vector2(141.232, 95.7472)
 
 [sub_resource type="Animation" id="Animation_vbgsf"]
 resource_name = "Damage_Anim"
@@ -64,7 +64,7 @@ damage = 5.0
 [node name="ShotCheck" type="RayCast2D" parent="gunParent" index="1"]
 unique_name_in_owner = true
 position = Vector2(0, -1)
-target_position = Vector2(0, 0)
+target_position = Vector2(600, 0)
 collision_mask = 7
 
 [node name="sideCheck_L" parent="." index="5"]

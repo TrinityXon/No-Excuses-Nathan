@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg86aqj2ogqqv"]
+
+[ext_resource type="PackedScene" uid="uid://byr0775cal5qk" path="res://Game_Objects/Enemies/Crackhead_Puny.tscn" id="1_h8nsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtj5x"]
+
+[node name="Enemies" instance=ExtResource("1_h8nsa")]
+
+[node name="CollisionShape2D" parent="AttackDistance" index="0"]
+position = Vector2(-0.735667, 0.294266)
+scale = Vector2(20.0835, 3.75574)
+shape = SubResource("RectangleShape2D_jtj5x")

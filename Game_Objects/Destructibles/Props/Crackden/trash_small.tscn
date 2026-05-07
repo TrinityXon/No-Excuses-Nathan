@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2uyekv6uyyrv"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_dplmh"]
+
+[node name="Trash_Small" instance=ExtResource("1_dplmh")]
+scale = Vector2(1.48, 1.48)
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.499996, 0)
+
+[node name="Icon" parent="." index="1"]
+modulate = Color(0.0431373, 0.364706, 0.25098, 1)
+position = Vector2(-1.43051e-06, 0.499999)
+scale = Vector2(2.25, 3.59375)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(3.64583, -1)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 15.0

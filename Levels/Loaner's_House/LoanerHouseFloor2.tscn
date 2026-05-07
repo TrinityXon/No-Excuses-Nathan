@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://mdyldyya8syk"]
+
+[ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_efwfy"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_pr8v6"]
+
+[node name="LoanerHouseFloor2" type="Node2D"]
+
+[node name="GroundLevel" parent="." instance=ExtResource("1_efwfy")]
+position = Vector2(438, 283)
+scale = Vector2(7.86616, 0.306158)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("2_pr8v6")]
+position = Vector2(152, 207)

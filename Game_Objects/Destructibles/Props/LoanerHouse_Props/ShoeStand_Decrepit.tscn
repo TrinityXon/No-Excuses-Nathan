@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvmuv1mcea1da"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_ojnce"]
+
+[node name="Area2D" instance=ExtResource("1_ojnce")]
+scale = Vector2(0.84, 0.84)
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(1.64, 1.28)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(6.3675, 4.59375)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+scale = Vector2(6.305, 1.19231)

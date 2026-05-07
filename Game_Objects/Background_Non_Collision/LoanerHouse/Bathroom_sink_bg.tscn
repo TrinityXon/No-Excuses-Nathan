@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://i38uski3lcji"]
+
+[ext_resource type="PackedScene" uid="uid://bpg6gyva0ftsl" path="res://Game_Objects/Background_Non_Collision/DecorationsBase.tscn" id="1_3ottf"]
+[ext_resource type="Texture2D" uid="uid://otsu26bi35a6" path="res://ArtSprite/Blockout.png" id="2_qjlb0"]
+
+[node name="DecorationsBase" instance=ExtResource("1_3ottf")]
+scale = Vector2(0.426084, 0.426084)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0"]
+modulate = Color(0.27451, 0.27451, 0.27451, 1)
+z_index = -1
+position = Vector2(0, 251)
+scale = Vector2(10.84, 9)
+texture = ExtResource("2_qjlb0")
+
+[node name="Sprite2D" parent="." index="1"]
+modulate = Color(0, 0.67451, 0.67451, 1)
+z_index = -2
+scale = Vector2(9, 9)
+texture = ExtResource("2_qjlb0")

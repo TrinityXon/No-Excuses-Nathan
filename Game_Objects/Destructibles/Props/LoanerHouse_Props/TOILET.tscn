@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqp70bccaox8m"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_g30ww"]
+[ext_resource type="Texture2D" uid="uid://otsu26bi35a6" path="res://ArtSprite/Blockout.png" id="2_0qfni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubfd0"]
+
+[node name="Area2D" instance=ExtResource("1_g30ww")]
+maxHealth = 30.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = true
+position = Vector2(26, 0)
+scale = Vector2(0.52, 1)
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(29, -5)
+scale = Vector2(1.7675, 3.79375)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+position = Vector2(-1.04167, 77.8846)
+scale = Vector2(6.125, 2.76923)
+shape = SubResource("RectangleShape2D_ubfd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="12"]
+z_index = -1
+position = Vector2(-0.999999, 81)
+rotation = -1.57079
+scale = Vector2(1.9102, 3.6)
+texture = ExtResource("2_0qfni")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh0k2bdwqt1a5"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_qboah"]
+[ext_resource type="Texture2D" uid="uid://qjsqqspygy2e" path="res://ArtSprite/Props/Crackden/Scaffolding.png" id="2_f638b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjpuu"]
+
+[node name="Scaffolding" instance=ExtResource("1_qboah")]
+scale = Vector2(1.68, 1.68)
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = true
+position = Vector2(-2.97619, 8.92857)
+scale = Vector2(0.608447, 0.696098)
+
+[node name="Icon" parent="." index="1"]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(2, -10)
+scale = Vector2(0.198838, 0.193783)
+texture = ExtResource("2_f638b")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = true
+position = Vector2(-36.8539, 33.4642)
+rotation = 0.388813
+scale = Vector2(0.638329, 0.653846)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+position = Vector2(-1.24008, 7.44048)
+scale = Vector2(2.61841, 0.47861)
+shape = SubResource("RectangleShape2D_yjpuu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" index="2"]
+position = Vector2(33.3943, -11.7728)
+rotation = -1.11362
+scale = Vector2(2.63717, 0.47012)
+shape = SubResource("RectangleShape2D_yjpuu")
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 40.0

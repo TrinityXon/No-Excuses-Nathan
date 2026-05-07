@@ -36,8 +36,9 @@ func _on_health_monitor_has_taken_damage(damageAmount: float):
 	healthBar.value = healthMonitor.currentHealth
 	
 	damageBehaviour.emit()
-
-	effectManager.playEffect()
+	
+	if effectManager != null:
+		effectManager.playEffect()
 
 func die(sfxLength: float):
 	deathAnim.play("death")

@@ -7,6 +7,7 @@ var isOnFloor: bool
 
 @onready var icon = $Icon
 @onready var damage_sound = $DamageSound
+@onready var collider = $CollisionShape2D
 
 @export var maxHealth: float
 @export var isInvincible: bool
@@ -56,13 +57,15 @@ func _process(delta):
 func destruction():
 	emitBus.emit_event("destroy")
 	squash_stretch.stretch(30)
+	collider.disabled = true
 	await get_tree().create_timer(0.1).timeout
 	icon.visible = false
 	$Timer.start()
 	
 
 func hasDamage(damageAmount):
-	squash_stretch.stretch()
+	if squash_stretch and self and collider:
+		squash_stretch.stretch()
 	emitBus.emit_event("hit")
 
 

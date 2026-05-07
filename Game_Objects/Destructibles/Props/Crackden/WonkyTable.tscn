@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceoe10iqpubrj"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_bylyt"]
+[ext_resource type="Texture2D" uid="uid://ewcuotrl10dr" path="res://icon.svg" id="2_whuet"]
+
+[node name="Area2D" instance=ExtResource("1_bylyt")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(1, 35)
+scale = Vector2(2.9351, 0.805997)
+
+[node name="Icon" parent="." index="1"]
+rotation = 0.119403
+scale = Vector2(5.2875, 0.87375)
+
+[node name="Sprite2D" type="Sprite2D" parent="Icon" index="0"]
+position = Vector2(-10.4019, 52.0744)
+rotation = 0.0705858
+scale = Vector2(0.0513414, 0.795315)
+texture = ExtResource("2_whuet")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Icon" index="1"]
+position = Vector2(7.34824, 50.5014)
+rotation = 0.0704246
+scale = Vector2(0.0513414, 0.795315)
+texture = ExtResource("2_whuet")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-4.17959, 36.8637)
+rotation = 0.000246558
+scale = Vector2(6.97318, 0.8205)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 30.0

@@ -1,0 +1,528 @@
+[gd_scene load_steps=14 format=3 uid="uid://75xd2gqbui6k"]
+
+[ext_resource type="PackedScene" uid="uid://dn7e6nh8el36e" path="res://Game_Objects/Floor/GroundLevel_Base.tscn" id="2_2xk3h"]
+[ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_qlxy3"]
+[ext_resource type="PackedScene" uid="uid://hv0rqhhuqp61" path="res://Game_Objects/Destructibles/Props/Crackden/Dumpster_Big.tscn" id="3_j7m27"]
+[ext_resource type="PackedScene" uid="uid://ceoe10iqpubrj" path="res://Game_Objects/Destructibles/Props/Crackden/WonkyTable.tscn" id="4_1t6uk"]
+[ext_resource type="PackedScene" uid="uid://c2uyekv6uyyrv" path="res://Game_Objects/Destructibles/Props/Crackden/trash_small.tscn" id="5_kmo0j"]
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="6_5be1v"]
+[ext_resource type="PackedScene" uid="uid://byr0775cal5qk" path="res://Game_Objects/Enemies/Crackhead_Puny.tscn" id="7_6v47o"]
+[ext_resource type="PackedScene" uid="uid://bhedj5ylnfws7" path="res://Game_Objects/Miscellaneous/ActivationZones/ActivationZone.tscn" id="8_rq4o2"]
+[ext_resource type="PackedScene" uid="uid://bfennkh5qeu18" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Sofa.tscn" id="9_l8h7e"]
+[ext_resource type="PackedScene" uid="uid://cyg1tahbffdvy" path="res://Game_Objects/Destructibles/Props/The_Marston_Estate_Props/Table.tscn" id="10_hbver"]
+[ext_resource type="PackedScene" uid="uid://rjpdxs0hfcdh" path="res://Game_Objects/Destructibles/Props/Table.tscn" id="11_i25le"]
+[ext_resource type="PackedScene" uid="uid://4wb4xj1d13d4" path="res://Game_Objects/Interactable/Ladder.tscn" id="12_trgjf"]
+[ext_resource type="PackedScene" uid="uid://83nvl7jt22s2" path="res://Game_Objects/Destructibles/Props/Box.tscn" id="13_ueq1v"]
+
+[node name="Crackden" type="Node2D"]
+
+[node name="Activation" type="Node2D" parent="."]
+visible = false
+position = Vector2(1372, 1121)
+rotation = 3.14159
+scale = Vector2(22.7172, -16.6027)
+
+[node name="ActivationZone" parent="Activation" instance=ExtResource("8_rq4o2")]
+
+[node name="ActivationZone5" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(34.5993, 8.73351)
+scale = Vector2(0.728105, 0.733784)
+
+[node name="ActivationZone6" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-83.9892, 1.80693)
+scale = Vector2(0.91797, 0.906612)
+
+[node name="ActivationZone7" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-109.168, 11.6246)
+scale = Vector2(1.29429, 0.804634)
+
+[node name="ActivationZone8" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-130.65, 12.8292)
+scale = Vector2(0.82416, 0.804634)
+
+[node name="ActivationZone2" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-26.5878, 0.301155)
+rotation = 3.14159
+scale = Vector2(1.21331, 0.722648)
+
+[node name="ActivationZone3" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-49.0377, 1.02393)
+rotation = 3.14159
+scale = Vector2(0.848833, 0.722648)
+
+[node name="ActivationZone4" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-64.9288, 1.44554)
+rotation = 3.14159
+scale = Vector2(0.570629, 0.722648)
+
+[node name="ActivationZone9" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-172.16, 20.5388)
+rotation = 3.14159
+scale = Vector2(0.804267, 0.754576)
+
+[node name="ActivationZone10" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-174.009, 37.4638)
+rotation = 3.14159
+scale = Vector2(0.804267, 0.754576)
+
+[node name="ActivationZone11" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-202.226, 33.7897)
+rotation = 3.14159
+scale = Vector2(1.35539, 0.754576)
+
+[node name="ActivationZone12" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-237.441, 34.8739)
+rotation = 3.14159
+scale = Vector2(1.35539, 0.754576)
+
+[node name="ActivationZone13" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-265.482, 64.2065)
+rotation = 3.14159
+scale = Vector2(1.32546, 0.754576)
+
+[node name="ActivationZone14" parent="Activation" instance=ExtResource("8_rq4o2")]
+position = Vector2(-284.278, 60.2312)
+rotation = 3.14159
+scale = Vector2(1.32546, 0.754576)
+
+[node name="Nathan_Main" parent="." instance=ExtResource("2_qlxy3")]
+position = Vector2(83, 1341)
+scale = Vector2(1.51936, 1.49152)
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Walls and floors" type="Node" parent="Environment"]
+
+[node name="GroundLevel" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(787, 1420)
+scale = Vector2(12.5741, 0.201739)
+
+[node name="GroundLevel4" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(362, 1069)
+scale = Vector2(6.23625, 0.201739)
+
+[node name="GroundLevel6" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(2593, 970)
+scale = Vector2(27.6876, 0.201739)
+
+[node name="GroundLevel2" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(-37, 1244)
+rotation = -1.57079
+scale = Vector2(2.68875, 0.201739)
+
+[node name="GroundLevel5" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(1604, 1292)
+rotation = -1.57079
+scale = Vector2(1.76875, 0.201739)
+
+[node name="GroundLevel10" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(3499, 1395)
+rotation = -1.57079
+scale = Vector2(1.28875, 0.201739)
+
+[node name="GroundLevel11" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(4098, 1465)
+rotation = -3.14159
+scale = Vector2(9.12876, 0.201739)
+
+[node name="GroundLevel14" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(4792, 1541)
+rotation = -2.42299
+scale = Vector2(2.19473, 0.201739)
+
+[node name="GroundLevel18" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(4942, 1647)
+rotation = -3.14159
+scale = Vector2(1.13464, 0.201739)
+
+[node name="GroundLevel19" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(5033, 1742)
+rotation = -2.4382
+scale = Vector2(2.12735, 0.201739)
+
+[node name="GroundLevel15" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(6162, 1838)
+rotation = -3.14159
+scale = Vector2(16.6131, 0.178914)
+
+[node name="GroundLevel26" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(7882, 1972)
+rotation = -3.14159
+scale = Vector2(7.10543, 0.205288)
+
+[node name="GroundLevel30" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(7162, 1972)
+rotation = -3.14159
+scale = Vector2(1.30544, 0.205288)
+
+[node name="GroundLevel29" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(7709, 2361)
+rotation = -3.14159
+scale = Vector2(9.77304, 0.178914)
+
+[node name="GroundLevel27" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(8339, 2078)
+rotation = -1.57079
+scale = Vector2(1.41306, 0.178914)
+
+[node name="GroundLevel34" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(9423, 2229)
+rotation = -1.57079
+scale = Vector2(4.13306, 0.179628)
+
+[node name="GroundLevel33" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(8346, 2444)
+rotation = -1.57079
+scale = Vector2(1.01306, 0.178914)
+
+[node name="GroundLevel31" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(8814, 1973)
+scale = Vector2(9.37306, 0.178914)
+
+[node name="GroundLevel32" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(8895, 2507)
+scale = Vector2(8.33306, 0.178914)
+
+[node name="GroundLevel28" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(7085, 2168)
+rotation = -1.57079
+scale = Vector2(2.93305, 0.178914)
+
+[node name="GroundLevel23" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(7247, 1905)
+rotation = 1.5708
+scale = Vector2(1.13307, 0.178914)
+
+[node name="GroundLevel24" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(7420, 1755)
+rotation = 1.5708
+scale = Vector2(3.22713, 0.178914)
+
+[node name="GroundLevel20" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(5610, 1479)
+rotation = -1.57079
+scale = Vector2(2.26463, 0.201739)
+
+[node name="GroundLevel22" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(6341, 1783)
+rotation = -1.57079
+scale = Vector2(0.984628, 1.28174)
+
+[node name="GroundLevel21" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(6523, 1531)
+scale = Vector2(13.8009, 0.176094)
+
+[node name="GroundLevel13" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(4686, 1234)
+rotation = -3.14159
+scale = Vector2(3.88875, 0.201739)
+
+[node name="GroundLevel16" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(4937, 1300)
+rotation = -1.57079
+scale = Vector2(0.848752, 0.201739)
+
+[node name="GroundLevel17" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(5267, 1344)
+rotation = -3.14159
+scale = Vector2(5.20874, 0.201739)
+
+[node name="GroundLevel12" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(4415, 1101)
+rotation = 1.57081
+scale = Vector2(2.24876, 0.201739)
+
+[node name="GroundLevel9" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(3005, 1234)
+rotation = -1.57079
+scale = Vector2(0.96875, 0.201739)
+
+[node name="GroundLevel8" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(2294, 1043)
+rotation = -1.57079
+scale = Vector2(1.24875, 0.201739)
+
+[node name="GroundLevel7" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(2556, 1313)
+scale = Vector2(14.3688, 0.201739)
+
+[node name="GroundLevel3" parent="Environment/Walls and floors" instance=ExtResource("2_2xk3h")]
+position = Vector2(765, 1114)
+rotation = -1.57079
+scale = Vector2(2.50472, 0.206359)
+
+[node name="Props" type="Node" parent="Environment"]
+
+[node name="Area2D" parent="Environment/Props" instance=ExtResource("3_j7m27")]
+position = Vector2(339, 1312)
+
+[node name="Area2D2" parent="Environment/Props" instance=ExtResource("4_1t6uk")]
+position = Vector2(1036, 1331)
+
+[node name="Trash_Small" parent="Environment/Props" instance=ExtResource("5_kmo0j")]
+position = Vector2(1224, 1338)
+scale = Vector2(1.18951, 1.198)
+
+[node name="Area2D3" parent="Environment/Props" instance=ExtResource("6_5be1v")]
+position = Vector2(1426, 1242)
+rotation = -0.270033
+scale = Vector2(2.88692, 0.240563)
+
+[node name="Area2D4" parent="Environment/Props" instance=ExtResource("9_l8h7e")]
+position = Vector2(1824, 1232)
+
+[node name="Area2D6" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("9_l8h7e")]
+position = Vector2(2165, 1227)
+flipSprite = true
+squash_stretch = NodePath("../Area2D4/SquashStretch")
+
+[node name="Area2D5" parent="Environment/Props" instance=ExtResource("10_hbver")]
+position = Vector2(1976, 1212)
+scale = Vector2(0.930019, 0.930019)
+
+[node name="Area2D7" parent="Environment/Props" instance=ExtResource("6_5be1v")]
+position = Vector2(2431, 1238)
+scale = Vector2(0.88, 0.88)
+
+[node name="Area2D8" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+position = Vector2(2602, 998)
+scale = Vector2(0.560005, 0.310483)
+squash_stretch = NodePath("../Area2D7/SquashStretch")
+
+[node name="Area2D9" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+position = Vector2(2658, 1018)
+rotation = -3.14159
+scale = Vector2(0.512792, -0.630483)
+squash_stretch = NodePath("../Area2D7/SquashStretch")
+
+[node name="Area2D10" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+position = Vector2(2715, 1007)
+rotation = -3.14159
+scale = Vector2(0.351404, -0.783242)
+squash_stretch = NodePath("../Area2D7/SquashStretch")
+
+[node name="Area2D11" parent="Environment/Props" instance=ExtResource("11_i25le")]
+position = Vector2(3212, 1219)
+
+[node name="Area2D12" parent="Environment/Props" instance=ExtResource("6_5be1v")]
+position = Vector2(3691, 1127)
+scale = Vector2(2.7175, 0.354284)
+
+[node name="Area2D13" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+process_mode = 4
+position = Vector2(3584, 1046)
+rotation = -1.57079
+scale = Vector2(1, 0.159995)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D14" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+process_mode = 4
+position = Vector2(3790, 1043)
+rotation = -1.57079
+scale = Vector2(1, 0.159995)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D16" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+position = Vector2(5286, 1492)
+scale = Vector2(2.7175, 0.354284)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D17" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+process_mode = 4
+position = Vector2(5179, 1411)
+rotation = -1.57079
+scale = Vector2(1, 0.159995)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D18" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+process_mode = 4
+position = Vector2(5385, 1408)
+rotation = -1.57079
+scale = Vector2(1, 0.159995)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D28" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+position = Vector2(9230, 2135)
+scale = Vector2(2.7175, 0.354284)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D29" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+process_mode = 4
+position = Vector2(9123, 2073)
+rotation = -1.57079
+scale = Vector2(1, 0.159995)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Area2D30" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("6_5be1v")]
+process_mode = 4
+position = Vector2(9329, 2070)
+rotation = -1.57079
+scale = Vector2(1, 0.159995)
+squash_stretch = NodePath("../Area2D12/SquashStretch")
+
+[node name="Ladder" parent="Environment/Props" instance=ExtResource("12_trgjf")]
+position = Vector2(3565, 1379)
+
+[node name="Area2D15" parent="Environment/Props" instance=ExtResource("6_5be1v")]
+position = Vector2(4036, 1397)
+scale = Vector2(0.92, 0.92)
+
+[node name="Area2D19" parent="Environment/Props" instance=ExtResource("11_i25le")]
+position = Vector2(6075, 1757)
+
+[node name="Box" parent="Environment/Props" instance=ExtResource("13_ueq1v")]
+position = Vector2(6615, 1787)
+scale = Vector2(1.34836, 1.34836)
+
+[node name="Box2" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("13_ueq1v")]
+position = Vector2(6717, 1782)
+scale = Vector2(1.34836, 1.34836)
+squash_stretch = NodePath("../Box/SquashStretch")
+
+[node name="Box3" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("13_ueq1v")]
+position = Vector2(6652, 1673)
+scale = Vector2(1.34836, 1.34836)
+squash_stretch = NodePath("../Box/SquashStretch")
+
+[node name="Area2D20" parent="Environment/Props" instance=ExtResource("4_1t6uk")]
+position = Vector2(7103, 1757)
+
+[node name="Area2D21" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("4_1t6uk")]
+position = Vector2(7120, 1662)
+flipSprite = true
+squash_stretch = NodePath("../Area2D20/SquashStretch")
+
+[node name="Ladder2" parent="Environment/Props" instance=ExtResource("12_trgjf")]
+position = Vector2(7315, 1936)
+scale = Vector2(2.58155, 4.18155)
+
+[node name="Area2D22" parent="Environment/Props" instance=ExtResource("11_i25le")]
+position = Vector2(7524, 2261)
+
+[node name="Area2D23" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("11_i25le")]
+position = Vector2(7744, 2261)
+squash_stretch = NodePath("../Area2D22/SquashStretch")
+
+[node name="Area2D24" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("11_i25le")]
+position = Vector2(7957, 2264)
+squash_stretch = NodePath("../Area2D22/SquashStretch")
+
+[node name="Area2D25" parent="Environment/Props" node_paths=PackedStringArray("squash_stretch") instance=ExtResource("11_i25le")]
+position = Vector2(8159, 2258)
+squash_stretch = NodePath("../Area2D22/SquashStretch")
+
+[node name="Area2D26" parent="Environment/Props" instance=ExtResource("6_5be1v")]
+position = Vector2(7801, 2206)
+scale = Vector2(5.7329, 0.493553)
+
+[node name="Area2D27" parent="Environment/Props" instance=ExtResource("4_1t6uk")]
+position = Vector2(8896, 2396)
+
+[node name="Enemies19" type="Node2D" parent="."]
+
+[node name="Enemies" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones") instance=ExtResource("7_6v47o")]
+position = Vector2(1475, 1116)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone")
+
+[node name="Enemies5" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(614, 1306)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone5")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies2" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(1983, 1122)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone2")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies3" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(2431, 1109)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone3")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies4" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(2824, 1219)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone4")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies6" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(3673, 1045)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone6")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies9" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(5280, 1419)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone9")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies10" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(5316, 1763)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone10")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies11" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(5816, 1763)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone11")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies12" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(6908, 1763)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone12")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies13" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(7347, 2270)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone13")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies14" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(7820, 2114)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone14")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies15" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(8908, 2301)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone14")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies18" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(9234, 2051)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone14")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies16" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(9256, 2411)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone14")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies7" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(4040, 1274)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone7")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies8" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(4371, 1391)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone8")
+effectManager = NodePath("../Enemies/EffectManager")
+
+[node name="Enemies17" parent="Enemies19" node_paths=PackedStringArray("player", "activationZones", "effectManager") instance=ExtResource("7_6v47o")]
+position = Vector2(13200, 3038)
+player = NodePath("../../Nathan_Main")
+activationZones = NodePath("../../Activation/ActivationZone14")
+effectManager = NodePath("../Enemies/EffectManager")
