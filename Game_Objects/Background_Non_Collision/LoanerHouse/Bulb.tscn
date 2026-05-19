@@ -1,15 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://fg7to1lc6ill"]
 
 [ext_resource type="PackedScene" uid="uid://bpg6gyva0ftsl" path="res://Game_Objects/Background_Non_Collision/DecorationsBase.tscn" id="1_caq8l"]
-[ext_resource type="Texture2D" uid="uid://otsu26bi35a6" path="res://ArtSprite/Blockout.png" id="2_26ngt"]
+[ext_resource type="Texture2D" uid="uid://bitfob2cei1k" path="res://Background-Non-Collision/LoanerHouse/Bulb.png" id="2_82fyb"]
 
 [node name="DecorationsBase" instance=ExtResource("1_caq8l")]
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.32, 1)
-texture = ExtResource("2_26ngt")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." index="1"]
-position = Vector2(0, 23)
-scale = Vector2(0.969585, 0.949772)
-texture = ExtResource("2_26ngt")
+position = Vector2(6.82121e-13, 29)
+scale = Vector2(0.194027, 0.194027)
+texture = ExtResource("2_82fyb")

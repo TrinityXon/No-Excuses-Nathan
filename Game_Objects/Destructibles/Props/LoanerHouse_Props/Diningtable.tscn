@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhuew3r7grxix"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_btq2j"]
+[ext_resource type="Texture2D" uid="uid://bomgwremxvctb" path="res://ArtSprite/Props/Loanerhouse/Dining_Table.png" id="2_2i2b2"]
+
+[node name="Area2D" instance=ExtResource("1_btq2j")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(3.41633, 1.66811)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.424706, 0.411355)
+texture = ExtResource("2_2i2b2")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-2.08334, 17.3077)
+scale = Vector2(10.0133, 1)
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 100.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqp70bccaox8m"]
 
 [ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_g30ww"]
-[ext_resource type="Texture2D" uid="uid://otsu26bi35a6" path="res://ArtSprite/Blockout.png" id="2_0qfni"]
+[ext_resource type="Texture2D" uid="uid://bttd86s0k17ty" path="res://ArtSprite/Props/Loanerhouse/Toilet.png" id="2_mdndf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubfd0"]
 
@@ -9,22 +9,26 @@
 maxHealth = 30.0
 
 [node name="CollisionShape2D" parent="." index="0"]
-visible = true
-position = Vector2(26, 0)
-scale = Vector2(0.52, 1)
+position = Vector2(12, 23)
+scale = Vector2(1.15244, 1.32606)
 
 [node name="Icon" parent="." index="1"]
-position = Vector2(29, -5)
-scale = Vector2(1.7675, 3.79375)
+position = Vector2(-8, 14)
+scale = Vector2(0.189837, 0.275782)
+texture = ExtResource("2_mdndf")
+
+[node name="StaticBody2D" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = true
+position = Vector2(20.8334, -3.84615)
+scale = Vector2(1.13833, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
-position = Vector2(-1.04167, 77.8846)
-scale = Vector2(6.125, 2.76923)
+position = Vector2(-4.16667, 73.0769)
+scale = Vector2(4.48605, 3.8378)
 shape = SubResource("RectangleShape2D_ubfd0")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="12"]
-z_index = -1
-position = Vector2(-0.999999, 81)
-rotation = -1.57079
-scale = Vector2(1.9102, 3.6)
-texture = ExtResource("2_0qfni")
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 20.0

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://u1orb3vuww8r"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_fk5c6"]
+[ext_resource type="Texture2D" uid="uid://yvscxxg5sbt2" path="res://ArtSprite/Props/Loanerhouse/Drawer_old.png" id="2_j35sc"]
+
+[node name="Area2D" instance=ExtResource("1_fk5c6")]
+maxHealth = 30.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(3, -1)
+scale = Vector2(1.36859, 0.926126)
+
+[node name="Icon" parent="." index="1"]
+position = Vector2(1, -18)
+scale = Vector2(0.287501, 0.280192)
+texture = ExtResource("2_j35sc")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(3.125, -0.961538)
+scale = Vector2(5.1097, -0.875989)

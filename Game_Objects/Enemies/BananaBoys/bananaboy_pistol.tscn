@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg86aqj2ogqqv"]
+[gd_scene load_steps=4 format=3 uid="uid://bg86aqj2ogqqv"]
 
 [ext_resource type="PackedScene" uid="uid://byr0775cal5qk" path="res://Game_Objects/Enemies/Crackhead_Puny.tscn" id="1_h8nsa"]
+[ext_resource type="Texture2D" uid="uid://ilu7x7bh0dh3" path="res://Game_Objects/Enemies/BananaBoys/BananaBoy.png" id="2_kq6nh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtj5x"]
 
 [node name="Enemies" instance=ExtResource("1_h8nsa")]
+scale = Vector2(1.61146, 1.61146)
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-4, 11.3333)
+scale = Vector2(0.733333, 1.08)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.161433, 0.159716)
+texture = ExtResource("2_kq6nh")
 
 [node name="CollisionShape2D" parent="AttackDistance" index="0"]
 position = Vector2(-0.735667, 0.294266)

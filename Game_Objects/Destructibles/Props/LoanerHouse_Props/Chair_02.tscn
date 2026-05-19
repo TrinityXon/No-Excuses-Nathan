@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://db8na31x3j01p"]
+
+[ext_resource type="PackedScene" uid="uid://ip1gvp25rhdj" path="res://Game_Objects/Destructibles/Placeholder.tscn" id="1_4bkcp"]
+[ext_resource type="Texture2D" uid="uid://dvtit1qhq3sjs" path="res://ArtSprite/Props/Loanerhouse/Old_chair_02.png" id="2_7ya7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16fh5"]
+
+[node name="Area2D" instance=ExtResource("1_4bkcp")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(8, 10)
+scale = Vector2(2.24056, 2.24056)
+
+[node name="Icon" parent="." index="1"]
+scale = Vector2(0.539186, 0.525707)
+texture = ExtResource("2_7ya7q")
+
+[node name="StaticBody2D" parent="." index="2"]
+visible = false
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-41.6667, -35.5769)
+scale = Vector2(2.26856, 1.42698)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+visible = false
+position = Vector2(3.125, 80.7692)
+scale = Vector2(8.2254, 4.29167)
+shape = SubResource("RectangleShape2D_16fh5")
+
+[node name="healthMonitor" parent="." index="3"]
+maxHealth = 15.0
