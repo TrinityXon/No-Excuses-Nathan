@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5u0fgt7l2iy3"]
+
+[ext_resource type="Script" path="res://Game_Objects/Collectible/Keys/base_key.gd" id="1_aivgf"]
+[ext_resource type="PackedScene" uid="uid://bhldf5vjnk7gx" path="res://Components/Pickup/Pickup.tscn" id="2_vn6md"]
+[ext_resource type="Texture2D" uid="uid://4tv1u0q0xfgk" path="res://ArtSprite/Interactables/Key.png" id="3_lja4u"]
+
+[node name="base_key" type="Node2D"]
+script = ExtResource("1_aivgf")
+
+[node name="Pickup" parent="." node_paths=PackedStringArray("pickup_text") instance=ExtResource("2_vn6md")]
+pickup_text = NodePath("../Label")
+pickup_prompt = "'F' to pickup"
+interactionText = "'Picked'"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.069654, 0.0694741)
+texture = ExtResource("3_lja4u")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -46.0
+offset_right = 20.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Doornoise" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="hasPicked" from="Pickup" to="." method="_on_pickup_has_picked"]

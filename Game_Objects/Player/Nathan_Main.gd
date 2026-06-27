@@ -40,8 +40,11 @@ var curStates: playerStates = playerStates.default
 @onready var equip_sound_effect = $EquipWeapon
 @onready var jump = $Jump
 @onready var hostile_dir_manager = $HostileDirManager
+@onready var black_screen = $CanvasLayer/BlackScreen
 
 var emitBus
+
+var keyList: Array[int] = []
 
 @export var armedTex: Texture
 @onready var defaultTex: Texture = playerSprite.texture
@@ -306,3 +309,15 @@ func knockback(dir: Vector2, force: float):
 	kb_velocity += dir.normalized() * force
 	kb_velocity.y = force * 0.35
 	kb_velocity = kb_velocity.limit_length(350)
+
+func trigger_black_screen(on_or_off: bool):
+	if on_or_off:
+		black_screen.visible = true
+	elif not on_or_off:
+		black_screen.visible = false
+
+func fetchKeyDirectory() -> Array[int]:
+	return keyList
+
+func addToKeyDirectory(keyCode: int):
+	keyList.append(keyCode)

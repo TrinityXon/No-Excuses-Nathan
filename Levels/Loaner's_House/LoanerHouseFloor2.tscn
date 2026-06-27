@@ -1,13 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://mdyldyya8syk"]
+[gd_scene load_steps=5 format=3 uid="uid://mdyldyya8syk"]
 
 [ext_resource type="PackedScene" uid="uid://cryaljckxmgxf" path="res://Game_Objects/Floor/BlockoutPlaceholder.tscn" id="1_efwfy"]
 [ext_resource type="PackedScene" uid="uid://wgm30cc5agxg" path="res://Game_Objects/Player/Nathan_Main.tscn" id="2_pr8v6"]
+[ext_resource type="PackedScene" uid="uid://d0slasqrdgk1a" path="res://Game_Objects/Enemies/Doors/teleportdoor.tscn" id="3_v74yd"]
+[ext_resource type="PackedScene" uid="uid://c5u0fgt7l2iy3" path="res://Game_Objects/Collectible/Keys/base_key.tscn" id="4_7l1dg"]
 
 [node name="LoanerHouseFloor2" type="Node2D"]
 
 [node name="GroundLevel" parent="." instance=ExtResource("1_efwfy")]
 position = Vector2(438, 283)
-scale = Vector2(7.86616, 0.306158)
+scale = Vector2(9.10616, 0.306158)
+
+[node name="GroundLevel4" parent="." instance=ExtResource("1_efwfy")]
+position = Vector2(-155, 67)
+rotation = -1.57079
+scale = Vector2(-3.57562, -0.279712)
+
+[node name="GroundLevel6" parent="." instance=ExtResource("1_efwfy")]
+position = Vector2(1049, 67)
+rotation = -1.57079
+scale = Vector2(-3.57562, -0.279712)
+
+[node name="GroundLevel5" parent="." instance=ExtResource("1_efwfy")]
+position = Vector2(441, -150)
+scale = Vector2(-9.21562, -0.279712)
+
+[node name="GroundLevel2" parent="." instance=ExtResource("1_efwfy")]
+position = Vector2(514, 228)
+scale = Vector2(7.98616, 0.946157)
+
+[node name="GroundLevel3" parent="." instance=ExtResource("1_efwfy")]
+position = Vector2(595, 153)
+scale = Vector2(6.74616, 0.946157)
 
 [node name="Nathan_Main" parent="." instance=ExtResource("2_pr8v6")]
-position = Vector2(152, 207)
+position = Vector2(-87, 206)
+
+[node name="BaseDoor" parent="." instance=ExtResource("3_v74yd")]
+position = Vector2(315, 38)
+scale = Vector2(1.35214, 1.35214)
+teleportLocation = Vector2(90, -250)
+
+[node name="base_key" parent="." instance=ExtResource("4_7l1dg")]
+position = Vector2(71, 127)
