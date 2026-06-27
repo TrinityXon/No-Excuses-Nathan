@@ -40,6 +40,7 @@ position = Vector2(-87, 206)
 position = Vector2(315, 38)
 scale = Vector2(1.35214, 1.35214)
 teleportLocation = Vector2(90, -250)
+keyCode = 1
 
 [node name="base_key" parent="." instance=ExtResource("4_7l1dg")]
 position = Vector2(71, 127)

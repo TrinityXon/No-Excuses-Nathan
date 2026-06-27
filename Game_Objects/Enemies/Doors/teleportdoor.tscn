@@ -5,6 +5,7 @@
 
 [node name="BaseDoor" node_paths=PackedStringArray("door_open") instance=ExtResource("1_xn6gl")]
 shouldTeleport = true
+shouldUseKey = true
 door_open = NodePath("AudioStreamPlayer2D")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]

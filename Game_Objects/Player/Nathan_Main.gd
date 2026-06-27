@@ -44,7 +44,7 @@ var curStates: playerStates = playerStates.default
 
 var emitBus
 
-var keyList: Array[int] = []
+@export var keyList: Array[int] = []
 
 @export var armedTex: Texture
 @onready var defaultTex: Texture = playerSprite.texture
